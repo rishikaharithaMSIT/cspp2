@@ -1,10 +1,19 @@
-
 import java.util.Scanner;
-/*
-	Do not modify this main function.
-	*/
-public class Solution {
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
+    }
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
 
         Scanner s=new Scanner(System.in);      
@@ -13,6 +22,14 @@ public class Solution {
         int g = gcd(n1,n2);
         System.out.println(g);
     }
+    /**
+     * { function_description }
+     *
+     * @param      n1    The n 1
+     * @param      n2    The n 2
+     *
+     * @return     int value.
+     */
     public static int gcd(int n1, int n2) {
         final int bigger = n1 > n2? n1 : n2;
         for (int i = bigger; i >= 1; i--) {
