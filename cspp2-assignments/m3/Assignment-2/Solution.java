@@ -1,10 +1,13 @@
-
 import java.util.Scanner;
-/*
-	Do not modify this main function.
-	*/
+/**
+ * Class for solution.
+ */
 public class Solution {
-/* Fill the main function to print the number of 7's between 1 to n*/
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
     public static void main(String[] args) {
 
         Scanner s=new Scanner(System.in);      
