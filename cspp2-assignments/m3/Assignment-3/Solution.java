@@ -23,7 +23,7 @@ public final class Solution {
         System.out.println(g);
     }
     /**
-     * { function_description }
+     * gcd.
      *
      * @param      n1    The n 1
      * @param      n2    The n 2
