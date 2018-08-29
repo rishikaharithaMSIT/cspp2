@@ -14,9 +14,13 @@ public class Solution {
         System.out.println(g);
     }
     public static int gcd(int n1, int n2) {
-        if (n1 == 0) {
-            return n1;
-        } 
-        return gcd(n1 , n1%n2);
+        final int bigger = n1 > n2? n1 : n2;
+        for (int i = bigger; i >= 1; i--) {
+            if ((n1%i ==0 ) && (n2%i == 0)) {
+                return i;
+            }
+        }
+        return 1;
+        
     }
 }
