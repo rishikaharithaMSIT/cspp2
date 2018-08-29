@@ -16,10 +16,10 @@ public final class Solution {
      */
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        int g = gcd(n1,n2);
+        int g = gcd(n1, n2);
         System.out.println(g);
     }
     /**
@@ -31,9 +31,9 @@ public final class Solution {
      * @return     int value.
      */
     public static int gcd(final int n1, final int n2) {
-        final int bigger = n1 > n2? n1 : n2;
+        final int bigger = n1 > n2 ? n1 : n2;
         for (int i = bigger; i >= 1; i--) {
-            if ((n1%i ==0 ) && (n2%i == 0)) {
+            if ((n1 % i == 0) && (n2 % i == 0)) {
                 return i;
             }
         }
