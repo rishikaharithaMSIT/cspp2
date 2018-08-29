@@ -15,10 +15,12 @@ public class Solution {
         int count = 0;
 		for (int i = 1; i <= n; i++) {
 			int number = i;
+			final int ten = 10;
+			final int seven = 7;
 			while (number > 0) {
-				int rem = number % 10;
-				number /= 10;
-				if (rem == 7) {
+				int rem = number % ten;
+				number /= ten;
+				if (rem == seven) {
 					count++;
 				}
 			}
