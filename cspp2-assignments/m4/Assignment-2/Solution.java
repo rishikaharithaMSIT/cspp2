@@ -31,9 +31,10 @@ public class Solution {
 			}
 		}
 		for(int i =0 ; i<r2;i++) {
-			for(int j = 0; j<c2;j++) {
+			for(int j = 0; j<c2-1;j++) {
 				System.out.print(sum[i][j]+ " ");
 			}
+			System.out.print(sum[i][c2-1]);
 			System.out.println();
 	}	}
 
