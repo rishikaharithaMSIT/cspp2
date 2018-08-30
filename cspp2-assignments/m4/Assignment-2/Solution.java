@@ -28,7 +28,7 @@ public final class Solution {
 		int r2 = sc.nextInt();
 		int c2 = sc.nextInt();
 		int[][] arr2 = new int[r2][c2];
-		for (int i = 0 ; i < r2; i++) {
+		for (int i = 0; i < r2; i++) {
 			for (int j = 0; j < c2; j++) {
 				arr2[i][j] = sc.nextInt();
 			}
@@ -38,7 +38,7 @@ public final class Solution {
 			return;
 		}
 		int[][] sum = new int[r1][c1];
-		for (int i = 0 ; i < r2; i++) {
+		for (int i = 0; i < r2; i++) {
 			for (int j = 0; j < c2; j++) {
 				sum[i][j] = arr1[i][j] + arr2[i][j];
 			}
