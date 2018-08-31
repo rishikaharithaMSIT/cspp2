@@ -15,9 +15,9 @@ public class Solution
 	}
 	public static String binaryToDecimal(final String s) {
 		String decimalDigit = "";
-		for (int i = 0; i < s.length();i++){
+		for (int i = 1; i <= s.length();i++){
 			//System.out.println(s.charAt(i));
-			int decimal= (int) Math.pow(2,i) * Character.getNumericValue(s.charAt(i));
+			int decimal= (int) Math.pow(2,s.length()-i) * Character.getNumericValue(s.charAt(i-1));
 			System.out.println(decimal);
 		}
 		return decimalDigit;
