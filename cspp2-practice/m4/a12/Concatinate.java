@@ -17,7 +17,7 @@ public final class Concatinate {
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        final String name = scan.next();
+        final String name = scan.nextLine();
         final String greeting = "Hello " + name + "!";
         System.out.println(greeting);
 
