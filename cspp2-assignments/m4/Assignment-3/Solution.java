@@ -15,11 +15,13 @@ public class Solution
 	}
 	public static String binaryToDecimal(final String s) {
 		String decimalDigit = "";
+		int decimal=0;
 		for (int i = 1; i <= s.length();i++){
 			//System.out.println(s.charAt(i));
-			int decimal= (int) Math.pow(2,s.length()-i) * Character.getNumericValue(s.charAt(i-1));
-			System.out.println(decimal);
+			decimal += (int) Math.pow(2,s.length()-i) * Character.getNumericValue(s.charAt(i-1));
+			
 		}
+		System.out.println(decimal);
 		return decimalDigit;
 
 	}
