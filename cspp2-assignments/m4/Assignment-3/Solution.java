@@ -24,6 +24,13 @@ public final class Solution {
             System.out.println(res);
         }
     }
+    /**
+     * { function_description }.
+     *
+     * @param      s     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static String binaryToDecimal(final String s) {
         String decimalDigit = "";
         int decimal = 0;
