@@ -25,14 +25,16 @@ final class Solution {
     static int[][] roundHundred(int[][] a, final int rows, final int columns) {
 
         // write ypur code here
+        final int hundred = 100;
+        final int fifty = 50;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                int number = a[i][j] / 100;
-                int rem = a[i][j] % 100;
-                if (rem <= 50) {
-                    a[i][j] = number * 100;
+                int number = a[i][j] / hundred;
+                int rem = a[i][j] % hundred;
+                if (rem <= fifty) {
+                    a[i][j] = number * hundred;
                 } else {
-                    a[i][j] = (number + 1) * 100;
+                    a[i][j] = (number + 1) * hundred;
                 }
             }
         }
