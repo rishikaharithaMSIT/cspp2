@@ -30,7 +30,7 @@ public final class Solution {
     static void oddComposites(final int n) {
 	// write your code here
     	for (int i =1; i<=n;i++){
-    		if (isOdd(i) && !isPrime(i)) {
+    		if (isOdd(i) && isPrime(i)) {
     			System.out.println(i);
     		}
     	}
