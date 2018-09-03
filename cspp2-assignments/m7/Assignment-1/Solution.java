@@ -1,30 +1,50 @@
-import java.util.*;
-class InputValidator
-{
-	/*Write the atrributes and methods for InputValidator*/
-	String input;
-	InputValidator() {
+import java.util.Scanner;
+/**
+ * Class for input validator.
+ */
+class InputValidator {
+    String input;
+    /**
+     * Constructs the object.
+     */
+    InputValidator() {
 
-	}
-	InputValidator(String input) {
-		this.input = input;
-	}
-	public boolean validateData(){
-		if (input.length() >= 6){
-			return true;
-		} else{
-			return false;
-		}
-	}
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param      input  The input
+     */
+    InputValidator(String input) {
+        this.input = input;
+    }
+    /**
+     * validate data.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean validateData() {
+        if (input.length() >= 6) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-public class Solution
-{
-	public static void main(String args[])
-    {
-    	Scanner s=new Scanner(System.in);
-    	String input=s.next();
-    	InputValidator i=new InputValidator(input);    	
-    	System.out.println(i.validateData());
+/**
+ * Class for solution.
+ */
+public class Solution {
+    /**
+     * main.
+     *
+     * @param     args input from cmd.
+     */
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        String input = s.next();
+        InputValidator i = new InputValidator(input);
+        System.out.println(i.validateData());
 
     }
 
