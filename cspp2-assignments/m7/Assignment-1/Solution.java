@@ -30,34 +30,30 @@ class InputValidator {
      */
     public boolean validateData() {
         final int six = 6;
-        if (input.length() >= six) {
-            return true;
-        } else {
-            return false;
+        return input.length() >= six;
+    }
+}
+    /**
+     * Class for solution.
+     */
+    public final class Solution {
+        /**
+         * Constructs the object.
+         */
+        private Solution() {
+
         }
-    }
-}
-/**
- * Class for solution.
- */
-public final class Solution {
-    /**
-     * Constructs the object.
-     */
-    private Solution() {
+        /**
+         * main.
+         *
+         * @param     args input from cmd.
+         */
+        public static void main(final String[] args) {
+            Scanner s = new Scanner(System.in);
+            String input = s.next();
+            InputValidator i = new InputValidator(input);
+            System.out.println(i.validateData());
+
+        }
 
     }
-    /**
-     * main.
-     *
-     * @param     args input from cmd.
-     */
-    public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
-        String input = s.next();
-        InputValidator i = new InputValidator(input);
-        System.out.println(i.validateData());
-
-    }
-
-}
