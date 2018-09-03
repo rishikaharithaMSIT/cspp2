@@ -6,7 +6,7 @@ class InputValidator {
     /**
      * { var_description }.
      */
-    private String inputt;
+    private String inputtest;
     /**
      * Constructs the object.
      */
@@ -19,7 +19,7 @@ class InputValidator {
      * @param      input  The input
      */
     InputValidator(final String input) {
-        this.inputt = input;
+        this.inputtest = input;
     }
 
 
@@ -30,7 +30,7 @@ class InputValidator {
      */
     public boolean validateData() {
         final int six = 6;
-        return inputt.length() >= six;
+        return inputtest.length() >= six;
     }
 }
     /**
