@@ -3,7 +3,10 @@ import java.util.Scanner;
  * Class for input validator.
  */
 class InputValidator {
-    String input;
+    /**
+     * { var_description }.
+     */
+    private String input;
     /**
      * Constructs the object.
      */
@@ -18,6 +21,8 @@ class InputValidator {
     InputValidator(String input) {
         this.input = input;
     }
+
+
     /**
      * validate data.
      *
@@ -35,7 +40,7 @@ class InputValidator {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -47,7 +52,7 @@ public class Solution {
      *
      * @param     args input from cmd.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
         InputValidator i = new InputValidator(input);
