@@ -7,7 +7,7 @@ class InputValidator {
     /**
      * Constructs the object.
      */
-    InputValidator() {
+    private InputValidator() {
 
     }
     /**
