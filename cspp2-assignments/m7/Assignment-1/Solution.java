@@ -21,7 +21,7 @@ class InputValidator {
     /**
      * validate data.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public boolean validateData() {
         final int six = 6;
