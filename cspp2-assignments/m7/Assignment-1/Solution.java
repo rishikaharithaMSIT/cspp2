@@ -7,7 +7,7 @@ class InputValidator {
     /**
      * Constructs the object.
      */
-    private InputValidator() {
+    InputValidator() {
 
     }
     /**
@@ -36,6 +36,12 @@ class InputValidator {
  * Class for solution.
  */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * main.
      *
