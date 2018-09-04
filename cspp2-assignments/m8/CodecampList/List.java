@@ -106,7 +106,7 @@ public class List {
 	 *
 	 * @param      item  The item
 	 */
-	public void add(int item) {
+	public void add(final int item) {
 		//Inserts the specified element at the end of the list.
 		array[size] = item;
 		size++;
@@ -155,7 +155,7 @@ public class List {
 	 *
 	 * @param      index  The index
 	 */
-	public void remove(int index) {
+	public void remove(final int index) {
 		// write the logic for remove here.
 		// Think about what to do to the size variable.
 		if (index > size) {
@@ -199,7 +199,7 @@ public class List {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public int get(int index) {
+	public int get(final int index) {
 		// Replace the code below to write the code for get
 		if (index <= size) {
 			//System.out.println(array[index-1] + "get element");
@@ -255,7 +255,7 @@ public class List {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public boolean contains(int item) {
+	public boolean contains(final int item) {
 		// Replace the code below
 		//System.out.println(item + " item");
 		//System.out.println(Arrays.toString(array) + " array");
@@ -280,7 +280,7 @@ public class List {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public int indexOf(int item) {
+	public int indexOf(final int item) {
 		// Replace the code below
 		for (int i = 0; i < size; i++) {
 			if (item == array[i]) return i;
