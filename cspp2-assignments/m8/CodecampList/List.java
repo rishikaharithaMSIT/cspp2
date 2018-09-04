@@ -72,6 +72,7 @@ public class List {
     /**
      * Constructs the object.
      */
+    final int ten = 10; 
     public List() {
 
         // what are the two variables to be initialized here?
@@ -84,7 +85,7 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        array = new int[10];
+        array = new int[ten];
         size = 0;
 
     }
@@ -161,7 +162,7 @@ public class List {
             System.out.println("Invalid Position Exception");
             return;
         }
-        int[] array_copy = new int[10];
+        int[] array_copy = new int[ten];
         for (int i = 0; i < array.length; i++) {
             array_copy[i] = array[i];
         }
@@ -174,7 +175,8 @@ public class List {
             }
 
         }
-        array[9] = 0;
+        final int nine = 9;
+        array[nine] = 0;
         size--;
         //System.out.println(Arrays.toString(array) + " removed array");
     }
