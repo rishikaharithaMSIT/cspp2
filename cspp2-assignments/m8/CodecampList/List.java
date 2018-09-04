@@ -131,6 +131,10 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
+        if (index-1 > size) {
+        	System.out.println("Invalid Position Exception");
+        	return;
+        }
         int[] array_copy = new int[10];
         for(int i =0;i<array.length;i++) {
         	array_copy[i] = array[i];
