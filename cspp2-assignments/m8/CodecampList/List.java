@@ -255,6 +255,7 @@ public class List {
      */
     public boolean contains(int item) {
         // Replace the code below
+        System.out.println(item + " item");
         for (int i = 0; i < size; i++) {
             if (item == array[i]) return true;
         }
