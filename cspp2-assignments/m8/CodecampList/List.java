@@ -145,6 +145,7 @@ public class List {
         	        	
         }
         array[9] = 0;
+        size--;
         System.out.println(Arrays.toString(array) + " removed array");
     }
 
