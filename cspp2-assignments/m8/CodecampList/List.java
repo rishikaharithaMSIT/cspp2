@@ -198,10 +198,10 @@ public class List {
             // read the line
             String line = stdin.nextLine();
             // split the line using space
-            System.out.println(line);
+            //System.out.println(line);
             String[] tokens = line.split(" ");
             // based on the list operation invoke the corresponding method
-            
+
             switch (tokens[0]) {
                 case "add":
                 l.add(Integer.parseInt(tokens[1]));
