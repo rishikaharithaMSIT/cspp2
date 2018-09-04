@@ -157,7 +157,7 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index - 1 > size) {
+        if (index > size) {
             System.out.println("Invalid Position Exception");
             return;
         }
@@ -167,7 +167,7 @@ public class List {
         }
         int ind = 0;
         for (int i = 0; i < array_copy.length; i++) {
-            if (i != index - 1) {
+            if (i != index) {
                 array[ind] = array_copy[i];
                 ind++;
                 //System.out.println(array[ind] + "ind array");
