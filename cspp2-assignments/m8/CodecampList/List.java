@@ -267,7 +267,12 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                int get = l.get(Integer.parseInt(tokens[1]));
+                if(get == -1) {
+                	System.out.println("Index Out of Bounds Exception");
+                }else {
+                	System.out.println(get);
+                }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
