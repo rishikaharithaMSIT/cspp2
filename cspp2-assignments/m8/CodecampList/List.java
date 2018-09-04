@@ -191,7 +191,11 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        return Arrays.toString(array) + "print array";
+        int[] printArray = new int[size];
+        for (int i = 0;i<size;i++){
+        	printArray[i] = array[i];
+        }
+        return Arrays.toString(printArray) + "print array";
     } 
     
     /*
