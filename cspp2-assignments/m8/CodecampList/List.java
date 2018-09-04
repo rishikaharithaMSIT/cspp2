@@ -139,9 +139,10 @@ public class List {
         for(int i = 0;i<array_copy.length;i++){
         	if (array_copy[i] != index) {
         		array[ind] = array_copy[i];
+        		ind++;
         		//System.out.println(array[ind] + "ind array");
         	}
-        	ind++;        	
+        	        	
         }
         array[9] = 0;
         System.out.println(Arrays.toString(array) + " removed array");
