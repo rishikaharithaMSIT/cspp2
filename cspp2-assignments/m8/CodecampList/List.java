@@ -162,9 +162,9 @@ public class List {
      */
     public int get(int index) {
         // Replace the code below to write the code for get
-        if (index <= size) {
-        	System.out.println(array[index] + "get element");
-        	return array[index];
+        if (index-1 <= size) {
+        	System.out.println(array[index-1] + "get element");
+        	return array[index-1];
         }
         return -1;
     }
