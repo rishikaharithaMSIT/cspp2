@@ -58,6 +58,8 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
+    int[] array;
+    int size;
     public List() {
 
         // what are the two variables to be initialized here?
@@ -70,6 +72,8 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
+        array = new int[10];
+        size = 0;
 
     }
     
@@ -86,6 +90,8 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
+        array[size] = item;
+        size++;
     }
 
     /*
