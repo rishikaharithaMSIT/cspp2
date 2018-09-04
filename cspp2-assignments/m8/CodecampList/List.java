@@ -255,11 +255,11 @@ public class List {
      */
     public boolean contains(int item) {
         // Replace the code below
-        System.out.println(item + " item");
-        System.out.println(Arrays.toString(array) + " array");
+        //System.out.println(item + " item");
+        //System.out.println(Arrays.toString(array) + " array");
         for (int i = 0; i < size; i++) {
             if (item == array[i]) {
-            	System.out.println("in if");
+            	//System.out.println("in if");
             	return true;
             }
         }
