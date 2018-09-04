@@ -325,7 +325,7 @@ public class List {
             case "get":
                 int get = l.get(Integer.parseInt(tokens[1]));
                 if (get == -1) {
-                    System.out.println("Index Out of Bounds Exception");
+                    
                 } else {
                     System.out.println(get);
                 }
