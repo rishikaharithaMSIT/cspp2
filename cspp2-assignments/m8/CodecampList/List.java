@@ -257,7 +257,10 @@ public class List {
         // Replace the code below
         System.out.println(item + " item");
         for (int i = 0; i < size; i++) {
-            if (item == array[i]) return true;
+            if (item == array[i]) {
+            	System.out.println("in if");
+            	return true;
+            }
         }
         return false;
     }
