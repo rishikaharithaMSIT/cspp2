@@ -137,7 +137,7 @@ public class List {
         }
         int ind = 0;
         for(int i = 0;i<array_copy.length;i++){
-        	if (i != index) {
+        	if (i != index-1) {
         		array[ind] = array_copy[i];
         		ind++;
         		//System.out.println(array[ind] + "ind array");
