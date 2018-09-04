@@ -195,7 +195,7 @@ public class List {
         for (int i = 0;i<size;i++){
         	printArray[i] = array[i];
         }
-        return Arrays.toString(printArray);
+        return Arrays.toString(printArray).replaceAll(" ","");
     } 
     
     /*
