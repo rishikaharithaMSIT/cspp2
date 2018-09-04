@@ -286,7 +286,9 @@ public class List {
     public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
-            if (item == array[i]) return i;
+            if (item == array[i]) {
+                return i;
+            }
         }
         return -1;
     }
