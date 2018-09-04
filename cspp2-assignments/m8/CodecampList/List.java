@@ -93,7 +93,7 @@ public class List {
         //Inserts the specified element at the end of the list.
         array[size] = item;
         size++;
-        System.out.println(Arrays.toString(array) + "array");
+        System.out.println(Arrays.toString(array) + "array " + size + " size");
     }
 
     /*
