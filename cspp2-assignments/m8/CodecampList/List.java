@@ -73,6 +73,9 @@ public class List {
      * Constructs the object.
      */
     private final int ten = 10;
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -162,14 +165,14 @@ public class List {
             System.out.println("Invalid Position Exception");
             return;
         }
-        int[] array_copy = new int[ten];
+        int[] arrayCopy = new int[ten];
         for (int i = 0; i < array.length; i++) {
-            array_copy[i] = array[i];
+            arrayCopy[i] = array[i];
         }
         int ind = 0;
-        for (int i = 0; i < array_copy.length; i++) {
+        for (int i = 0; i < arrayCopy.length; i++) {
             if (i != index) {
-                array[ind] = array_copy[i];
+                array[ind] = arrayCopy[i];
                 ind++;
                 //System.out.println(array[ind] + "ind array");
             }
