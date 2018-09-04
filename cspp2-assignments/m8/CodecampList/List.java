@@ -105,7 +105,7 @@ public class List {
      */
     public int size() {
         // replace the code below to implement the size method
-        return -1;
+        return size;
     }
 
     /*
@@ -131,6 +131,11 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
+        int[] array_copy = new int[10];
+        for(int i =0;i<array.length;i++) {
+        	array_copy[i] = array[i];
+        }
+        System.out.println(Arrays.toString(array_copy) + " array_copy");
     }
 
     /*
