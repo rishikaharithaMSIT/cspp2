@@ -93,7 +93,7 @@ public class List {
         //Inserts the specified element at the end of the list.
         array[size] = item;
         size++;
-        System.out.println(Arrays.toString(array) + "array " + size + " size");
+        //System.out.println(Arrays.toString(array) + "array " + size + " size");
     }
 
     /*
@@ -146,7 +146,7 @@ public class List {
         }
         array[9] = 0;
         size--;
-        System.out.println(Arrays.toString(array) + " removed array");
+        //System.out.println(Arrays.toString(array) + " removed array");
     }
 
     /*
@@ -163,7 +163,7 @@ public class List {
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index-1 <= size) {
-        	System.out.println(array[index-1] + "get element");
+        	//System.out.println(array[index-1] + "get element");
         	return array[index-1];
         }
         return -1;
@@ -195,7 +195,7 @@ public class List {
         for (int i = 0;i<size;i++){
         	printArray[i] = array[i];
         }
-        return Arrays.toString(printArray) + "print array";
+        return Arrays.toString(printArray);
     } 
     
     /*
