@@ -191,7 +191,7 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        return "print the list";
+        return Arrays.toString(array);
     } 
     
     /*
