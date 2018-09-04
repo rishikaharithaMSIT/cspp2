@@ -135,7 +135,14 @@ public class List {
         for(int i =0;i<array.length;i++) {
         	array_copy[i] = array[i];
         }
-        System.out.println(Arrays.toString(array_copy) + " array_copy");
+        int ind = 0;
+        for(int i = 0;i<array_copy.length;i++){
+        	if (i != index) {
+        		array[ind] = array_copy[i];
+        	}        	
+        }
+        array[9] = 0;
+        System.out.println(Arrays.toString(array) + " removed array");
     }
 
     /*
