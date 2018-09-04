@@ -336,9 +336,7 @@ public class List {
                 break;
             case "get":
                 int get = l.get(Integer.parseInt(tokens[1]));
-                if (get == -1) {
-
-                } else {
+                if (get != -1) {
                     System.out.println(get);
                 }
                 break;
