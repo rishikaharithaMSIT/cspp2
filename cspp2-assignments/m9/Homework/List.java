@@ -306,6 +306,7 @@ public class List {
             ind++;
         }
     }catch(Exception e) { resize();}
+    System.out.println(Arrays.toString(list) + " add index");
     }
 
     /* Returns the count of occurances of a given item in the list*/
