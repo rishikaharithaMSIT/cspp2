@@ -64,13 +64,14 @@ public class List {
     
     int length;
 
-    public List() {
+    public List(int length) {
 
         // what are the two variables to be initialized here?
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
+        this.length = length;
         list = new int[length];
 
         // Think about the initial value for size.
