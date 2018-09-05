@@ -297,6 +297,10 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
+        if(index < 0 ) {
+            System.out.println("Negative Index Exception");
+            return;
+        }
         int[] li = new int[size];
         for(int i=0;i<size;i++){
             li[i] = list[i];
