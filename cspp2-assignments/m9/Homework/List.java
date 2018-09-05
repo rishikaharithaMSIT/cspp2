@@ -284,7 +284,7 @@ public class List {
         }} catch(Exception e) {
             resize();
         }
-        System.out.println(list + " add all");
+        System.out.println(Arrays.toString(list) + " add all");
     }
 
     /*
