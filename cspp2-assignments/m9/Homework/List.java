@@ -302,7 +302,7 @@ public class List {
         try {
         int ind = 0;
         for (int i = 0; i < size;) {
-            if (i == index) {
+            if (ind == index) {
                 list[ind] = item;
                 System.out.println(list[ind]+" in if");
             } else {
