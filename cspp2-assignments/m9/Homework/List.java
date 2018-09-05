@@ -285,7 +285,7 @@ public class List {
             resize();
         }
         size += items.length;
-        System.out.println(Arrays.toString(list) + " add all");
+        //System.out.println(Arrays.toString(list) + " add all");
     }
 
     /*
@@ -314,7 +314,7 @@ public class List {
         }
     }catch(Exception e) { resize();}
     size++;
-    System.out.println(Arrays.toString(list) + " add index");
+    //System.out.println(Arrays.toString(list) + " add index");
     }
 
     /* Returns the count of occurances of a given item in the list*/
