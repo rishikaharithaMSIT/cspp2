@@ -278,12 +278,14 @@ public class List {
      array to the end of list*/
     public void addAll(int items[]) {
         // write the logic
-        try{
+        
         for (int i = 0; i < items.length; i++) {
+            try{
             list[size++] = items[i];
-        }} catch(Exception e) {
+        } catch(Exception e) {
             resize();
         }
+    }
         size += items.length;
         //System.out.println(Arrays.toString(list) + " add all");
     }
