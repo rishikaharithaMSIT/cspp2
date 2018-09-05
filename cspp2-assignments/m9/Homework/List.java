@@ -294,13 +294,17 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
+        int[] li = new int[size];
+        for(int i=0;i<size;i++){
+            li[i] = list[i];
+        }
         try {
         int ind = 0;
         for (int i = 0; i < size;) {
             if (i == index) {
                 list[ind] = item;
             } else {
-                list[ind] = list[i];
+                list[ind] = li[i];
                 i++;
             }
             ind++;
