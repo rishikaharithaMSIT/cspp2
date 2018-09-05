@@ -278,15 +278,15 @@ public class List {
      array to the end of list*/
     public void addAll(int items[]) {
         // write the logic
-        
+
         for (int i = 0; i < items.length; i++) {
-            try{
-            list[size++] = items[i];
-        } catch(Exception e) {
-            resize();
+            try {
+                list[size++] = items[i];
+            } catch (Exception e) {
+                resize();
+            }
         }
-    }
-        
+
         //System.out.println(Arrays.toString(list) + " add all");
     }
 
@@ -297,38 +297,38 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
-        if(index < 0 ) {
+        if (index < 0 ) {
             System.out.println("Negative Index Exception");
             return;
         }
         int[] li = new int[size];
-        for(int i=0;i<size;i++){
+        for (int i = 0; i < size; i++) {
             li[i] = list[i];
         }
         try {
-        int ind = 0;
-        for (int i = 0; i < size;) {
-            if (ind == index) {
-                list[ind] = item;
-                //System.out.println(list[ind]+" in if");
-            } else {
-                list[ind] = li[i];
-                //System.out.println(list[ind]+" in else");
-                i++;
+            int ind = 0;
+            for (int i = 0; i < size;) {
+                if (ind == index) {
+                    list[ind] = item;
+                    //System.out.println(list[ind]+" in if");
+                } else {
+                    list[ind] = li[i];
+                    //System.out.println(list[ind]+" in else");
+                    i++;
+                }
+                ind++;
             }
-            ind++;
-        }
-    }catch(Exception e) { resize();}
-    size++;
-    //System.out.println(Arrays.toString(list) + " add index");
+        } catch (Exception e) { resize();}
+        size++;
+        //System.out.println(Arrays.toString(list) + " add index");
     }
 
     /* Returns the count of occurances of a given item in the list*/
     public int count(int item) {
         // write the logic
-        int c=0;
-        for(int i=0;i<size;i++){
-            if(item == list[i]) {
+        int c = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
                 c++;
             }
         }
