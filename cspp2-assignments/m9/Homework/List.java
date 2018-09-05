@@ -278,8 +278,11 @@ public class List {
      array to the end of list*/
     public void addAll(int items[]) {
         // write the logic
+        try{
         for (int i = 0; i < items.length; i++) {
             list[size++] = items[i];
+        }} catch(Exception e) {
+            resize();
         }
     }
 
@@ -290,6 +293,7 @@ public class List {
         */
     public void add(int index, int item) {
         // write the logic
+        try {
         int ind = 0;
         for (int i = 0; i < size;) {
             if (i == index) {
@@ -300,6 +304,7 @@ public class List {
             }
             ind++;
         }
+    }catch(Exception e) { resize();}
     }
 
     /* Returns the count of occurances of a given item in the list*/
