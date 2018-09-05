@@ -304,10 +304,10 @@ public class List {
         for (int i = 0; i < size;) {
             if (ind == index) {
                 list[ind] = item;
-                System.out.println(list[ind]+" in if");
+                //System.out.println(list[ind]+" in if");
             } else {
                 list[ind] = li[i];
-                System.out.println(list[ind]+" in else");
+                //System.out.println(list[ind]+" in else");
                 i++;
             }
             ind++;
