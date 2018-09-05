@@ -310,7 +310,13 @@ public class List {
     /* Returns the count of occurances of a given item in the list*/
     public int count(int item) {
         // write the logic
-        return 0;
+        int c=0;
+        for(int i=0;i<size;i++){
+            if(item == list[i]) {
+                c++;
+            }
+        }
+        return c;
     }
 
 
