@@ -28,6 +28,12 @@ public final class Fibonacci {
      * Look for the hint.txt if some of the testcases fail.
      */
     /**
+     * Constructs the object.
+     */
+    private Fibonacci() {
+        //unused.
+    }
+    /**
      * { function_description }.
      *
      * @param      n     { parameter_description }
