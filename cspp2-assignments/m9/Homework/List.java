@@ -286,7 +286,7 @@ public class List {
             resize();
         }
     }
-        size += items.length;
+        
         //System.out.println(Arrays.toString(list) + " add all");
     }
 
