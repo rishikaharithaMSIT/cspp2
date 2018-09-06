@@ -73,7 +73,9 @@ public class List {
      */
 
 
-
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -104,6 +106,11 @@ public class List {
      * constructor.
      *
      */
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     public List(int capacity) {
         size = 0;
         list = new int[capacity];
@@ -119,6 +126,11 @@ public class List {
      * to the list.
      *
      * The method returns void (nothing)
+     */
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
      */
     public void add(int item) {
         //Inserts the specified element at the end of the zelist.
@@ -161,6 +173,10 @@ public class List {
      */
 
     // todo create resize method
+    
+    /**
+     * { function_description }.
+     */
     public void resize() {
         //int newlen = 2 * list.length;
         list = Arrays.copyOf(list, 2 * size);
@@ -172,6 +188,12 @@ public class List {
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return size;
@@ -198,6 +220,11 @@ public class List {
      * The method returns void (nothing)
      */
 
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     */
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -221,6 +248,14 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
+     */
+
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
      */
     public int get(int index) {
         if (index < 0 || index >= size) {
@@ -250,6 +285,12 @@ public class List {
      * not all the elements of the array.
      *
      */
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0)
             return "[]";
@@ -268,6 +309,14 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(int item) {
         return indexOf(item) == -1;
     }
@@ -276,6 +325,14 @@ public class List {
      * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
+     */
+
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public int indexOf(int item) {
         for (int i = 0; i < size; i++) {
@@ -286,6 +343,10 @@ public class List {
     }
     /*Inserts all the elements of specified int
      array to the end of list*/
+
+    /**
+     * { item_description }.
+     */
     public void addAll(int items[]) {
         // write the logic
 
@@ -305,6 +366,13 @@ public class List {
     by moving all the elements to the right.
            The method returns void (nothing)
         */
+
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
     public void add(int index, int item) {
         // write the logic
         if (index < 0 ) {
@@ -334,6 +402,14 @@ public class List {
     }
 
     /* Returns the count of occurances of a given item in the list*/
+
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int count(int item) {
         // write the logic
         int c = 0;
@@ -345,7 +421,11 @@ public class List {
         return c;
     }
 
-
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
