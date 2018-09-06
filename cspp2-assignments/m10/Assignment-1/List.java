@@ -160,7 +160,8 @@ public class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). Resize should create an new array that is
+     * Create a method called resize(). Resize should create
+     * an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
      *
@@ -168,12 +169,13 @@ public class List {
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
+     * You know enough of Object Oriented Programming
+     * to answer these questions :-)
      *
      */
 
     // todo create resize method
-    
+
     /**
      * { function_description }.
      */
@@ -447,7 +449,8 @@ public class List {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
                         if (t.length > 1)
-                            l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                            l.add(Integer.parseInt(t[0]),
+                                  Integer.parseInt(t[1]));
                     }
                 }
                 break;
