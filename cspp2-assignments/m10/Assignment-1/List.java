@@ -352,7 +352,7 @@ public class List {
     /**
      * @param      items The item
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         // write the logic
         for (int i = 0; i < items.length; i++) {
             try {
@@ -377,7 +377,7 @@ public class List {
      */
     public void add(final int index, final int item) {
         // write the logic
-        if (index < 0 ) {
+        if (index < 0) {
             System.out.println("Negative Index Exception");
             return;
         }
@@ -398,7 +398,9 @@ public class List {
                 }
                 ind++;
             }
-        } catch (Exception e) { resize();}
+        } catch (Exception e) { 
+            resize();
+        }
         size++;
         //System.out.println(Arrays.toString(list) + " add index");
     }
