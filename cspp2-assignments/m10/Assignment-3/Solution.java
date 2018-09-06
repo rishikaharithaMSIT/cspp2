@@ -13,7 +13,8 @@ class Student {
      *
      * @param      name  The name
      */
-    public Student(String name) {//A constructor used to initialize the instance variables
+    public Student(String name) {
+        //A constructor used to initialize the instance variables
         this.name = name;
     }
     /**
@@ -21,7 +22,8 @@ class Student {
      *
      * @return     The name.
      */
-    public String getName() {//Getter method which returns the value of instance variable
+    public String getName() {
+        //Getter method which returns the value of instance variable
         return this.name;
     }
     /**
@@ -32,7 +34,8 @@ class Student {
      * @return     { description_of_the_return_value }
      */
     @Override
-    public boolean equals(Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(Object other) { 
+        //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -70,7 +73,8 @@ public final class Solution {
         String objectType = stdin.nextLine();
 
         switch (objectType) {
-        case "S"://This case will be executed for String type list
+        case "S":
+            //This case will be executed for String type list
             List<String> listString = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -117,7 +121,8 @@ public final class Solution {
             }
             break;
 
-        case "I"://This case will be executed for Integer type list
+        case "I":
+            //This case will be executed for Integer type list
             List<Integer> listInteger = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -171,7 +176,8 @@ public final class Solution {
             }
             break;
 
-        case "F"://This case will be executed for Float type list
+        case "F":
+            //This case will be executed for Float type list
             List<Float> listFloat = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -222,7 +228,8 @@ public final class Solution {
             }
             break;
 
-        case "C"://This case will be executed for Character type list
+        case "C":
+            //This case will be executed for Character type list
             List<Character> listCharacter = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -273,7 +280,8 @@ public final class Solution {
             }
             break;
 
-        case "D"://This case will be executed for Double type list
+        case "D":
+            //This case will be executed for Double type list
             List<Double> listDouble = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -324,7 +332,8 @@ public final class Solution {
             }
             break;
 
-        case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+        case "O":
+            //This case will be executed for Student type list i.e to store List of Student Objects
             List<Student> listStudent = new List();
             while (stdin.hasNext()) {
                 // read the line
