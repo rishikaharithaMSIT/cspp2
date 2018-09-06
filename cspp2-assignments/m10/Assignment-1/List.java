@@ -350,7 +350,7 @@ public class List {
      array to the end of list*/
 
     /**
-     * { item_description }.
+     * @param      items The item
      */
     public void addAll(final int items[]) {
         // write the logic
