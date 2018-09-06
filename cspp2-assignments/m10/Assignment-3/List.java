@@ -174,7 +174,7 @@ public class List<E> {
     public boolean contains(E item) {
 		//Write logic for contains method
         for(int i =0;i<size;i++) {
-            if (item == list[i]) {
+            if (item.equals(list[i])) {
                 return true;
             }
         }
