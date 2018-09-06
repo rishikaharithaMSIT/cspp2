@@ -139,7 +139,7 @@ public class StringList implements StringListInterface{
 		for (int i=0;i<items.length;i++) {            
             try {
                 list[size++] = items[i];
-                //System.out.println(Arrays.toString(list) + " list");
+                System.out.println(Arrays.toString(list) + " list");
             }catch (Exception e){
                 resize();
             }
