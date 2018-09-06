@@ -136,13 +136,14 @@ public class StringList implements StringListInterface{
         list = Arrays.copyOf(list, 2 * size);
     }
     public void addAll(String[] items) {
-        System.out.println(Arrays.toString(items) + " list");
+        //System.out.println(Arrays.toString(items) + " list");
 		for (int i=0;i<items.length;i++) {            
             try {
                 list[size++] = items[i];
-                System.out.println(Arrays.toString(list) + " list");
+                //System.out.println(Arrays.toString(list) + " list");
             }catch (Exception e){
                 resize();
+                list[size++] = items[i];
             }
         }
 	}
