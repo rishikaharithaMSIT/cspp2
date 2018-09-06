@@ -354,7 +354,6 @@ public class List {
      */
     public void addAll(final int items[]) {
         // write the logic
-
         for (int i = 0; i < items.length; i++) {
             try {
                 list[size++] = items[i];
@@ -362,8 +361,6 @@ public class List {
                 resize();
             }
         }
-
-        //System.out.println(Arrays.toString(list) + " add all");
     }
 
     /*
