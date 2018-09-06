@@ -136,7 +136,7 @@ public class StringList implements StringListInterface{
         list = Arrays.copyOf(list, 2 * size);
     }
     public void addAll(String[] items) {
-		for (int i=0;i<items.length;i++) {            
+		for (int i=0;i<items.length+1;i++) {            
             try {
                 list[size++] = items[i];
                 System.out.println(items[i] + " list");
