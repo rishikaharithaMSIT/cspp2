@@ -1,19 +1,18 @@
 //An interface for ListADT of strings
 import java.util.Arrays;
-interface StringListInterface
-{
-	 public void add(String item);
-	 public void addAll(String items[]);
-	 public String get(int index);
-	 public int size();
-	 public void remove(int index);
-	 public boolean contains(String item);
-	 public int indexOf(String item);
+interface StringListInterface {
+    public void add(String item);
+    public void addAll(String items[]);
+    public String get(int index);
+    public int size();
+    public void remove(int index);
+    public boolean contains(String item);
+    public int indexOf(String item);
 }
-//Write a StringList class which implements StringListInterface 
+//Write a StringList class which implements StringListInterface
 
-public class StringList implements StringListInterface{
-	//Implement all the methods mentioned to build a ListADT
+public class StringList implements StringListInterface {
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -36,7 +35,7 @@ public class StringList implements StringListInterface{
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
+
     // declare a private String[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -59,7 +58,7 @@ public class StringList implements StringListInterface{
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
@@ -71,8 +70,8 @@ public class StringList implements StringListInterface{
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
-    
+
+
 
     public StringList() {
 
@@ -98,16 +97,16 @@ public class StringList implements StringListInterface{
      * There will be some clients of the ADT that will require
      * the list to contain n elements which is known
      * at the time of creating the list.
-     * 
+     *
      * The overloaded constructor is a way to initialize a list with
      * a list capacity of n items where n is given as an argument to
      * constructor.
-     * 
+     *
      */
 
     // todo - add an overloaded constructor here
 
-    
+
     /*
      * The add method does what the name suggests.
      * Add an String item to the list.
@@ -116,20 +115,20 @@ public class StringList implements StringListInterface{
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
+     *
      * The method returns void (nothing)
      */
     public void add(String item) {
         //Inserts the specified element at the end of the list.
         try {
-        list[size++] = item;
-        //System.out.println(Arrays.toString(list) + " list");
-    }catch (Exception e){
-        resize();
+            list[size++] = item;
+            //System.out.println(Arrays.toString(list) + " list");
+        } catch (Exception e) {
+            resize();
+        }
+
     }
-       
-    }
-    /*Inserts all the elements of specified int 
+    /*Inserts all the elements of specified int
     array to the end of list*/
     public void resize() {
         //int newlen = 2 * list.length;
@@ -137,24 +136,24 @@ public class StringList implements StringListInterface{
     }
     public void addAll(String[] items) {
         //System.out.println(Arrays.toString(items) + " list");
-		for (int i=0;i<items.length;i++) {            
+        for (int i = 0; i < items.length; i++) {
             try {
-                
+
                 list[size] = items[i];
                 size++;
-            
+
                 //System.out.println(Arrays.toString(list) + " list");
-            }catch (Exception e){
+            } catch (Exception e) {
                 resize();
                 list[size++] = items[i];
             }
         }
-	}
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
+     *
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
@@ -165,7 +164,7 @@ public class StringList implements StringListInterface{
      * The remove method does what the name suggests.
      * Removes a String item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -202,9 +201,9 @@ public class StringList implements StringListInterface{
             }
 
         }
-        
+
         size--;
-       
+
     }
 
     /*
@@ -215,7 +214,7 @@ public class StringList implements StringListInterface{
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
     public String get(int index) {
@@ -223,7 +222,7 @@ public class StringList implements StringListInterface{
 
         }
         return "";
-        
+
     }
 
     /*
@@ -235,7 +234,7 @@ public class StringList implements StringListInterface{
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
+     *
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.e., if the list has numbers 1, 2, 3
@@ -247,7 +246,7 @@ public class StringList implements StringListInterface{
      *
      */
     public String toString() {
-        if(size == 0) {
+        if (size == 0) {
             return "[]";
         }
         String[] printArray = new String[size];
@@ -256,7 +255,7 @@ public class StringList implements StringListInterface{
         }
         return Arrays.toString(printArray).replaceAll(" ", "");
     }
-    
+
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -268,7 +267,7 @@ public class StringList implements StringListInterface{
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
