@@ -122,6 +122,7 @@ public class StringList implements StringListInterface{
     public void add(String item) {
         //Inserts the specified element at the end of the list.
         list[size++] = item;
+        System.out.println(list + " list");
        
     }
     /*Inserts all the elements of specified int 
