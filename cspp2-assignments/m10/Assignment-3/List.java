@@ -173,7 +173,12 @@ public class List<E> {
      */
     public boolean contains(E item) {
 		//Write logic for contains method
-        return true;
+        for(int i =0;i<size;i++) {
+            if (item == list[i]) {
+                return true;
+            }
+        }
+        return false;
     }
     /*
      * Returns the index of the first occurrence 
