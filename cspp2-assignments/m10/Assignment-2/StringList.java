@@ -208,7 +208,14 @@ public class StringList implements StringListInterface{
      *
      */
     public String toString() {
-       return "";
+        if(size == 0) {
+            return "[]";
+        }
+        String[] printArray = new String[size];
+        for (int i = 0; i < size; i++) {
+            printArray[i] = list[i];
+        }
+        return Arrays.toString(printArray).replaceAll(" ", "");
     }
     
     /*
