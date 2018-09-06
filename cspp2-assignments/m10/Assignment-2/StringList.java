@@ -168,6 +168,25 @@ public class StringList implements StringListInterface{
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
+        if (index > size) {
+            System.out.println("Invalid Position Exception");
+            return;
+        }
+        String[] arrayCopy = new String[list.length];
+        for (int i = 0; i < list.length; i++) {
+            arrayCopy[i] = list[i];
+        }
+        int ind = 0;
+        for (int i = 0; i < arrayCopy.length; i++) {
+            if (i != index) {
+                list[ind] = arrayCopy[i];
+                ind++;
+                //System.out.println(array[ind] + "ind array");
+            }
+
+        }
+        
+        size--;
        
     }
 
