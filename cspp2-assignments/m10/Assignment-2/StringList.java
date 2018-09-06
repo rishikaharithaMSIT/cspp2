@@ -168,7 +168,7 @@ public class StringList implements StringListInterface{
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index > size) {
+        if (index > size || index < 0) {
             System.out.println("Invalid Position Exception");
             return;
         }
@@ -202,6 +202,9 @@ public class StringList implements StringListInterface{
      * number of items in the list? Would size variable be useful?
      */
     public String get(int index) {
+        if (index > size) {
+
+        }
         return "";
         
     }
