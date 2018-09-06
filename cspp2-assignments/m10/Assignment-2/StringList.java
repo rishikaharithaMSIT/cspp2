@@ -121,16 +121,28 @@ public class StringList implements StringListInterface{
      */
     public void add(String item) {
         //Inserts the specified element at the end of the list.
+        try {
         list[size++] = item;
         //System.out.println(Arrays.toString(list) + " list");
+    }catch (Exception e){
+        resize();
+    }
        
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
-   
+    public void resize() {
+        //int newlen = 2 * list.length;
+        list = Arrays.copyOf(list, 2 * size);
+    }
     public void addAll(String[] items) {
-		for (int i=0;i<items.length;i++) {
-            list[size++] = items[i];
+		for (int i=0;i<items.length;i++) {            
+            try {
+                list[size++] = items[i];
+                //System.out.println(Arrays.toString(list) + " list");
+            }catch (Exception e){
+                resize();
+            }
         }
 	}
     /*
@@ -181,7 +193,7 @@ public class StringList implements StringListInterface{
             if (i != index) {
                 list[ind] = arrayCopy[i];
                 ind++;
-                System.out.println(list[ind] + "ind array");
+                //System.out.println(list[ind] + "ind array");
             }
 
         }
