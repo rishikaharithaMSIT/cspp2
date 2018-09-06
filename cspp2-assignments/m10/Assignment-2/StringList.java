@@ -181,7 +181,7 @@ public class StringList implements StringListInterface{
             if (i != index) {
                 list[ind] = arrayCopy[i];
                 ind++;
-                //System.out.println(array[ind] + "ind array");
+                System.out.println(list[ind] + "ind array");
             }
 
         }
