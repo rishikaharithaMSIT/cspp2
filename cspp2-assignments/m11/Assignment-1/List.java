@@ -294,9 +294,7 @@ public class List {
     */
     public void clear()
     {
-    for(int i =0;i<size;i++){
-    	remove(list[i]);
-    }
+    list = new int[10];
     size = 0;
     }
 
