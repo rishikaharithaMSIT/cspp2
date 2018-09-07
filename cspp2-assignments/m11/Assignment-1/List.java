@@ -1,7 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**
+ * List of .
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -59,9 +61,17 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
-
+    /**
+     * { var_description }.
+     */
     private int[] list;
+    /**
+     * { var_description }.
+     */
     private int size;
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here? think about the
@@ -87,7 +97,13 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
     	try {
             list[size++] = item;
@@ -96,11 +112,19 @@ public class List {
         }
     }
 
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     public List(final int capacity) {
         size = 0;
         list = new int[capacity];
     }
 
+    /**
+     * { function_description }.
+     */
     public void resize() {
         //int newlen = 2 * list.length;
         list = Arrays.copyOf(list, 2 * size);
