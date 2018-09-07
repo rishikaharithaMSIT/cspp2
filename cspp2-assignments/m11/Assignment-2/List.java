@@ -249,7 +249,7 @@ public class List<E> {
             return false;
         }
         for(int i=0;i<size;i++) {
-            if(list.contains(this.list[i])){
+            if(!list.contains(this.list[i])){
                 return false;
             }
         }
