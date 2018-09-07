@@ -297,7 +297,7 @@ public class List {
     for(int i =0;i<size;i++){
     	remove(list[i]);
     }
-
+    size = 0;
     }
 
     public static void main(String[] args) {
