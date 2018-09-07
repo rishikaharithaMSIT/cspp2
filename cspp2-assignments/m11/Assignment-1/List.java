@@ -230,7 +230,7 @@ public class List {
         //list = new int[10];
         for(int i =0;i<newArray.length;i++){
         	System.out.println("removing : " + newArray[i]);
-        	System.out.println("list : "+ Arrays.toString(list));
+        	System.out.println("list : "+ toString());
         	remove(newArray[i]);
         } 
 
