@@ -69,7 +69,7 @@ public class List {
      * { var_description }.
      */
     private int size;
-    
+
 
     /**
      * { var_description }.
@@ -90,7 +90,7 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        
+
         list = new int[ten];
         size = 0;
 
