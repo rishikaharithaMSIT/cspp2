@@ -246,7 +246,7 @@ public class List<E> {
     public boolean equals(List<E> li)
     {
         
-        for(int i =0;i<li.size;i++){
+        for(int i =0;i<size()-li.size+1;i++){
             int cnt = 0;
             List lis = subList(i,i+li.size);
             System.out.println(Arrays.toString(lis.list) + " listt");
