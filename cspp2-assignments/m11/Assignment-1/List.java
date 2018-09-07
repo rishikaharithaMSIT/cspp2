@@ -74,7 +74,7 @@ public class List {
     /**
      * { var_description }.
      */
-    final int ten = 10;
+    private final int ten = 10;
 
     /**
      * Constructs the object.
@@ -264,6 +264,14 @@ public class List {
     /*
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
+     */
+
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
