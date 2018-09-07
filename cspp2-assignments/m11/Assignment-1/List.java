@@ -480,9 +480,10 @@ public class List {
                     int[] a = new int[t2.length];
                     for (int i = 0; i < t2.length; i++)
                         a[i] = Integer.parseInt(t2[i]);
+                    System.out.println("Chaitanya is a good boy");
                     l.removeAll(a);
                 }
-                break;
+                break; 
             case "subList": {
                 if (tokens.length != 2) {
                     break;
