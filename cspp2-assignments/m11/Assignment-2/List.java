@@ -246,8 +246,8 @@ public class List<E> {
     public boolean equals(List<E> li)
     {
         
-        for(int i =0;i<size-li.size+1;i++){
-            if(Arrays.equals(subList(i,i+li.size).list, li.list)){
+        for(int i =0;i<size-li.size+1;i++){            
+            if(Arrays.equals(list, li.list)){
                 return true;
             }
             
