@@ -248,7 +248,8 @@ public class List<E> {
         if(size() != li.size()){
             return false;
         }
-        for(int i=0;i<li.size;i++) {
+        for(int i=0;i<size;i++) {
+            System.out.println("li.list[i] : "+li.list[i]+" this.list[i]: "+this.list[i]);
             if(li.list[i] != this.list[i]){
                 return false;
             }
