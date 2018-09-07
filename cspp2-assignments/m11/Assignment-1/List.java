@@ -96,6 +96,11 @@ public class List {
         }
     }
 
+    public List(final int capacity) {
+        size = 0;
+        list = new int[capacity];
+    }
+
     public void resize() {
         //int newlen = 2 * list.length;
         list = Arrays.copyOf(list, 2 * size);
@@ -222,7 +227,7 @@ public class List {
     */
      public void removeAll(int[] newArray)
      {
-        list = new int[10]; 
+        //list = new int[10]; 
 
      }
     /*
@@ -235,7 +240,15 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    return new List();
+    	if(start < 0 || end > size || start > end) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	}
+    	List sublist = new List(end-start);
+    	for(int i = start; i < end;i++) {
+    		sublist.add(list[i]);
+    	}
+    return sublist;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
