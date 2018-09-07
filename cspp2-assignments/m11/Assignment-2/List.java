@@ -248,7 +248,7 @@ public class List<E> {
         if(size() != li.size()){
             return false;
         }
-        for(int i=0;i<size;i++) {
+        for(int i=0;i<li.size;i++) {
             if(li.list[i] != this.list[i]){
                 return false;
             }
