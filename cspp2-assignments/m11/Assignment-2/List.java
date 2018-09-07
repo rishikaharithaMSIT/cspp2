@@ -239,9 +239,18 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> listdata)
+    public boolean equals(List<E> list)
     {
-        return true;
+        if(size() != list.size()){
+            return false;
+        }
+        for(int i=0;i<size;i++) {
+            if(list.contains(this.list[i])){
+                return false;
+            }
+        }
+    return true;
+        
     }
     /*Removes all the elements from list*/
     public void clear()
