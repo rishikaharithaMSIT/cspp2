@@ -243,13 +243,13 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> list)
+    public boolean equals(List<E> li)
     {
-        if(size() != list.size()){
+        if(size() != li.size()){
             return false;
         }
         for(int i=0;i<size;i++) {
-            if(!list.contains(this.list[i])){
+            if(li.list[i] == this.list[i]){
                 return false;
             }
         }
