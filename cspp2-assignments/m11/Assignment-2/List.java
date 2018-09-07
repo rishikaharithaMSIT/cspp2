@@ -256,5 +256,7 @@ public class List<E> {
     public void clear()
     {
         // write the logic for clear.
+        list = ((E[])new Object[10]);
+        size = 0;
     }
 }
