@@ -359,6 +359,14 @@ public class List<E> {
         return false;
 
     }
+    /**
+     * { hashCode function }.
+     *
+     * @return     { int type }
+     */
+    public int hashCode() {
+        return 0;
+    }
     /*Removes all the elements from list*/
 
     /**
