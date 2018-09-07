@@ -229,7 +229,7 @@ public class List {
      {
         //list = new int[10];
         for(int i =0;i<newArray.length;i++){
-        	
+        	System.out.println("count : "+ count(newArray[i]));
         	for(int j =0;j<count(newArray[i]);j++){
         		remove(indexOf(newArray[i]));
         		System.out.println("removing : " + newArray[i]);
