@@ -233,7 +233,7 @@ public class List {
         	for(int j =0;j<c;j++){
         		remove(indexOf(newArray[i]));
         		//System.out.println("removing : " + newArray[i]);
-        		//System.out.println("list : "+ toString());
+        		System.out.println("list : "+ toString());
         		
         	}
         } 
