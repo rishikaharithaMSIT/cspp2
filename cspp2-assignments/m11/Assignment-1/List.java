@@ -69,6 +69,13 @@ public class List {
      * { var_description }.
      */
     private int size;
+    
+
+    /**
+     * { var_description }.
+     */
+    final int ten = 10;
+
     /**
      * Constructs the object.
      */
@@ -83,7 +90,7 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        final int ten = 10;
+        
         list = new int[ten];
         size = 0;
 
@@ -389,7 +396,7 @@ public class List {
      * { function_description }.
      */
     public void clear() {
-        list = new int[10];
+        list = new int[ten];
         size = 0;
     }
 
@@ -469,12 +476,15 @@ public class List {
                 }
                 break;
             case "subList": {
-                if (tokens.length != 2) break;
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
-                if (object != null)
+                if (object != null) {
                     System.out.println(object);
+                }
                 break;
             }
             case "equals":
