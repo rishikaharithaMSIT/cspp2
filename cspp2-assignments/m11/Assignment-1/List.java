@@ -360,7 +360,7 @@ public class List {
      */
     public List subList(final int start, final int end) {
         // write the logic for subList
-        if (start < 0 || end > size + 1 || !(start < end) ) {
+        if (start < 0 || end > size + 1 || !(start < end)) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
@@ -499,7 +499,7 @@ public class List {
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
                     List l2 = new List();
-                    for (int k = 0; k < lt.length; k++ ) {
+                    for (int k = 0; k < lt.length; k++) {
                         l2.add(Integer.parseInt(lt[k]));
                     }
                     System.out.println(l.equals(l2));
