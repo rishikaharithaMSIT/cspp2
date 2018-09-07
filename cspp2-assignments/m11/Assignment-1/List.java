@@ -227,7 +227,10 @@ public class List {
     */
      public void removeAll(int[] newArray)
      {
-        //list = new int[10]; 
+        //list = new int[10];
+        for(int i =0;i<newArray.length;i++){
+        	remove(newArray[i]);
+        } 
 
      }
     /*
