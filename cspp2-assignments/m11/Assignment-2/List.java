@@ -248,7 +248,7 @@ public class List<E> {
         
         for(int i =0;i<size-li.size+1;i++){
             List lis = subList(i,i+li.size);
-            System.out.println(lis.list + " listt");
+            System.out.println(Arrays.toString(lis.list) + " listt");
             for(int j = 0;j< lis.size;j++) {
                 if(lis.list[i] != li.list[i]) {
                     return false;
