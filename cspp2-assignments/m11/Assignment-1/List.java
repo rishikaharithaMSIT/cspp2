@@ -229,9 +229,10 @@ public class List {
      {
         //list = new int[10];
         for(int i =0;i<newArray.length;i++){
-        	System.out.println("removing : " + newArray[i]);
-        	System.out.println("list : "+ toString());
+        	
         	for(int j =0;j<count(newArray[i]);j++){
+        		System.out.println("removing : " + newArray[i]);
+        		System.out.println("list : "+ toString());
         		remove(newArray[i]);
         	}
         } 
