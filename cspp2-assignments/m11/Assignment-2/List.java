@@ -250,7 +250,7 @@ public class List<E> {
             List lis = subList(i,i+li.size);
             System.out.println(Arrays.toString(lis.list) + " listt");
             for(int j = 0;j< lis.size;j++) {
-                if(lis.list[i] != li.list[i]) {
+                if(lis.list[j] != li.list[j]) {
                     return false;
                 }
             }
