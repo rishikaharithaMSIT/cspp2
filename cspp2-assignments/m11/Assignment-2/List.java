@@ -194,9 +194,29 @@ public class List<E> {
     /* Removes all of its elements that
      * are contained in the specified int array.
      */
+    public int count(final E item) {
+        // write the logic
+        int c = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                c++;
+            }
+        }
+        return c;
+    }
     public void removeAll(E[] items)
     {
         // write the logic
+        System.out.println("list : "+items);
+        for(int i =0;i<items.length;i++){
+            int c = count(items[i]);
+            for(int j =0;j<c;j++){
+                remove(indexOf(items[i]));
+                //System.out.println("removing : " + newArray[i]);
+                //System.out.println("list : "+ toString());
+                
+            }
+        }
     }
 
     /*Returns a list containing elements, including
