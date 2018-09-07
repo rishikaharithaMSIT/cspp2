@@ -13,9 +13,9 @@ class Student {
     /**
      * Constructs the object.
      *
-     * @param      name  The name
+     * @param      names  The name
      */
-    Student(String names) {
+    Student(final String names) {
         //A constructor used to initialize the instance variables
         this.name = names;
     }
@@ -598,7 +598,7 @@ public final class Solution {
             break;
 
         case "O":
-            //This case will be executed for Student type 
+            //This case will be executed for Student type
             //list i.e to store List of Student Objects
             executeListStudent(stdin);
             break;
