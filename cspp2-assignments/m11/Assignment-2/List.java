@@ -9,16 +9,38 @@ import java.util.Arrays;
      * Here E is a type parameter, and it will be replaced with
         actual type when the object got created.
      */
+
+/**
+ * List of .
+ *
+ * @param      <E>   { parameter_description }
+ */
 public class List<E> {
+    /**
+     * { var_description }.
+     */
     private E[] list;
+    /**
+     * { var_description }.
+     */
     private int size;
     //Constructor
+
+    /**
+     * Constructs the object.
+     */
     public List() {
         // Create a variable of the type Object[]
         list = ((E[])new Object[10]);//Object is the base class for all the classes
         size = 0;
     }
     //Overloaded Constructor
+
+    /**
+     * Constructs the object.
+     *
+     * @param      param  The parameter
+     */
     public List(int param) {
         list = ((E[])new Object[param]);
         size = 0;
@@ -31,11 +53,20 @@ public class List<E> {
      * Think about how you can use the size variable to add item
      * to the list.
      */
+
+    /**
+     * { function_description }.
+     */
     public void resize() {
         //int newlen = 2 * list.length;
         list = Arrays.copyOf(list, 2 * size);
     }
 
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     */
     public void add(E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
@@ -48,6 +79,12 @@ public class List<E> {
     }
     /*Inserts all the elements of specified int
     array to the end of list*/
+
+    /**
+     * Adds all.
+     *
+     * @param      items  The items
+     */
     public void addAll(E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
@@ -66,13 +103,19 @@ public class List<E> {
     /**
      * { function_description }
      */
-    
+
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return size;
@@ -96,6 +139,12 @@ public class List<E> {
      * So, the new array looks like this.
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
+     */
+
+    /**
+     * { function_description }.
+     *
+     * @param      idex  The idex
      */
     public void remove(int idex) {
         //Write logic for remove method
@@ -130,6 +179,14 @@ public class List<E> {
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
+
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
+     */
     public E get(int index) {
         //Write logic for get method
         return list[index];
@@ -154,6 +211,12 @@ public class List<E> {
      * not all the elements of the array.
      *
      */
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
 
         if (size == 0) {
@@ -171,6 +234,14 @@ public class List<E> {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(E item) {
         //Write logic for contains method
         for (int i = 0; i < size; i++) {
@@ -186,8 +257,15 @@ public class List<E> {
      * or -1 if this list does not contain the element.
      */
 
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int indexOf(E item) {
-       for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
             }
@@ -197,6 +275,14 @@ public class List<E> {
 
     /* Removes all of its elements that
      * are contained in the specified int array.
+     */
+
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public int count(final E item) {
         // write the logic
@@ -208,8 +294,13 @@ public class List<E> {
         }
         return c;
     }
-    public void removeAll(E[] items)
-    {
+
+    /**
+     * Removes all.
+     *
+     * @param      items  The items
+     */
+    public void removeAll(E[] items) {
         // // write the logic
         // System.out.println("list : "+items);
         // for(int i =0;i<items.length;i++){
@@ -218,7 +309,7 @@ public class List<E> {
         //         remove(indexOf(items[i]));
         //         //System.out.println("removing : " + newArray[i]);
         //         //System.out.println("list : "+ toString());
-                
+
         //     }
         // }
     }
@@ -228,34 +319,52 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
+
+    /**
+     * { function_description }.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     { description_of_the_return_value }
+     */
     public List subList(int start, int end) {
 
-        if(start < 0 || end > size+1 || !(start < end)) {
+        if (start < 0 || end > size + 1 || !(start < end)) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
-        List sublist = new List(end-start);
-        for(int i = start; i < end;i++) {
+        List sublist = new List(end - start);
+        for (int i = start; i < end; i++) {
             sublist.add(list[i]);
         }
-    return sublist;
+        return sublist;
     }
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> li)
-    {
-        
-                 
-    if(Arrays.equals(list, li.list)){
-        return true;
-    }
-    return false;
-        
+
+    /**
+     * { function_description }.
+     *
+     * @param      li    { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean equals(List<E> li) {
+
+        if (Arrays.equals(list, li.list)) {
+            return true;
+        }
+        return false;
+
     }
     /*Removes all the elements from list*/
-    public void clear()
-    {
+
+    /**
+     * { function_description }.
+     */
+    public void clear() {
         // write the logic for clear.
         list = ((E[])new Object[10]);
         size = 0;
