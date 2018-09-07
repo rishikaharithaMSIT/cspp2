@@ -215,7 +215,8 @@ public class List {
         // write the logic
         for (int i = 0; i < items.length; i++) {
             try {
-                list[size++] = items[i];
+                list[size] = items[i];
+                size++;
             } catch (Exception e) {
                 resize();
             }
