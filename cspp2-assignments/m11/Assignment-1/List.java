@@ -231,7 +231,7 @@ public class List {
         for(int i =0;i<newArray.length;i++){
         	
         	for(int j =0;j<count(newArray[i]);j++){
-        		remove(newArray[i]);
+        		remove(indexOf(newArray[i]));
         		System.out.println("removing : " + newArray[i]);
         		System.out.println("list : "+ toString());
         		
