@@ -222,7 +222,7 @@ public class List {
     */
      public void removeAll(int[] newArray)
      {
-        // write the logic 
+        list = new int[10]; 
 
      }
     /*
