@@ -231,7 +231,9 @@ public class List {
         for(int i =0;i<newArray.length;i++){
         	System.out.println("removing : " + newArray[i]);
         	System.out.println("list : "+ toString());
-        	remove(newArray[i]);
+        	for(int j =0;j<count(newArray[i]);j++){
+        		remove(newArray[i]);
+        	}
         } 
 
      }
@@ -242,6 +244,17 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
+    public int count(final int item) {
+        // write the logic
+        int c = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                c++;
+            }
+        }
+        return c;
+    }
+
     public List subList(int start, int end) 
     {
     // write the logic for subList
