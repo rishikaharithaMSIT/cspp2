@@ -247,15 +247,20 @@ public class List<E> {
     {
         
         for(int i =0;i<size-li.size+1;i++){
+            int cnt = 0;
             List lis = subList(i,i+li.size);
-            System.out.println(Arrays.toString(lis.list) + " listt");
+            //System.out.println(Arrays.toString(lis.list) + " listt");
             for(int j = 0;j< lis.size;j++) {
-                if(lis.list[j] != li.list[j]) {
-                    return false;
+                if(lis.list[j] == li.list[j]) {
+                    cnt++;
                 }
+                
             }
+            if (cnt == lis.size) {
+                    return true;
+                }
         }
-    return true;
+    return false;
         
     }
     /*Removes all the elements from list*/
