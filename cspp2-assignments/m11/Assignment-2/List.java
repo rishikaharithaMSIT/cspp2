@@ -206,17 +206,17 @@ public class List<E> {
     }
     public void removeAll(E[] items)
     {
-        // write the logic
-        System.out.println("list : "+items);
-        for(int i =0;i<items.length;i++){
-            int c = count(items[i]);
-            for(int j =0;j<c;j++){
-                remove(indexOf(items[i]));
-                //System.out.println("removing : " + newArray[i]);
-                //System.out.println("list : "+ toString());
+        // // write the logic
+        // System.out.println("list : "+items);
+        // for(int i =0;i<items.length;i++){
+        //     int c = count(items[i]);
+        //     for(int j =0;j<c;j++){
+        //         remove(indexOf(items[i]));
+        //         //System.out.println("removing : " + newArray[i]);
+        //         //System.out.println("list : "+ toString());
                 
-            }
-        }
+        //     }
+        // }
     }
 
     /*Returns a list containing elements, including
@@ -224,9 +224,17 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
-    public List subList(int n, int n2) {
+    public List subList(int start, int end) {
 
-        return null;
+        if(start < 0 || end > list.length || start > end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List sublist = new List(end-start);
+        for(int i = start; i < end;i++) {
+            sublist.add(list[i]);
+        }
+    return sublist;
     }
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
