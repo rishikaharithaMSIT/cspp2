@@ -257,9 +257,7 @@ public class List {
     public boolean equals(List list ) 
     {
     // Replace the code below
-    	if(this.list.length != list.size){
-    		return false;
-    	}
+    	
     	for(int i=0;i<size;i++) {
     		if(!list.contains(this.list[i])){
     			return false;
