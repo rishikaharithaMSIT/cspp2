@@ -167,7 +167,7 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= 0 && index < size) {
@@ -197,7 +197,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < 0 || index >= size) {
             return -1;
@@ -296,7 +296,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void removeAll(int[] newArray) {
+    public void removeAll(final int[] newArray) {
         //list = new int[10];
         for (int i = 0; i < newArray.length; i++) {
             int c = count(newArray[i]);
@@ -343,7 +343,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
         // write the logic for subList
         if (start < 0 || end > size + 1 || !(start < end) ) {
             System.out.println("Index Out of Bounds Exception");
@@ -367,7 +367,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(List li) {
+    public boolean equals(final List li) {
         // Replace the code below
         if (size() != li.size()) {
             return false;
@@ -398,7 +398,7 @@ public class List {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
