@@ -245,13 +245,13 @@ public class List<E> {
      */
     public boolean equals(List<E> li)
     {
-        if(size() != li.size()){
-            return false;
-        }
-        for(int i=0;i<size;i++) {
-            System.out.println("li.list[i] : "+li.list[i]+" this.list[i]: "+this.list[i]);
-            if(li.list[i] != this.list[i]){
-                return false;
+        
+        for(int i =0;i<size-li.size;i++){
+            List lis = subList(i,i+li.size);
+            for(int j = 0;j< lis.size;j++) {
+                if(lis.list[i] != li.list[i]) {
+                    return false;
+                }
             }
         }
     return true;
