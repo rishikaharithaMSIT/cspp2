@@ -67,7 +67,7 @@ class Set {
                 //System.out.println(set[i] +" - "+items.set[i]);
                 if(set[i] == items.set[j]) {
                     //System.out.println("in if" );
-                    intersectionSet.add(items.set[i]);
+                    intersectionSet.add(items.set[j]);
             }
             }
         }
