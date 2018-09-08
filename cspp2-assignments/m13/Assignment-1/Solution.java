@@ -61,13 +61,16 @@ class Set {
     }
     Set intersection(Set items) {
         Set intersectionSet = new Set();
-        for (int i =0;i<items.size;i++) {
-            if(contains(items.set[i])) {
-                System.out.println("in if");
-                intersectionSet.add(items.set[i]);
+        for (int i =0;i<size;i++) {
+            for(int j=0;j<items.size;j++) {
+                if(set[i] == items.set[i]) {
+                    System.out.println("in if");
+                    intersectionSet.add(items.set[i]);
+            }
             }
         }
         return intersectionSet;
+        
     }
 
     Set retainAll(int[] items) {
