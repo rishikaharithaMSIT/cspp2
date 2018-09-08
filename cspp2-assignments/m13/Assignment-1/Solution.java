@@ -89,8 +89,8 @@ class Set {
         for (int i =0;i<size;i++) {
             for(int j=0;j<items.size;j++) {
             for(int k =0;k< items.size*size;k++) {               
-                product[k][i] = set[i];
-                product[k][j] = set[j];
+                product[k][0] = set[i];
+                product[k][1] = set[j];
             }
             }
         }
