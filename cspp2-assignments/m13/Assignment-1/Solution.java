@@ -63,6 +63,7 @@ class Set {
         Set intersectionSet = new Set();
         for (int i =0;i<items.size;i++) {
             if(contains(items.set[i])) {
+                System.out.println("in if");
                 intersectionSet.add(items.set[i]);
             }
         }
