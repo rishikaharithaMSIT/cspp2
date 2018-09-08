@@ -16,10 +16,16 @@ class Set {
         set = new int[10];
         size = 0;
     }
-
+    void resize() {
+        set = Arrays.copyOf(set, 2 * size);
+    }
     void add(int item) {
+        try{
         set[size] = item;
         size++;
+        }catch (Exception e){
+            resize();
+        }
     }
     void add(int[] items) {
 
