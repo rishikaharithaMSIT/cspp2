@@ -48,10 +48,10 @@ class Set {
     }
     public String toString() {
         String printString = "{";
-        for(int i = 0;i<size-1;i++){
+        for(int i = 0;i<size;i++){
             printString += set[i] + ",";
         }
-        printString += set[size-1];
+        printString += "}";
 
         return printString;
     }
