@@ -92,8 +92,9 @@ class Set {
             for(int j=0;j<items.size;j++) {              
                 product[k][0] = set[i];
                 product[k][1] = set[j];
+                k++;
             }
-            k++;
+
             }
         
         return product;
