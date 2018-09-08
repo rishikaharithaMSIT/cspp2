@@ -21,9 +21,11 @@ class Set {
     }
     void add(int item) {
         try{
-        set[size] = item;
-        size++;
-        System.out.println(Arrays.toString(set));
+            if(!contains(item)){
+                set[size] = item;
+                size++;
+            }
+            System.out.println(Arrays.toString(set));
         }catch (Exception e){
             resize();
         }
@@ -37,6 +39,11 @@ class Set {
         return size;
     }
     boolean contains(int item){
+        for(int i =0;i<size;i++) {
+            if(set[i] == item) {
+                return true;
+            }
+        }
         return false;
     }
     public String toString() {
