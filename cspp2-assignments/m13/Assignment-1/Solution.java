@@ -84,8 +84,8 @@ class Set {
         return retainSet;
     }
     int[][] cartesianProduct(Set items) {
-        int[][] abc = new int[1][1];
-        return abc;
+        int[][] product = new int[size][items.size];
+        return product;
     }
 
 
