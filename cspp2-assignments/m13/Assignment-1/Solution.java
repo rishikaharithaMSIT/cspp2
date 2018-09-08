@@ -73,7 +73,15 @@ class Set {
     }
 
     Set retainAll(int[] items) {
-        return new Set();
+        Set retainSet = new Set();
+        for (int i =0;i<size;i++) {
+            for(int j=0;j<items.length;j++) {                
+                if(set[i] == items[j]) {
+                    retainSet.add(items[j]);
+            }
+            }
+        }
+        return retainSet;
     }
     int[][] cartesianProduct(Set items) {
         int[][] abc = new int[1][1];
