@@ -60,8 +60,13 @@ class Set {
         return printString;
     }
     Set intersection(Set items) {
-        System.out.println(Arrays.toString(items.set));
-        return new Set();
+        Set intersectionSet = new Set();
+        for (int i =0;i<items.size;i++) {
+            if(contains(items.set[i])) {
+                intersectionSet.add(items.set[i]);
+            }
+        }
+        return intersectionSet;
     }
 
     Set retainAll(int[] items) {
