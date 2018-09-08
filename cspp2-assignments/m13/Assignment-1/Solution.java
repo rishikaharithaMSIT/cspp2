@@ -87,7 +87,8 @@ class Set {
         int[][] product = new int[items.size*size][2];
         for (int i =0;i<size;i++) {
             for(int j=0;j<items.size;j++) {                
-                
+                product[i][0] = set[i];
+                product[i][1] = set[j];
             }
             }
         return product;
