@@ -60,7 +60,7 @@ class Set {
         return printString;
     }
     Set intersection(Set items) {
-        System.out.println(items.set);
+        System.out.println(Arrays.toString(items.set));
         return new Set();
     }
 
