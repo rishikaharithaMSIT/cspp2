@@ -15,7 +15,7 @@ class Set {
      */
     private int[] set;
     /**
-     * { int size }
+     * { int size }.
      */
     private int size;
 
@@ -153,7 +153,7 @@ class Set {
      *
      * @return     { 2d array type }
      */
-    int[][] cartesianProduct(Set items) {
+    int[][] cartesianProduct(final Set items) {
         if (size == 0 || items.size == 0) {
             return null;
         }
