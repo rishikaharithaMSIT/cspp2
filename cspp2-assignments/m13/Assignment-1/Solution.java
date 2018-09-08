@@ -52,7 +52,7 @@ class Set {
             if(i == size-1) {
                 printString += set[i];
             }else {
-                printString += set[i] + ",";
+                printString += set[i] + ", ";
             }
         }
         printString += "}";
