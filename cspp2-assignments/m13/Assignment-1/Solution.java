@@ -61,10 +61,10 @@ class Set {
     }
     Set intersection(Set items) {
         Set intersectionSet = new Set();
-        System.out.println(Arrays.toString(items.set) + " set");
+        //System.out.println(Arrays.toString(items.set) + " set");
         for (int i =0;i<size;i++) {
             for(int j=0;j<items.size;j++) {
-                System.out.println(set[i] +" - "+items.set[i]);
+                //System.out.println(set[i] +" - "+items.set[i]);
                 if(set[i] == items.set[j]) {
                     //System.out.println("in if" );
                     intersectionSet.add(items.set[i]);
