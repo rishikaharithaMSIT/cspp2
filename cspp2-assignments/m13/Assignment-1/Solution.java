@@ -31,7 +31,13 @@ class Set {
         return false;
     }
     public String toString() {
-        return "print";
+        String printString = "{";
+        for(int i = 0;i<size-1;i++){
+            printString += set[i] + ",";
+        }
+        printString += set[size-1] + "}";
+
+        return printString;
     }
 
 }
