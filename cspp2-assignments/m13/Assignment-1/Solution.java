@@ -4,21 +4,41 @@ import java.util.Arrays;
 
 /**
  * Class for set.
- * @author :
+ * @author : Rishika Haritha - 20186041
  */
 class Set {
     //your code goes here...
     //Good luck :-)
+
+    /**
+     * { int[] set }.
+     */
     private int[] set;
+    /**
+     * { int size }
+     */
     private int size;
 
+    /**
+     * Constructs the object set.
+     */
     Set() {
         set = new int[10];
         size = 0;
     }
+
+    /**
+     * { resize function}.
+     */
     void resize() {
         set = Arrays.copyOf(set, 2 * size);
     }
+
+    /**
+     * { add }.
+     *
+     * @param      item  int type
+     */
     void add(int item) {
         try {
             if (!contains(item)) {
@@ -30,14 +50,34 @@ class Set {
             resize();
         }
     }
+
+    /**
+     * { add array }.
+     *
+     * @param      items  array type
+     */
     void add(int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
+
+    /**
+     * { size }.
+     *
+     * @return     { int type }
+     */
     int size() {
         return size;
     }
+
+    /**
+     * { contains}.
+     *
+     * @param      item  int type
+     *
+     * @return     { boolean type}
+     */
     boolean contains(int item) {
         for (int i = 0; i < size; i++) {
             if (set[i] == item) {
@@ -46,6 +86,12 @@ class Set {
         }
         return false;
     }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String printString = "{";
         for (int i = 0; i < size; i++) {
@@ -59,6 +105,14 @@ class Set {
 
         return printString;
     }
+
+    /**
+     * {intersection}.
+     *
+     * @param      items  set type
+     *
+     * @return     { set type }
+     */
     Set intersection(Set items) {
         Set intersectionSet = new Set();
         for (int i = 0; i < size; i++) {
@@ -72,6 +126,13 @@ class Set {
 
     }
 
+    /**
+     * { retain all }.
+     *
+     * @param      items  array type
+     *
+     * @return     { set type }
+     */
     Set retainAll(int[] items) {
         Set retainSet = new Set();
         for (int i = 0; i < size; i++) {
@@ -83,6 +144,14 @@ class Set {
         }
         return retainSet;
     }
+
+    /**
+     * { cartesianProduct }.
+     *
+     * @param      items  set type
+     *
+     * @return     { 2d array type }
+     */
     int[][] cartesianProduct(Set items) {
         if (size == 0 || items.size == 0) {
             return null;
