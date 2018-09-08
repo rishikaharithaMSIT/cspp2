@@ -84,7 +84,12 @@ class Set {
         return retainSet;
     }
     int[][] cartesianProduct(Set items) {
-        int[][] product = new int[size][items.size];
+        int[][] product = new int[items.size][size];
+        for (int i =0;i<size;i++) {
+            for(int j=0;j<items.size;j++) {                
+                
+            }
+            }
         return product;
     }
 
