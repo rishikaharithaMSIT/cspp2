@@ -25,7 +25,7 @@ class Set {
                 set[size] = item;
                 size++;
             }
-            System.out.println(Arrays.toString(set));
+            //System.out.println(Arrays.toString(set));
         }catch (Exception e){
             resize();
         }
