@@ -49,7 +49,11 @@ class Set {
     public String toString() {
         String printString = "{";
         for(int i = 0;i<size;i++){
-            printString += set[i] + ",";
+            if(i == size-1) {
+                printString += set[i];
+            }else {
+                printString += set[i] + ",";
+            }
         }
         printString += "}";
 
