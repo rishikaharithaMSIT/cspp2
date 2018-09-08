@@ -63,8 +63,9 @@ class Set {
         Set intersectionSet = new Set();
         for (int i =0;i<size;i++) {
             for(int j=0;j<items.size;j++) {
+                System.out.println(set[i] +" - "+items.set[i]);
                 if(set[i] == items.set[i]) {
-                    System.out.println("in if");
+                    //System.out.println("in if" );
                     intersectionSet.add(items.set[i]);
             }
             }
