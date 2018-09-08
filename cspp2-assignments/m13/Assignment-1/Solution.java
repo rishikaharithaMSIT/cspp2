@@ -51,7 +51,7 @@ class Set {
         for(int i = 0;i<size-1;i++){
             printString += set[i] + ",";
         }
-        printString += set[size-1] + "}";
+        printString += "}";
 
         return printString;
     }
