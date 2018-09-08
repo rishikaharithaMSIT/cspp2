@@ -23,7 +23,8 @@ class Set {
      * Constructs the object set.
      */
     Set() {
-        set = new int[10];
+        final int ten = 10;
+        set = new int[ten];
         size = 0;
     }
 
@@ -39,7 +40,7 @@ class Set {
      *
      * @param      item  int type
      */
-    void add(int item) {
+    void add(final int item) {
         try {
             if (!contains(item)) {
                 set[size] = item;
@@ -56,7 +57,7 @@ class Set {
      *
      * @param      items  array type
      */
-    void add(int[] items) {
+    void add(final int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
@@ -78,7 +79,7 @@ class Set {
      *
      * @return     { boolean type}
      */
-    boolean contains(int item) {
+    boolean contains(final int item) {
         for (int i = 0; i < size; i++) {
             if (set[i] == item) {
                 return true;
@@ -113,7 +114,7 @@ class Set {
      *
      * @return     { set type }
      */
-    Set intersection(Set items) {
+    Set intersection(final Set items) {
         Set intersectionSet = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < items.size; j++) {
@@ -133,7 +134,7 @@ class Set {
      *
      * @return     { set type }
      */
-    Set retainAll(int[] items) {
+    Set retainAll(final int[] items) {
         Set retainSet = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < items.length; j++) {
