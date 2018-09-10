@@ -172,12 +172,22 @@ class Set {
 
         return product;
     }
-
+    int indexOf(int item){
+        for(int i = 0;i<size();i++){
+            if(item == set[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
     Set subSet(int fromElement, int toElement) {
         Set sub = new Set();
-        for (int i = fromElement;i<=toElement;i++) {
+        int start = indexOf(fromElement);
+        int end = indexOf(toElement);
+        for(int i = start;i<end;i++) {
             sub.add(set[i]);
         }
+        
         System.out.println(Arrays.toString(sub.set));
         return sub;
     }
