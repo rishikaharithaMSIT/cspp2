@@ -197,10 +197,7 @@ class SortedSet extends Set {
         Arrays.sort(set, 0, size);
         return super.toString();
     }
-    public String toString(int[] arr) {
-        Arrays.sort(set, 0, size);
-        return super.toString();
-    }
+    
 
     /**
      * { function_description }.
@@ -334,7 +331,7 @@ public final class Solution {
                 Set si = new Set();
                 si.set = s.subSet(intArray[0], intArray[1]);
 
-                if ( s.set != null) {
+                if ( si.set != null) {
                     System.out.println(si.toString());
                 }
                 break;
