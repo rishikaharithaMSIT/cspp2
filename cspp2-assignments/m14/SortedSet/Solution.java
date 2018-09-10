@@ -232,7 +232,7 @@ class SortedSet extends Set {
         }
         Arrays.sort(set, 0, size);
         int s = size -1;
-        return set[s];
+        return set[1];
     }
 
 }
@@ -312,8 +312,6 @@ public final class Solution {
                 System.out.println(s.headSet(intArray[0]));
                 break;
             case "last":
-                String[] strArray2 = tokens[1].split(",");
-                int lastelm = Integer.parseInt(strArray2[0]);
                 System.out.println(s.last());
                 break;
             // case "intersection":
