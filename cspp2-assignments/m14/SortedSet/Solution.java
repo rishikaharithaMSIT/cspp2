@@ -181,7 +181,7 @@ class Set {
         return -1;
     }
     Set subSet(int fromElement, int toElement) {
-        if(indexOf(toElement) > indexOf(fromElement)) {
+        if(indexOf(toElement) < indexOf(fromElement)) {
             System.out.println("Invalid");
             return new Set();
         }
