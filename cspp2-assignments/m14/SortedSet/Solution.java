@@ -328,11 +328,11 @@ public final class Solution {
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                Set si = new Set();
+                SortedSet si = new SortedSet();
                 si.set = s.subSet(intArray[0], intArray[1]);
 
                 if ( si.set != null) {
-                    System.out.println(si.set);
+                    System.out.println(si.toString());
                 }
                 break;
             case "headSet":
