@@ -225,13 +225,13 @@ class SortedSet extends Set {
         }
         return sub;
     }
-    int last(){
-        if(size <= 0) {
+    int last() {
+        if (size <= 0) {
             System.out.println("Set Empty Exception");
             return -1;
         }
         Arrays.sort(set, 0, size);
-        int s = size -1;
+        int s = size - 1;
         return set[s];
     }
 
@@ -304,10 +304,10 @@ public final class Solution {
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
                 Set su = s.subSet(intArray[0], intArray[1]);
-                if( su != null) {
+                if (su != null) {
                     System.out.println(su);
                 }
-                
+
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
