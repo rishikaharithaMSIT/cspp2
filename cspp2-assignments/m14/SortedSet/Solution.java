@@ -232,7 +232,7 @@ class SortedSet extends Set {
         }
         Arrays.sort(set, 0, size);
         int s = size -1;
-        return set[1];
+        return set[s];
     }
 
 }
