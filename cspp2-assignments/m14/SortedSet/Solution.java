@@ -333,9 +333,9 @@ public final class Solution {
                 intArray[1] = Integer.parseInt(strArray[1]);
                 Set si = new Set();
                 si.set = s.subSet(intArray[0], intArray[1]);
-                
+
                 if ( s.set != null) {
-                    System.out.println(Arrays.toString(si.set));
+                    System.out.println(si.toString());
                 }
                 break;
             case "headSet":
