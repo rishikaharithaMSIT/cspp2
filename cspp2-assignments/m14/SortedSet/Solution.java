@@ -206,7 +206,7 @@ class SortedSet extends Set{
         Set sub = new Set();
         
         while(start < end) {
-            System.out.println("here" + start);
+            //System.out.println("here" + start);
             if(contains(start)) {
                 sub.add(start);
             }
@@ -214,6 +214,15 @@ class SortedSet extends Set{
         }
         
         //System.out.println(Arrays.toString(sub.set));
+        return sub;
+    }
+    Set headSet(int toElement) {
+        Set sub = new Set();
+        for(int i =0;i<size;i++){
+            if(set[i] < toElement){
+                sub.add(set[i]);
+            }
+        }
         return sub;
     }
 
@@ -286,6 +295,13 @@ public final class Solution {
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
                 System.out.println(s.subSet(intArray[0], intArray[1]));
+                break;
+            case "headSet":
+                String[] strArray = tokens[1].split(",");
+                intArray = new int[2];
+                intArray[0] = Integer.parseInt(strArray[0]);
+                System.out.println(s.subSet(intArray[0]));
+                break;
             // case "intersection":
             //     s = new Set();
             //     Set t = new Set();
