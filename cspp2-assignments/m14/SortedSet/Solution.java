@@ -231,7 +231,7 @@ class SortedSet extends Set {
             return -1;
         }
         Arrays.sort(set, 0, size);
-        return set[size];
+        return set[size() - 1];
     }
 
 }
