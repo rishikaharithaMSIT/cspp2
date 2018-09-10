@@ -13,11 +13,11 @@ class Set {
     /**
      * { int[] set }.
      */
-    int[] set;
+    public int[] set;
     /**
      * { int size }.
      */
-    int size;
+    public int size;
 
     /**
      * Constructs the object set.
