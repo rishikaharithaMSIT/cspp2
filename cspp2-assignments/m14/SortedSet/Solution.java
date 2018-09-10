@@ -13,11 +13,11 @@ class Set {
     /**
      * { int[] set }.
      */
-    private int[] set;
+    int[] set;
     /**
      * { int size }.
      */
-    private int size;
+    int size;
 
     /**
      * Constructs the object set.
@@ -179,6 +179,17 @@ class Set {
         }
         return -1;
     }
+    
+
+
+}
+/**
+ * Solution class for code-eval.
+ */
+class SortedSet extends Set{
+    SortedSet(){
+        super();
+    }
     Set subSet(int fromElement, int toElement) {
         int start = indexOf(fromElement);
         int end = indexOf(toElement);
@@ -196,11 +207,7 @@ class Set {
         return sub;
     }
 
-
 }
-/**
- * Solution class for code-eval.
- */
 public final class Solution {
     /**
      * Constructs the object.
@@ -234,7 +241,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         // instantiate this set
-        Set s = new Set();
+        SortedSet s = new SortedSet();
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
