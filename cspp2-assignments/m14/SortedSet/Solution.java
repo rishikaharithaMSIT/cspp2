@@ -249,9 +249,10 @@ public final class Solution {
                 }
                 break;
             case "subSet":
+                String[] strArray = tokens[1].split(",");
                 intArray = new int[2];
-                intArray[0] = Integer.parseInt(tokens[1]);
-                intArray[1] = Integer.parseInt(tokens[2]);
+                intArray[0] = Integer.parseInt(strArray[0]);
+                intArray[1] = Integer.parseInt(strArray[0]);
                 System.out.println(s.subSet(intArray[0], intArray[1]));
             case "intersection":
                 s = new Set();
