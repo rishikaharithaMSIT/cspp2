@@ -178,7 +178,7 @@ class Set {
      *
      * @return     { description_of_the_return_value }
      */
-    int indexOf(int item) {
+    int indexOf(final int item) {
         for (int i = 0; i < size(); i++) {
             if (item == set[i]) {
                 return i;
