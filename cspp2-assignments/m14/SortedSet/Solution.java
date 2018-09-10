@@ -200,8 +200,8 @@ class SortedSet extends Set {
         int start = fromElement;
         int end = toElement;
         if (end < start) {
-            System.out.println("Invalid");
-            return new Set();
+            System.out.println("Invalid Arguments to Subset Exception");
+            return null;
         }
         Set sub = new Set();
 
@@ -303,7 +303,11 @@ public final class Solution {
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                System.out.println(s.subSet(intArray[0], intArray[1]));
+                Set su = s.subSet(intArray[0], intArray[1]);
+                if( su != null) {
+                    System.out.println(su);
+                }
+                
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
