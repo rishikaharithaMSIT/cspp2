@@ -331,10 +331,12 @@ public final class Solution {
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                int[] su = s.subSet(intArray[0], intArray[1]);
-                if ( su != null) {
-                    System.out.println(su.toString());
-                }
+                Set si = new Set();
+                si.set = s.subSet(intArray[0], intArray[1]);
+                System.out.println(Arrays.toString(si.set));
+                // if ( s.set != null) {
+                //     System.out.println(Arrays.toString(sub));
+                // }
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
