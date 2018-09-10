@@ -248,6 +248,8 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
+            case "subSet":
+                System.out.println(s.subSet(1,3));
             case "intersection":
                 s = new Set();
                 Set t = new Set();
