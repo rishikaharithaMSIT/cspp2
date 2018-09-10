@@ -249,7 +249,7 @@ public final class Solution {
                 }
                 break;
             case "subSet":
-                System.out.println(s.subSet(1,3));
+                System.out.println(s.subSet(1,2));
             case "intersection":
                 s = new Set();
                 Set t = new Set();
