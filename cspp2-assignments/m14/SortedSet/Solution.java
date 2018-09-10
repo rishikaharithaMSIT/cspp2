@@ -193,8 +193,6 @@ class SortedSet extends Set{
 
     public String toString() {
         Arrays.sort(set,0,size);
-        
-
         return super.toString();
     }
 
@@ -211,7 +209,7 @@ class SortedSet extends Set{
             sub.add(set[i]);
         }
         
-        System.out.println(Arrays.toString(sub.set));
+        //System.out.println(Arrays.toString(sub.set));
         return sub;
     }
 
