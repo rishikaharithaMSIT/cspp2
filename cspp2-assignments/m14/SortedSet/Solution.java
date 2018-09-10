@@ -40,8 +40,8 @@ class Set {
      *
      * @param      set   The set
      */
-    void setSet(int[] set){
-        this.set = set;
+    void setSet(final int[] sets){
+        this.set = sets;
     }
     /**
      * { resize function}.
