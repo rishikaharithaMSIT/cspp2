@@ -211,7 +211,7 @@ class SortedSet extends Set {
      *
      * @return     { description_of_the_return_value }
      */
-    Set subSet(int fromElement, int toElement) {
+    Set subSet(final int fromElement, final int toElement) {
         int start = fromElement;
         int end = toElement;
         if (end < start) {
@@ -239,7 +239,7 @@ class SortedSet extends Set {
      *
      * @return     { description_of_the_return_value }
      */
-    Set headSet(int toElement) {
+    Set headSet(final int toElement) {
         Set sub = new Set();
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
