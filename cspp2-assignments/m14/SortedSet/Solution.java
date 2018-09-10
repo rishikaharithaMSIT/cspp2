@@ -197,6 +197,10 @@ class SortedSet extends Set {
         Arrays.sort(set, 0, size);
         return super.toString();
     }
+    public String toString(int[] arr) {
+        Arrays.sort(set, 0, size);
+        return super.toString();
+    }
 
     /**
      * { function_description }.
@@ -329,7 +333,7 @@ public final class Solution {
                 intArray[1] = Integer.parseInt(strArray[1]);
                 int[] su = s.subSet(intArray[0], intArray[1]);
                 if ( su != null) {
-                    System.out.println(Arrays.toString(su));
+                    System.out.println(s.toString());
                 }
                 break;
             case "headSet":
