@@ -297,10 +297,10 @@ public final class Solution {
                 System.out.println(s.subSet(intArray[0], intArray[1]));
                 break;
             case "headSet":
-                String[] strArray = tokens[1].split(",");
+                String[] strArray1 = tokens[1].split(",");
                 intArray = new int[2];
-                intArray[0] = Integer.parseInt(strArray[0]);
-                System.out.println(s.subSet(intArray[0]));
+                intArray[0] = Integer.parseInt(strArray1[0]);
+                System.out.println(s.headSet(intArray[0]));
                 break;
             // case "intersection":
             //     s = new Set();
