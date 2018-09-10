@@ -57,7 +57,7 @@ class Set {
      *
      * @param      items  array type
      */
-    void add(final int[] items) {
+    void addAll(final int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
@@ -250,12 +250,13 @@ public final class Solution {
             case "print":
                 System.out.println(s);
                 break;
+            case "addAll":
             case "add":
                 int[] intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
                     s.add(intArray[0]);
                 } else {
-                    s.add(intArray);
+                    s.addAll(intArray);
                 }
                 break;
             case "subSet":
@@ -268,15 +269,15 @@ public final class Solution {
                 s = new Set();
                 Set t = new Set();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                t.add(intArray);
+                t.addAll(intArray);
                 System.out.println(s.intersection(t));
                 break;
             case "retainAll":
                 s = new Set();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
                 break;
@@ -284,9 +285,9 @@ public final class Solution {
                 s = new Set();
                 t = new Set();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                t.add(intArray);
+                t.addAll(intArray);
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;
             default:
