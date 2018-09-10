@@ -207,7 +207,7 @@ class SortedSet extends Set{
         
         while(start < end) {
             if(contains(start)) {
-                System.out.println("here");
+                System.out.println("here" + start);
                 sub.add(start);
             }
             start++;
