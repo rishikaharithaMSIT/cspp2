@@ -175,21 +175,7 @@ class Set {
         }
         return product;
     }
-    /**
-     * Searches for the first match.
-     *
-     * @param      item  The item
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int indexOf(int item) {
-        for (int i = 0; i < size(); i++) {
-            if (item == set[i]) {
-                return i;
-            }
-        }
-        return -1;
-    }
+    
 
 
 
