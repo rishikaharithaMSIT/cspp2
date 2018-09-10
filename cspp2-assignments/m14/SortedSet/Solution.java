@@ -198,12 +198,12 @@ class Set {
  * Solution class for code-eval.
  */
 class SortedSet extends Set {
-    /**
-     * Constructs the object.
-     */
-    SortedSet() {
-        super();
-    }
+    // /**
+    //  * Constructs the object.
+    //  */
+    // SortedSet() {
+    //     super();
+    // }
     /**
      * Returns a string representation of the object.
      *
