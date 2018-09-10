@@ -6,10 +6,6 @@ import java.util.Arrays;
  * Class for set.
  * @author : Rishika Haritha - 20186041
  */
-
-/**
- * Class for set.
- */
 class Set {
     //your code goes here...
     //Good luck :-)
@@ -175,6 +171,15 @@ class Set {
         }
         return product;
     }
+    int indexOf(int item) {
+        for (int i = 0; i < size(); i++) {
+            if (item == set[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 
 }
@@ -182,32 +187,16 @@ class Set {
  * Solution class for code-eval.
  */
 class SortedSet extends Set {
-    // /**
-    //  * Constructs the object.
-    //  */
-    // SortedSet() {
-    //     super();
-    // }
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
+    SortedSet() {
+        super();
+    }
+
     public String toString() {
         Arrays.sort(set, 0, size);
         return super.toString();
     }
-    
 
-    /**
-     * { function_description }.
-     *
-     * @param      fromElement  The from element
-     * @param      toElement    To element
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int[] subSet(int fromElement, int toElement) {
+    Set subSet(int fromElement, int toElement) {
         int start = fromElement;
         int end = toElement;
         if (end < start) {
@@ -225,16 +214,8 @@ class SortedSet extends Set {
         }
 
         //System.out.println(Arrays.toString(sub.set));
-        return sub.set;
+        return sub;
     }
-
-    /**
-     * { function_description }.
-     *
-     * @param      toElement  To element
-     *
-     * @return     { description_of_the_return_value }
-     */
     Set headSet(int toElement) {
         Set sub = new Set();
         for (int i = 0; i < size; i++) {
@@ -244,19 +225,13 @@ class SortedSet extends Set {
         }
         return sub;
     }
-
-    /**
-     * { function_description }.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int last() {
-        if (size <= 0) {
+    int last(){
+        if(size <= 0) {
             System.out.println("Set Empty Exception");
             return -1;
         }
         Arrays.sort(set, 0, size);
-        int s = size - 1;
+        int s = size -1;
         return set[s];
     }
 
@@ -328,12 +303,11 @@ public final class Solution {
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                SortedSet si = new SortedSet();
-                si.set = s.subSet(intArray[0], intArray[1]);
-
-                if ( si.set != null) {
-                    System.out.println(si.toString());
+                Set su = s.subSet(intArray[0], intArray[1]);
+                if( su != null) {
+                    System.out.println(su);
                 }
+                
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
