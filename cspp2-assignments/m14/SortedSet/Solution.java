@@ -249,7 +249,10 @@ public final class Solution {
                 }
                 break;
             case "subSet":
-                System.out.println(s.subSet(1,2));
+                intArray = new int[2];
+                intArray[0] = Integer.parseInt(tokens[1]);
+                intArray[1] = Integer.parseInt(tokens[2]);
+                System.out.println(s.subSet(intArray[0], intArray[1]));
             case "intersection":
                 s = new Set();
                 Set t = new Set();
