@@ -6,6 +6,10 @@ import java.util.Arrays;
  * Class for set.
  * @author : Rishika Haritha - 20186041
  */
+
+/**
+ * Class for set.
+ */
 class Set {
     //your code goes here...
     //Good luck :-)
@@ -171,6 +175,13 @@ class Set {
         }
         return product;
     }
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     int indexOf(int item) {
         for (int i = 0; i < size(); i++) {
             if (item == set[i]) {
@@ -187,15 +198,30 @@ class Set {
  * Solution class for code-eval.
  */
 class SortedSet extends Set {
+    /**
+     * Constructs the object.
+     */
     SortedSet() {
         super();
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         Arrays.sort(set, 0, size);
         return super.toString();
     }
 
+    /**
+     * { function_description }.
+     *
+     * @param      fromElement  The from element
+     * @param      toElement    To element
+     *
+     * @return     { description_of_the_return_value }
+     */
     Set subSet(int fromElement, int toElement) {
         int start = fromElement;
         int end = toElement;
@@ -216,6 +242,14 @@ class SortedSet extends Set {
         //System.out.println(Arrays.toString(sub.set));
         return sub;
     }
+
+    /**
+     * { function_description }.
+     *
+     * @param      toElement  To element
+     *
+     * @return     { description_of_the_return_value }
+     */
     Set headSet(int toElement) {
         Set sub = new Set();
         for (int i = 0; i < size; i++) {
@@ -225,6 +259,12 @@ class SortedSet extends Set {
         }
         return sub;
     }
+
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     int last() {
         if (size <= 0) {
             System.out.println("Set Empty Exception");
