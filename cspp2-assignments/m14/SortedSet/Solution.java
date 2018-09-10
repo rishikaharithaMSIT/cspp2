@@ -175,8 +175,6 @@ class Set {
         }
         return product;
     }
-    
-
 
 
 }
@@ -330,10 +328,9 @@ public final class Solution {
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
                 Set su = s.subSet(intArray[0], intArray[1]);
-                if ( su != null) {
+                if (su != null) {
                     System.out.println(su);
                 }
-
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
