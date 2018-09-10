@@ -193,17 +193,9 @@ class SortedSet extends Set{
 
     public String toString() {
         Arrays.sort(set,0,size);
-        String printString = "{";
-        for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                printString += set[i];
-            } else {
-                printString += set[i] + ", ";
-            }
-        }
-        printString += "}";
+        
 
-        return printString;
+        return super.toString();
     }
 
     Set subSet(int fromElement, int toElement) {
