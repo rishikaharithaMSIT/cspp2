@@ -169,7 +169,6 @@ class Set {
             }
 
         }
-
         return product;
     }
     int indexOf(int item){
