@@ -332,7 +332,7 @@ public final class Solution {
                 si.set = s.subSet(intArray[0], intArray[1]);
 
                 if ( si.set != null) {
-                    System.out.println(si.toString());
+                    System.out.println(si.set);
                 }
                 break;
             case "headSet":
