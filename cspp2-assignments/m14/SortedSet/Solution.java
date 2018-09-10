@@ -171,59 +171,67 @@ class Set {
         }
         return product;
     }
-    int indexOf(int item){
-        for(int i = 0;i<size();i++){
-            if(item == set[i]){
+    int indexOf(int item) {
+        for (int i = 0; i < size(); i++) {
+            if (item == set[i]) {
                 return i;
             }
         }
         return -1;
     }
-    
+
 
 
 }
 /**
  * Solution class for code-eval.
  */
-class SortedSet extends Set{
-    SortedSet(){
+class SortedSet extends Set {
+    SortedSet() {
         super();
     }
 
     public String toString() {
-        Arrays.sort(set,0,size);
+        Arrays.sort(set, 0, size);
         return super.toString();
     }
 
     Set subSet(int fromElement, int toElement) {
         int start = fromElement;
         int end = toElement;
-        if(end < start) {
+        if (end < start) {
             System.out.println("Invalid");
             return new Set();
         }
         Set sub = new Set();
-        
-        while(start < end) {
+
+        while (start < end) {
             //System.out.println("here" + start);
-            if(contains(start)) {
+            if (contains(start)) {
                 sub.add(start);
             }
             start++;
         }
-        
+
         //System.out.println(Arrays.toString(sub.set));
         return sub;
     }
     Set headSet(int toElement) {
         Set sub = new Set();
-        for(int i =0;i<size;i++){
-            if(set[i] < toElement){
+        for (int i = 0; i < size; i++) {
+            if (set[i] < toElement) {
                 sub.add(set[i]);
             }
         }
         return sub;
+    }
+    int last(){
+        if(size <= 0) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        }
+        Arrays.sort(set, 0, size);
+        return set[size-1];
     }
 
 }
@@ -298,9 +306,14 @@ public final class Solution {
                 break;
             case "headSet":
                 String[] strArray1 = tokens[1].split(",");
-                intArray = new int[2];
+                intArray = new int[1];
                 intArray[0] = Integer.parseInt(strArray1[0]);
                 System.out.println(s.headSet(intArray[0]));
+                break;
+            case "last":
+                String[] strArray2 = tokens[1].split(",");
+                int lastelm = Integer.parseInt(strArray2[0]);
+                System.out.println(s.last());
                 break;
             // case "intersection":
             //     s = new Set();
