@@ -199,14 +199,17 @@ class SortedSet extends Set{
     Set subSet(int fromElement, int toElement) {
         int start = indexOf(fromElement);
         int end = indexOf(toElement);
-        if(end < start || end > size+1 || start < 0) {
+        if(end < start) {
             System.out.println("Invalid");
             return new Set();
         }
         Set sub = new Set();
         
-        for(int i = start;i<end;i++) {
-            sub.add(set[i]);
+        while(start < end) {
+            if(contains(start)) {
+                sub.add(start);
+            }
+            start++;
         }
         
         //System.out.println(Arrays.toString(sub.set));
