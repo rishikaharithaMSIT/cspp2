@@ -197,8 +197,8 @@ class SortedSet extends Set{
     }
 
     Set subSet(int fromElement, int toElement) {
-        int start = indexOf(fromElement);
-        int end = indexOf(toElement);
+        int start = fromElement;
+        int end = toElement;
         if(end < start) {
             System.out.println("Invalid");
             return new Set();
