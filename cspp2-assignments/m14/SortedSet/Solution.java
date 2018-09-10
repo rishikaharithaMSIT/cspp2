@@ -333,7 +333,7 @@ public final class Solution {
                 intArray[1] = Integer.parseInt(strArray[1]);
                 int[] su = s.subSet(intArray[0], intArray[1]);
                 if ( su != null) {
-                    System.out.println(s.toString());
+                    System.out.println(su.toString());
                 }
                 break;
             case "headSet":
