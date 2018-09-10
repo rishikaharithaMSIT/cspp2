@@ -206,7 +206,7 @@ class SortedSet extends Set {
      *
      * @return     { description_of_the_return_value }
      */
-    Set subSet(int fromElement, int toElement) {
+    int[] subSet(int fromElement, int toElement) {
         int start = fromElement;
         int end = toElement;
         if (end < start) {
@@ -224,7 +224,7 @@ class SortedSet extends Set {
         }
 
         //System.out.println(Arrays.toString(sub.set));
-        return sub;
+        return sub.set;
     }
 
     /**
@@ -327,9 +327,9 @@ public final class Solution {
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                Set su = s.subSet(intArray[0], intArray[1]);
-                if (su != null) {
-                    System.out.println(su);
+                int[] su = s.subSet(intArray[0], intArray[1]);
+                if ( su != null) {
+                    System.out.println(Arrays.toString(su));
                 }
                 break;
             case "headSet":
