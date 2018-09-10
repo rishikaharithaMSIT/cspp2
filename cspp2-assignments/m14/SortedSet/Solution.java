@@ -13,11 +13,11 @@ class Set {
     /**
      * { int[] set }.
      */
-    public int[] set;
+    private int[] set;
     /**
      * { int size }.
      */
-    public int size;
+    private int size;
 
     /**
      * Constructs the object set.
@@ -27,7 +27,22 @@ class Set {
         set = new int[ten];
         size = 0;
     }
-
+    /**
+     * Gets the set.
+     *
+     * @return     The set.
+     */
+    int[] getSet() {
+        return set;
+    }
+    /**
+     * Sets the set.
+     *
+     * @param      set   The set
+     */
+    void setSet(int[] set){
+        this.set = set;
+    }
     /**
      * { resize function}.
      */
@@ -200,7 +215,7 @@ class SortedSet extends Set {
      * @return     String representation of the object.
      */
     public String toString() {
-        Arrays.sort(set, 0, size);
+        Arrays.sort(getSet(), 0, size());
         return super.toString();
     }
     /**
@@ -241,9 +256,9 @@ class SortedSet extends Set {
      */
     Set headSet(final int toElement) {
         Set sub = new Set();
-        for (int i = 0; i < size; i++) {
-            if (set[i] < toElement) {
-                sub.add(set[i]);
+        for (int i = 0; i < size(); i++) {
+            if (getSet()[i] < toElement) {
+                sub.add(getSet()[i]);
             }
         }
         return sub;
@@ -255,13 +270,13 @@ class SortedSet extends Set {
      * @return     { description_of_the_return_value }
      */
     int last() {
-        if (size <= 0) {
+        if (size() <= 0) {
             System.out.println("Set Empty Exception");
             return -1;
         }
-        Arrays.sort(set, 0, size);
-        int s = size - 1;
-        return set[s];
+        Arrays.sort(getSet(), 0, size());
+        int s = size() - 1;
+        return getSet()[s];
     }
 
 }
