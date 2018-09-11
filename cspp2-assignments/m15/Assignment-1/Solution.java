@@ -70,7 +70,7 @@ class List<E> {
      *
      * @param      item  The item
      */
-    public void add(E item) {
+    public void add(final E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
         try {
@@ -101,7 +101,6 @@ class List<E> {
             }
         }
     }
-    
     /**
      * { function_description }.
      *
@@ -110,13 +109,12 @@ class List<E> {
     public int size() {
         return size;
     }
-    
     /**
      * { function_description }.
      *
      * @param      idex  The idex
      */
-    public void remove(int idex) {
+    public void remove(final int idex) {
         //Write logic for remove method
         try {
             if (idex >= size || idex < 0) {
@@ -128,7 +126,7 @@ class List<E> {
             System.out.println("Invalid Position Exception");
             return;
         }
-        E[] arrayCopy = ((E[])new Object[list.length]);
+        E[] arrayCopy = ((E[]) new Object[list.length]);
         for (int i = 0; i < list.length; i++) {
             arrayCopy[i] = list[i];
         }
