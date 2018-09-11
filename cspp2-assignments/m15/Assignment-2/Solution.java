@@ -262,6 +262,9 @@ class SortedSet extends Set {
                 sub.add(getSet()[i]);
             }
         }
+        if(sub.size() == 0) {
+            System.out.println("excep");
+        }
         return sub;
     }
 
