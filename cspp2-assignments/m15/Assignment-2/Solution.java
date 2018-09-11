@@ -262,7 +262,7 @@ class SortedSet extends Set {
                 sub.add(getSet()[i]);
             }
         }
-        if(sub.size() == 0) {
+        if (sub.size() == 0) {
             System.out.println("Set Empty Exception");
             return null;
         }
@@ -403,8 +403,7 @@ public final class Solution {
                 s.addAll(intArray);
                 intArray = intArray(tokens[2]);
                 t.addAll(intArray);
-                System.out.println(Arrays.deepToString
-                                   (s.cartesianProduct(t)));
+                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;
             default:
                 break;
