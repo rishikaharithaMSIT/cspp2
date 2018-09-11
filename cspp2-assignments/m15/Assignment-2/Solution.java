@@ -371,7 +371,7 @@ public final class Solution {
             case "last":
                 int la = s.last();
                 if(la != -1) {
-                    System.out.println();
+                    System.out.println(la);
                 }
                 break;
             case "intersection":
