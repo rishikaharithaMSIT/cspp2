@@ -109,22 +109,24 @@ class Set {
      * @return     String representation of the object.
      */
     public String toString() {
+        String printString = "{";
         try {
             if(size == 0) {
                 throw new Exception();
             }
-        }catch (Exception e) {
-            System.out.println("Set Empty Exception");
-        }
-        String printString = "{";
-        for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                printString += set[i];
-            } else {
-                printString += set[i] + ", ";
+            
+            for (int i = 0; i < size; i++) {
+                if (i == size - 1) {
+                    printString += set[i];
+                } else {
+                    printString += set[i] + ", ";
+                }
             }
-        }
-        printString += "}";
+            printString += "}";
+            }catch (Exception e) {
+                return "Set Empty Exception";
+            }
+        
 
         return printString;
     }
