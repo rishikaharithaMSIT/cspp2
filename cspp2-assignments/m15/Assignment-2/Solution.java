@@ -230,7 +230,7 @@ class SortedSet extends Set {
     Set subSet(final int fromElement, final int toElement) {
         int start = fromElement;
         int end = toElement;
-        try{
+        try {
 	        if (end < start) {
 	            throw new Exception();
 	        }
