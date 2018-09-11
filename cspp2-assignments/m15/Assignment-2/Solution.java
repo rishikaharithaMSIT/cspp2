@@ -110,23 +110,14 @@ class Set {
      */
     public String toString() {
         String printString = "{";
-        try {
-            if(size == 0) {
-                throw new Exception();
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) {
+                printString += set[i];
+            } else {
+                printString += set[i] + ", ";
             }
-            
-            for (int i = 0; i < size; i++) {
-                if (i == size - 1) {
-                    printString += set[i];
-                } else {
-                    printString += set[i] + ", ";
-                }
-            }
-            printString += "}";
-            }catch (Exception e) {
-                return "Set Empty Exception";
-            }
-        
+        }
+        printString += "}";
 
         return printString;
     }
@@ -279,14 +270,19 @@ class SortedSet extends Set {
      * @return     { description_of_the_return_value }
      */
     int last() {
+        try{
         if (size() <= 0) {
-            System.out.println("Set Empty Exception");
-            return -1;
+            throw new Exception();
         }
+
+    }catch(Exception e) {
+        System.out.println("Set Empty Exception");
+        return -1;
+    }
         Arrays.sort(getSet(), 0, size());
         int s = size() - 1;
         return getSet()[s];
-    }
+    }   
 
 }
 /**
