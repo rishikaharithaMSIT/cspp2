@@ -234,7 +234,7 @@ class SortedSet extends Set {
 	        if (end < start) {
 	            throw new Exception();
 	        }
-    	} catch(Exception e) {
+    	} catch (Exception e) {
     		System.out.println("Invalid Arguments to Subset Exception");
 	        return null;
     	}
@@ -270,7 +270,7 @@ class SortedSet extends Set {
 	        if (sub.size() == 0) {
 	            throw new Exception();
 	        }
-	    } catch(Exception e) {
+	    } catch (Exception e) {
 	    	System.out.println("Set Empty Exception");
 	        return null;
 	    }
