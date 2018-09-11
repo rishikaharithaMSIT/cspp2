@@ -346,15 +346,17 @@ class List<E> {
     public void clear() {
         // write the logic for clear.
         final int ten = 10;
-        list = ((E[])new Object[ten]);
+        list = ((E[]) new Object[ten]);
         size = 0;
     }
 }
+/**
+ * Class for solution.
+ */
 public class Solution {
     public static void main(final String[] args) {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
-
         List<Integer> l = new List();
         while (stdin.hasNext()) {
             // read the line
