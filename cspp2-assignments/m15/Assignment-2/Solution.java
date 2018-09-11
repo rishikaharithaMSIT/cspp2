@@ -275,19 +275,19 @@ class SortedSet extends Set {
      * @return     { description_of_the_return_value }
      */
     int last() {
-        try{
-        if (size() <= 0) {
-            throw new Exception();
-        }
+        try {
+            if (size() <= 0) {
+                throw new Exception();
+            }
 
-    }catch(Exception e) {
-        System.out.println("Set Empty Exception");
-        return -1;
-    }
+        } catch (Exception e) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        }
         Arrays.sort(getSet(), 0, size());
         int s = size() - 1;
         return getSet()[s];
-    }   
+    }
 
 }
 /**
@@ -370,13 +370,13 @@ public final class Solution {
                 String[] strArray1 = tokens[1].split(",");
                 intArray = new int[1];
                 intArray[0] = Integer.parseInt(strArray1[0]);
-                if(s.headSet(intArray[0]) != null) {
+                if (s.headSet(intArray[0]) != null) {
                     System.out.println(s.headSet(intArray[0]));
                 }
                 break;
             case "last":
                 int la = s.last();
-                if(la != -1) {
+                if (la != -1) {
                     System.out.println(la);
                 }
                 break;
@@ -404,7 +404,7 @@ public final class Solution {
                 intArray = intArray(tokens[2]);
                 t.addAll(intArray);
                 System.out.println(Arrays.deepToString
-                (s.cartesianProduct(t)));
+                                   (s.cartesianProduct(t)));
                 break;
             default:
                 break;
