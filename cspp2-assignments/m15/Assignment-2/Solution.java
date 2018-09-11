@@ -262,10 +262,14 @@ class SortedSet extends Set {
                 sub.add(getSet()[i]);
             }
         }
-        if (sub.size() == 0) {
-            System.out.println("Set Empty Exception");
-            return null;
-        }
+        try {
+	        if (sub.size() == 0) {
+	            throw new Exception();
+	        }
+	    } catch(Exception e) {
+	    	System.out.println("Set Empty Exception");
+	        return null;
+	    }
         return sub;
     }
 
