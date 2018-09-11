@@ -30,9 +30,11 @@ class List<E> {
     /**
      * Constructs the object.
      */
-    public List() {
+    List() {
         // Create a variable of the type Object[]
-        list = ((E[])new Object[10]);//Object is the base class for all the classes
+        final int ten = 10;
+        list = ((E[]) new Object[ten]);
+        //Object is the base class for all the classes
         size = 0;
     }
     //Overloaded Constructor
@@ -42,8 +44,8 @@ class List<E> {
      *
      * @param      param  The parameter
      */
-    public List(int param) {
-        list = ((E[])new Object[param]);
+    List(final int param) {
+        list = ((E[]) new Object[param]);
         size = 0;
     }
     /* The add method does what the name suggests.
@@ -86,15 +88,13 @@ class List<E> {
      *
      * @param      items  The items
      */
-    public void addAll(E[] items) {
+    public void addAll(final E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
             try {
 
                 list[size] = items[i];
                 size++;
-
-                //System.out.println(Arrays.toString(list) + " list");
             } catch (Exception e) {
                 resize();
                 list[size++] = items[i];
