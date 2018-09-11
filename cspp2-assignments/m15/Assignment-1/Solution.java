@@ -337,8 +337,11 @@ class List<E> {
      * @return     { description_of_the_return_value }
      */
     public List subList(int start, int end) {
-
-        if (start < 0 || end > size + 1 || !(start < end)) {
+        try {
+            if (start < 0 || end > size + 1 || !(start < end)) {
+                throw new Exception();
+            }
+        }catch(Exception e) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
