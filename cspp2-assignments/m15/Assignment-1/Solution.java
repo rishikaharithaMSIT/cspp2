@@ -354,6 +354,17 @@ class List<E> {
  * Class for solution.
  */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //unused.
+    }
+    /**
+     * { function_description}.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
