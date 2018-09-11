@@ -231,13 +231,13 @@ class SortedSet extends Set {
         int start = fromElement;
         int end = toElement;
         try {
-	        if (end < start) {
-	            throw new Exception();
-	        }
-    	} catch (Exception e) {
-    		System.out.println("Invalid Arguments to Subset Exception");
-	        return null;
-    	}
+            if (end < start) {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid Arguments to Subset Exception");
+            return null;
+        }
         Set sub = new Set();
 
         while (start < end) {
@@ -267,13 +267,13 @@ class SortedSet extends Set {
             }
         }
         try {
-	        if (sub.size() == 0) {
-	            throw new Exception();
-	        }
-	    } catch (Exception e) {
-	    	System.out.println("Set Empty Exception");
-	        return null;
-	    }
+            if (sub.size() == 0) {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            System.out.println("Set Empty Exception");
+            return null;
+        }
         return sub;
     }
 
