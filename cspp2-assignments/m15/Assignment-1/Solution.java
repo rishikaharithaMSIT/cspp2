@@ -1,403 +1,21 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//A Class is implemented for Student details
-import java.util.Arrays;
-/*
-     * The goal for the list is to store items.
-     * How are we going to store the items in the list?
-     * An array would be good. Right?
-     * So, when we do not what we are going to have in the list
-     * We need to create a Generic list to store the items
-
-     * Here E is a type parameter, and it will be replaced with
-        actual type when the object got created.
-     */
-
-/**
- * List of .
- *
- * @param      <E>   { parameter_description }
- */
-class List<E> {
-    /**
-     * { var_description }.
-     */
-    private E[] list;
-    /**
-     * { var_description }.
-     */
-    private int size;
-    //Constructor
-
-    /**
-     * Constructs the object.
-     */
-    public List() {
-        // Create a variable of the type Object[]
-        list = ((E[])new Object[10]);//Object is the base class for all the classes
-        size = 0;
-    }
-    //Overloaded Constructor
-
-    /**
-     * Constructs the object.
-     *
-     * @param      param  The parameter
-     */
-    public List(int param) {
-        list = ((E[])new Object[param]);
-        size = 0;
-    }
-    /* The add method does what the name suggests.
-     * Add a generic type item to the list.
-     * The assumption is to store the item at the end of the list
-     * What is the end of the list?
-     * Is it the same as the end of the array?
-     * Think about how you can use the size variable to add item
-     * to the list.
-     */
-
-    /**
-     * { function_description }.
-     */
-    public void resize() {
-        //int newlen = 2 * list.length;
-        list = Arrays.copyOf(list, 2 * size);
-    }
-
-    /**
-     * { function_description }.
-     *
-     * @param      item  The item
-     */
-    public void add(E item) {
-        //Inserts the specified element at the end of the list.
-        //You can modify the code in this method.
-        try {
-            list[size++] = item;
-            //System.out.println(Arrays.toString(list) + " list");
-        } catch (Exception e) {
-            resize();
-        }
-    }
-    /*Inserts all the elements of specified int
-    array to the end of list*/
-
-    /**
-     * Adds all.
-     *
-     * @param      items  The items
-     */
-    public void addAll(E[] items) {
-        //Write logic for addAll method
-        for (int i = 0; i < items.length; i++) {
-            try {
-
-                list[size] = items[i];
-                size++;
-
-                //System.out.println(Arrays.toString(list) + " list");
-            } catch (Exception e) {
-                resize();
-                list[size++] = items[i];
-            }
-        }
-    }
-    /**
-     * { function_description }
-     */
-
-    /*
-     * The size method returns the value of the size.
-     * The purpose of the method is to announce the size of the list
-     * to the objects outside the list
-     *
-     * The method returns an int. Empty list should return 0.
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public int size() {
-        return size;
-    }
-    /*
-     * The remove method does what the name suggests.
-     * Removes a String item, specified by the index argument, from the list
-     * It also does an additional step.
-     * Think about what happens when
-     * an item is removed from the middle of the list
-     * It creates a hole in the list, right?
-     * This would mean, all the items that are
-     * to the right side of the removed item should be
-     * moved to the left by one position.
-     * Here is an example:
-     * array = [1,2,3,0,0,0,0,0,0,0]
-     * remove(1) would remove the item 2 which is at index position 1.
-     * But how do you remove the item from an array?
-     * Well, the way to remove it is to move all
-     * the items, that are to the right of the removed item, to the left
-     * So, the new array looks like this.
-     * array = [1,3,0,0,0,0,0,0,0,0]
-     * The method returns void (nothing)
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      idex  The idex
-     */
-    public void remove(int idex) {
-        //Write logic for remove method
-        if (idex >= size || idex < 0) {
-            System.out.println("Invalid Position Exception");
-            return;
-        }
-        E[] arrayCopy = ((E[])new Object[list.length]);
-        for (int i = 0; i < list.length; i++) {
-            arrayCopy[i] = list[i];
-        }
-        int ind = 0;
-        for (int i = 0; i < arrayCopy.length; i++) {
-            if (i != idex) {
-                list[ind] = arrayCopy[i];
-                ind++;
-                //System.out.println(list[ind] + "ind array");
-            }
-
-        }
-
-        size--;
-    }
-    /*
-     * Get method has to return the items that is
-     * at the index position passed as an argument to the method.
-     * If the item doesn't exist then return a -1 to indicate that
-     * there is no element at that index.
-     * How can an element not be there at a given position?
-     * Well, if the position is greater than the number of items
-     * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the
-     * number of items in the list? Would size variable be useful?
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      index  The index
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public E get(int index) {
-        //Write logic for get method
-        return list[index];
-    }
-    /*
-     * What happens when you print an object using println?
-     * Java provides a method named toString that is internally
-     * invoked when an object variable is used in println.
-     * For example:
-     * List l = new List();
-     * System.out.println(l);
-     * This statement is a shortcut for
-     * System.out.println(l.toString());
-     *
-     * So, implement the toString method to display the items
-     * in the list in the square brackets notation.
-     * i.e., if the list has numbers 1, 2, 3
-     * return the string [1,2,3]
-     * Caution: The array may be having other elements
-     * Example: [1,2,3,0,0,0,0,0,0,0]
-     * toString should only return the items in the list and
-     * not all the elements of the array.
-     *
-     */
-
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
-    public String toString() {
-
-        if (size == 0) {
-            return "[]";
-        }
-        E[] printArray = ((E[])new Object[size]);
-        for (int i = 0; i < size; i++) {
-            printArray[i] = list[i];
-        }
-        return Arrays.toString(printArray).replaceAll(" ", "");
-    }
-    /*
-     * Contains return true if the list has
-     * the item passed as an argument to the method
-     * So, iterate through the list and return true if
-     * the item exists and otherwise false
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      item  The item
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public boolean contains(E item) {
-        //Write logic for contains method
-        for (int i = 0; i < size; i++) {
-            if (item.equals(list[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-    /*
-     * Returns the index of the first occurrence
-     * of the specified element in this list,
-     * or -1 if this list does not contain the element.
-     */
-
-    /**
-     * Searches for the first match.
-     *
-     * @param      item  The item
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public int indexOf(E item) {
-        for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    /* Removes all of its elements that
-     * are contained in the specified int array.
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      item  The item
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public int count(final E item) {
-        // write the logic
-        int c = 0;
-        for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
-                c++;
-            }
-        }
-        return c;
-    }
-
-    /**
-     * Removes all.
-     *
-     * @param      items  The items
-     */
-    public void removeAll(E[] items) {
-        // // write the logic
-        // System.out.println("list : "+items);
-        // for(int i =0;i<items.length;i++){
-        //     int c = count(items[i]);
-        //     for(int j =0;j<c;j++){
-        //         remove(indexOf(items[i]));
-        //         //System.out.println("removing : " + newArray[i]);
-        //         //System.out.println("list : "+ toString());
-
-        //     }
-        // }
-    }
-
-    /*Returns a list containing elements, including
-     startIndex and excluding endIndex. The first parameter
-     indicates the startIndex and the second parameter
-     indicates the endIndex.
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      start  The start
-     * @param      end    The end
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public List subList(int start, int end) {
-
-        if (start < 0 || end > size + 1 || !(start < end)) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        List sublist = new List(end - start);
-        for (int i = start; i < end; i++) {
-            sublist.add(list[i]);
-        }
-        return sublist;
-    }
-    /*Returns a boolean indicating whether the parameter
-      i.e a List object is exactly matching with the given list or not.
-     */
-
-    /**
-     * { function_description }.
-     *
-     * @param      li    { parameter_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public boolean equals(List<E> li) {
-
-        if (Arrays.equals(list, li.list)) {
-            return true;
-        }
-        return false;
-
-    }
-    /**
-     * { hashCode function }.
-     *
-     * @return     { int type }
-     */
-    public int hashCode() {
-        return 0;
-    }
-    /*Removes all the elements from list*/
-
-    /**
-     * { function_description }.
-     */
-    public void clear() {
-        // write the logic for clear.
-        list = ((E[])new Object[10]);
-        size = 0;
-    }
-}
-
 /**
  * Class for student.
  */
 class Student {
     /**
-     * { var_description }.
+     * { It is of string type }.
      */
-    private String name;
+    private String studentname;
     /**
      * Constructs the object.
      *
-     * @param      names  The name
+     * @param      name  The name
      */
-    Student(final String names) {
+    Student(final String name) {
         //A constructor used to initialize the instance variables
-        this.name = names;
+        this.studentname = name;
     }
     /**
      * Gets the name.
@@ -406,16 +24,16 @@ class Student {
      */
     public String getName() {
         //Getter method which returns the value of instance variable
-        return this.name;
+        return this.studentname;
     }
+    @Override
     /**
-     * { function_description }.
+     * { To check for names }.
      *
      * @param      other  The other
      *
      * @return     { description_of_the_return_value }
      */
-    @Override
     public boolean equals(final Object other) {
         //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
@@ -426,11 +44,6 @@ class Student {
         return this.getName().equals(that.getName());
     }
     @Override
-    /**
-     * { hashCode function }.
-     *
-     * @return     { int type }
-     */
     public int hashCode() {
         return 0;
     }
@@ -440,26 +53,35 @@ class Student {
      * @return     String representation of the object.
      */
     public String toString() {
-        return this.name;
+        return this.studentname;
     }
 }
 /**
  * Class for solution.
  */
-public final class Solution {
+final class Solution {
+    /**
+     * { Scanner object }.
+     */
+    private static Scanner stdin = new Scanner(
+        new BufferedInputStream(System.in));
     /**
      * Constructs the object.
      */
+
     private Solution() {
-        //unused.
+        //unused
     }
     /**
-     * { function_description }.
+     * { Main function starts here }.
      *
-     * @param      stdin  The stdin
+     * @param      args  The arguments
      */
-    public static void executeListInteger(final Scanner stdin) {
-        List<Integer> l = new List();
+    /**
+     * { String type switch execution }.
+     */
+    public static void stringswitch() {
+        List<String> listString = new List();
         while (stdin.hasNext()) {
             // read the line
             String line = stdin.nextLine();
@@ -468,41 +90,59 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "add":
+                listString.add(tokens[1]);
+                break;
+            case "addAll":
                 if (tokens.length == 2) {
-                    String[] t = tokens[1].split(",");
-                    if (t.length == 1) {
-                        l.add(Integer.parseInt(tokens[1]));
-                    }
+                    String[] t1 = tokens[1].split(",");
+                    listString.addAll(t1);
                 }
                 break;
             case "size":
-                System.out.println(l.size());
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listString.size());
                 break;
             case "print":
-                System.out.println(l);
+                // print the list (implement toString in List class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listString);
                 break;
             case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
+                listString.remove(Integer.parseInt(tokens[1]));
                 break;
             case "indexOf":
-                if (tokens.length == 2) {
-                    System.out.println(l.indexOf(
-                                           Integer.parseInt(tokens[1])));
-                }
+                System.out.println(listString.indexOf(tokens[1]));
                 break;
             case "get":
-                if (tokens.length == 2) {
-                    System.out.println(l.get(
-                                           Integer.parseInt(tokens[1])));
-                }
+                System.out.println(
+                    listString.get(Integer.parseInt(tokens[1])));
                 break;
             case "contains":
-                if (tokens.length == 2) {
-                    System.out.println(l.contains(
-                                           Integer.parseInt(tokens[1])));
-                }
+                System.out.println(listString.contains(tokens[1]));
+                break;
+            default:
+            }
+        }
+
+    }
+    /**
+     * { To switch int type }.
+     */
+    public static void intswitch() {
+        List<Integer> listInteger = new List();
+        while (stdin.hasNext()) {
+            // read the line
+            String line = stdin.nextLine();
+            // split the line using space
+            String[] tokens = line.split(" ");
+            // based on the list operation invoke the corresponding method
+            switch (tokens[0]) {
+            case "add":
+                listInteger.add(Integer.parseInt(tokens[1]));
                 break;
             case "addAll":
                 if (tokens.length == 2) {
@@ -511,57 +151,47 @@ public final class Solution {
                     for (int i = 0; i < temp.length; i++) {
                         temp[i] = Integer.parseInt(t1[i]);
                     }
-                    l.addAll(temp);
+                    listInteger.addAll(temp);
                 }
                 break;
-            case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    Integer[] a = new Integer[t2.length];
-                    for (int i = 0; i < t2.length; i++) {
-                        a[i] = Integer.parseInt(t2[i]);
-                    }
-                    l.removeAll(a);
-                }
+            case "size":
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listInteger.size());
                 break;
-            case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
-                }
+            case "print":
+                // print the list (implement toString in List class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listInteger);
                 break;
-
-            case "equals":
-                if (tokens.length == 2) {
-                    String[] lt = tokens[1].split(",");
-                    List l2 = new List();
-                    for (int k = 0; k < lt.length; k++) {
-                        l2.add(Integer.parseInt(lt[k]));
-                    }
-                    System.out.println(l.equals(l2));
-                }
+            case "remove":
+                listInteger.remove(Integer.parseInt(tokens[1]));
                 break;
-            case "clear":
-                l.clear();
+            case "indexOf":
+                System.out.println(
+                    listInteger.indexOf(Integer.parseInt((tokens[1]))));
+                break;
+            case "get":
+                System.out.println(
+                    listInteger.get(Integer.parseInt(tokens[1])));
+                break;
+            case "contains":
+                System.out.println(
+                    listInteger.contains(Integer.parseInt((tokens[1]))));
                 break;
             default:
-                break;
             }
         }
-    }
 
+    }
     /**
-     * { function_description }.
-     *
-     * @param      stdin  The stdin
+     * { floatswitch }.
      */
-    public static void executeListDouble(final Scanner stdin) {
-        List<Double> l = new List();
+    public static void floatswitch() {
+        List<Float> listFloat = new List();
         while (stdin.hasNext()) {
             // read the line
             String line = stdin.nextLine();
@@ -570,202 +200,56 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "add":
-                if (tokens.length == 2) {
-                    String[] t = tokens[1].split(",");
-                    if (t.length == 1) {
-                        l.add(Double.parseDouble(tokens[1]));
-                    }
-                }
-                break;
-            case "size":
-                System.out.println(l.size());
-                break;
-            case "print":
-                System.out.println(l);
-                break;
-            case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
-                break;
-            case "indexOf":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.indexOf(Double.parseDouble(tokens[1])));
-                }
-                break;
-            case "get":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.get(Integer.parseInt(tokens[1])));
-                }
-                break;
-            case "contains":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.contains(Double.parseDouble(tokens[1])));
-                }
-                break;
-            case "addAll":
-                if (tokens.length == 2) {
-                    String[] t1 = tokens[1].split(",");
-                    Double[] temp = new Double[t1.length];
-                    for (int i = 0; i < temp.length; i++) {
-                        temp[i] = Double.parseDouble(t1[i]);
-                    }
-                    l.addAll(temp);
-                }
-                break;
-            case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    Double[] a = new Double[t2.length];
-                    for (int i = 0; i < t2.length; i++) {
-                        a[i] = Double.parseDouble(t2[i]);
-                    }
-                    l.removeAll(a);
-                }
-                break;
-            case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
-                }
-                break;
-
-            case "equals":
-                if (tokens.length == 2) {
-                    String[] lt = tokens[1].split(",");
-                    List l2 = new List();
-                    for (int k = 0; k < lt.length; k++) {
-                        l2.add(Double.parseDouble(lt[k]));
-                    }
-                    System.out.println(l.equals(l2));
-                }
-                break;
-            case "clear":
-                l.clear();
-                break;
-            default:
-                break;
-            }
-        }
-    }
-
-    /**
-     * { function_description }.
-     *
-     * @param      stdin  The stdin
-     */
-    public static void executeListFloat(final Scanner stdin) {
-        List<Float> l = new List();
-        while (stdin.hasNext()) {
-            // read the line
-            String line = stdin.nextLine();
-            // split the line using space
-            String[] tokens = line.split(" ");
-            // based on the list operation invoke the corresponding method
-            switch (tokens[0]) {
-            case "add":
-                if (tokens.length == 2) {
-                    String[] t = tokens[1].split(",");
-                    if (t.length == 1) {
-                        l.add(Float.parseFloat(tokens[1]));
-                    }
-                }
-                break;
-            case "size":
-                System.out.println(l.size());
-                break;
-            case "print":
-                System.out.println(l);
-                break;
-            case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
-                break;
-            case "indexOf":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.indexOf(Float.parseFloat(tokens[1])));
-                }
-                break;
-            case "get":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.get(Integer.parseInt(tokens[1])));
-                }
-                break;
-            case "contains":
-                if (tokens.length == 2) {
-                    System.out.println(
-                        l.contains(Float.parseFloat(tokens[1])));
-                }
+                listFloat.add(Float.parseFloat(tokens[1]));
                 break;
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
                     Float[] temp = new Float[t1.length];
-                    for (int i = 0; i < temp.length; i++) {
+                    for (int i = 0; i < t1.length; i++) {
                         temp[i] = Float.parseFloat(t1[i]);
                     }
-                    l.addAll(temp);
+                    listFloat.addAll(temp);
                 }
                 break;
-            case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    Float[] a = new Float[t2.length];
-                    for (int i = 0; i < t2.length; i++) {
-                        a[i] = Float.parseFloat(t2[i]);
-                    }
-                    l.removeAll(a);
-                }
+            case "size":
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listFloat.size());
                 break;
-            case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
-                }
+            case "print":
+                // print the list (implement toString in List class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listFloat);
                 break;
-
-            case "equals":
-                if (tokens.length == 2) {
-                    String[] lt = tokens[1].split(",");
-                    List l2 = new List();
-                    for (int k = 0; k < lt.length; k++) {
-                        l2.add(Float.parseFloat(lt[k]));
-                    }
-                    System.out.println(l.equals(l2));
-                }
+            case "remove":
+                listFloat.remove(Integer.parseInt(tokens[1]));
                 break;
-            case "clear":
-                l.clear();
+            case "indexOf":
+                System.out.println(
+                    listFloat.indexOf(Float.parseFloat(tokens[1])));
+                break;
+            case "get":
+                System.out.println(
+                    listFloat.get(Integer.parseInt(tokens[1])));
+                break;
+            case "contains":
+                System.out.println(
+                    listFloat.contains(Float.parseFloat(tokens[1])));
                 break;
             default:
-                break;
             }
         }
-    }
 
+    }
     /**
-     * { function_description }.
-     *
-     * @param      stdin  The stdin
+     * { charswitch }.
      */
-    public static void executeListString(final Scanner stdin) {
-        List<String> l = new List();
+    public static void charswitch() {
+        List<Character> listCharacter = new List();
         while (stdin.hasNext()) {
             // read the line
             String line = stdin.nextLine();
@@ -774,90 +258,56 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "add":
-                if (tokens.length == 2) {
-                    String[] t = tokens[1].split(",");
-                    if (t.length == 1) {
-                        l.add(tokens[1]);
-                    }
-                }
-                break;
-            case "size":
-                System.out.println(l.size());
-                break;
-            case "print":
-                System.out.println(l);
-                break;
-            case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
-                break;
-            case "indexOf":
-                if (tokens.length == 2) {
-                    System.out.println(l.indexOf((tokens[1])));
-                }
-                break;
-            case "get":
-                if (tokens.length == 2) {
-                    System.out.println(l.get(
-                                           Integer.parseInt(tokens[1])));
-                }
-                break;
-            case "contains":
-                if (tokens.length == 2) {
-                    System.out.println(l.contains((tokens[1])));
-                }
+                listCharacter.add(tokens[1].charAt(0));
                 break;
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
-                    l.addAll(t1);
-                }
-                break;
-            case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    l.removeAll(t2);
-                }
-                break;
-            case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
-                }
-                break;
-
-            case "equals":
-                if (tokens.length == 2) {
-                    String[] lt = tokens[1].split(",");
-                    List l2 = new List();
-                    for (int k = 0; k < lt.length; k++) {
-                        l2.add((lt[k]));
+                    Character[] temp = new Character[t1.length];
+                    for (int i = 0; i < t1.length; i++) {
+                        temp[i] = t1[i].charAt(0);
                     }
-                    System.out.println(l.equals(l2));
+                    listCharacter.addAll(temp);
                 }
                 break;
-            case "clear":
-                l.clear();
+            case "size":
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listCharacter.size());
+                break;
+            case "print":
+                // print the list (implement toString in List class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listCharacter);
+                break;
+            case "remove":
+                listCharacter.remove(Integer.parseInt(tokens[1]));
+                break;
+            case "indexOf":
+                System.out.println(
+                    listCharacter.indexOf(tokens[1].charAt(0)));
+                break;
+            case "get":
+                System.out.println(
+                    listCharacter.get(Integer.parseInt(tokens[1])));
+                break;
+            case "contains":
+                System.out.println(listCharacter.contains(
+                                       tokens[1].charAt(0)));
                 break;
             default:
-                break;
             }
         }
-    }
 
+    }
     /**
-     * { function_description }.
-     *
-     * @param      stdin  The stdin
+     * { double switch }.
      */
-    public static void executeListStudent(final Scanner stdin) {
-        List<Student> l = new List();
+    public static void doubleswitch() {
+        List<Double> listDouble = new List();
         while (stdin.hasNext()) {
             // read the line
             String line = stdin.nextLine();
@@ -866,134 +316,146 @@ public final class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
             case "add":
-                if (tokens.length == 2) {
-                    String[] t = tokens[1].split(",");
-                    if (t.length == 1) {
-                        l.add(new Student(tokens[1]));
-                    }
-                }
-                break;
-            case "size":
-                System.out.println(l.size());
-                break;
-            case "print":
-                System.out.println(l);
-                break;
-            case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
-                }
-                break;
-            case "indexOf":
-                if (tokens.length == 2) {
-                    System.out.println(l.indexOf(new Student(tokens[1])));
-                }
-                break;
-            case "get":
-                if (tokens.length == 2) {
-                    System.out.println(l.get(Integer.parseInt(tokens[1])));
-                }
-                break;
-            case "contains":
-                if (tokens.length == 2) {
-                    System.out.println(l.contains(new Student(tokens[1])));
-                }
+                listDouble.add(Double.parseDouble(tokens[1]));
                 break;
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
-                    Student[] students = new Student[t1.length];
+                    Double[] temp = new Double[t1.length];
                     for (int i = 0; i < t1.length; i++) {
-                        students[i] = new Student(t1[i]);
+                        temp[i] = Double.parseDouble(t1[i]);
                     }
-                    l.addAll(students);
+                    listDouble.addAll(temp);
                 }
                 break;
-            case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t1 = tokens[1].split(",");
-                    Student[] students = new Student[t1.length];
-                    for (int i = 0; i < t1.length; i++) {
-                        students[i] = new Student(t1[i]);
-                    }
-                    l.removeAll(students);
-                }
+            case "size":
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listDouble.size());
                 break;
-            case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
-                }
+            case "print":
+                // print the list (implement toString in StringList class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listDouble);
                 break;
-
-            case "equals":
-                if (tokens.length == 2) {
-                    String[] lt = tokens[1].split(",");
-                    List l2 = new List();
-                    for (int k = 0; k < lt.length; k++) {
-                        l2.add((lt[k]));
-                    }
-                    System.out.println(l.equals(l2));
-                }
+            case "remove":
+                listDouble.remove(Integer.parseInt(tokens[1]));
                 break;
-            case "clear":
-                l.clear();
+            case "indexOf":
+                System.out.println(
+                    listDouble.indexOf(Double.parseDouble(tokens[1])));
+                break;
+            case "get":
+                System.out.println(
+                    listDouble.get(Integer.parseInt(tokens[1])));
+                break;
+            case "contains":
+                System.out.println(
+                    listDouble.contains(Double.parseDouble(tokens[1])));
                 break;
             default:
-                break;
             }
         }
-    }
 
+    }
     /**
-     * { function_description }.
+     * { Object switch }.
+     */
+    public static void objectswitch() {
+        List<Student> listStudent = new List();
+        while (stdin.hasNext()) {
+            // read the line
+            String line = stdin.nextLine();
+            // split the line using space
+            String[] tokens = line.split(" ");
+            // based on the list operation invoke the corresponding method
+            switch (tokens[0]) {
+            case "add":
+                listStudent.add(new Student(tokens[1]));
+                break;
+            case "addAll":
+                if (tokens.length == 2) {
+                    String[] t1 = tokens[1].split(",");
+                    Student[] temp = new Student[t1.length];
+                    for (int i = 0; i < t1.length; i++) {
+                        temp[i] = new Student(t1[i]);
+                    }
+                    listStudent.addAll(temp);
+                }
+                break;
+            case "size":
+                // invoke size method and print the list size
+                // BTW, list size is not the array size
+                // it is the number of items in the list
+                System.out.println(listStudent.size());
+                break;
+            case "print":
+                // print the list (implement toString in List class
+                //for this to work)
+                // expected format is [item-1,item-2,...,item-n]
+                // review the output testcase file
+                System.out.println(listStudent);
+                break;
+            case "remove":
+                listStudent.remove(Integer.parseInt(tokens[1]));
+                break;
+            case "indexOf":
+                System.out.println(
+                    listStudent.indexOf(new Student(tokens[1])));
+                break;
+            case "get":
+                System.out.println(
+                    listStudent.get(Integer.parseInt(tokens[1])));
+                break;
+            case "contains":
+                System.out.println(
+                    listStudent.contains(new Student(tokens[1])));
+                break;
+            default:
+            }
+        }
+
+    }
+    /**
+     * { Main function starts here }.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
-        Scanner stdin = new Scanner(new BufferedInputStream(System.in));
+
         String objectType = stdin.nextLine();
-
         switch (objectType) {
-        case "S":
-            //This case will be executed for String type list
-            executeListString(stdin);
+        case "S"://This case will be executed for String type list
+            stringswitch();
             break;
 
-        case "I":
-            //This case will be executed for Integer type list
-            executeListInteger(stdin);
+        case "I"://This case will be executed for Integer type list
+            intswitch();
             break;
 
-        case "F":
-            //This case will be executed for Float type list
-            executeListFloat(stdin);
+        case "F"://This case will be executed for Float type list
+            floatswitch();
             break;
 
-        case "C":
-            //This case will be executed for Character type list
-            executeListString(stdin);
+        case "C"://This case will be executed for Character type list
+            charswitch();
             break;
 
-        case "D":
-            //This case will be executed for Double type list
-            executeListDouble(stdin);
+        case "D"://This case will be executed for Double type list
+            doubleswitch();
             break;
 
         case "O":
-            //This case will be executed for Student type
-            //list i.e to store List of Student Objects
-            executeListStudent(stdin);
+            //This case will be executed for Student type list
+            //i.e to store List of Student Objects
+            objectswitch();
             break;
         default:
             break;
         }
     }
 }
-
