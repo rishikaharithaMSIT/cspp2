@@ -109,6 +109,7 @@ class Set {
      * @return     String representation of the object.
      */
     public String toString() {
+        Arrays.sort(set, 0, size());
         String printString = "{";
         for (int i = 0; i < size; i++) {
             if (i == size - 1) {
