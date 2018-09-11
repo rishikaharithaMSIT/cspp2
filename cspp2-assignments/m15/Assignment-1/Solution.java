@@ -81,6 +81,7 @@ final class Solution {
      * { String type switch execution }.
      */
     public static void stringswitch() {
+        System.out.println("inmain");
         List<String> listString = new List();
         while (stdin.hasNext()) {
             // read the line
