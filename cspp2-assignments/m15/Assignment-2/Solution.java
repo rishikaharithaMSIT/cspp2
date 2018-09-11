@@ -370,7 +370,7 @@ public final class Solution {
                 String[] strArray1 = tokens[1].split(",");
                 intArray = new int[1];
                 intArray[0] = Integer.parseInt(strArray1[0]);
-                if(intArray != null) {
+                if(s.headSet(intArray[0]) != null) {
                     System.out.println(s.headSet(intArray[0]));
                 }
                 break;
