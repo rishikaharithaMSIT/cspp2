@@ -81,7 +81,7 @@ final class Solution {
      * { String type switch execution }.
      */
     public static void stringswitch() {
-        System.out.println("inmain");
+        
         List<String> listString = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -427,7 +427,7 @@ final class Solution {
      */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
-
+        System.out.println("inmain");
         String objectType = stdin.nextLine();
         switch (objectType) {
         case "S"://This case will be executed for String type list
