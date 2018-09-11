@@ -424,6 +424,11 @@ class List {
         size++;
         //System.out.println(Arrays.toString(list) + " add index");
     }
+    public void clear() {
+        // write the logic for clear.
+        list = new int[10];
+        size = 0;
+    }
 
     /* Returns the count of occurances of a given item in the list*/
 
@@ -521,6 +526,9 @@ public class Solution {
                 if (object != null) {
                     System.out.println(object);
                 }
+                break;
+            case "clear":
+                l.clear();
                 break;
             case "get":
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
