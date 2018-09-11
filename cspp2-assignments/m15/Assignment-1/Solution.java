@@ -161,7 +161,7 @@ class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public E get(int index) {
+    public E get(final int index) {
         //Write logic for get method
         return list[index];
     }
@@ -196,7 +196,7 @@ class List<E> {
         if (size == 0) {
             return "[]";
         }
-        E[] printArray = ((E[])new Object[size]);
+        E[] printArray = ((E[]) new Object[size]);
         for (int i = 0; i < size; i++) {
             printArray[i] = list[i];
         }
@@ -216,7 +216,7 @@ class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(E item) {
+    public boolean contains(final E item) {
         //Write logic for contains method
         for (int i = 0; i < size; i++) {
             if (item.equals(list[i])) {
@@ -238,7 +238,7 @@ class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(E item) {
+    public int indexOf(final E item) {
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
@@ -274,7 +274,7 @@ class List<E> {
      *
      * @param      items  The items
      */
-    public void removeAll(E[] items) {
+    public void removeAll(final E[] items) {
         // // write the logic
         // System.out.println("list : "+items);
         for (int i = 0; i < items.length; i++) {
@@ -302,7 +302,7 @@ class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
         try {
             if (start < 0 || end > size + 1 || !(start < end)) {
                 throw new Exception();
@@ -317,7 +317,6 @@ class List<E> {
         }
         return sublist;
     }
-    
     /**
      * { function_description }.
      *
@@ -325,7 +324,7 @@ class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(List<E> li) {
+    public boolean equals(final List<E> li) {
 
         if (Arrays.equals(list, li.list)) {
             return true;
