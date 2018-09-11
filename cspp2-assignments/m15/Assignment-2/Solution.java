@@ -230,10 +230,14 @@ class SortedSet extends Set {
     Set subSet(final int fromElement, final int toElement) {
         int start = fromElement;
         int end = toElement;
-        if (end < start) {
-            System.out.println("Invalid Arguments to Subset Exception");
-            return null;
-        }
+        try{
+	        if (end < start) {
+	            throw new Exception();
+	        }
+    	} catch(Exception e) {
+    		System.out.println("Invalid Arguments to Subset Exception");
+	        return null;
+    	}
         Set sub = new Set();
 
         while (start < end) {
