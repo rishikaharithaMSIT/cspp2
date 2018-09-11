@@ -150,7 +150,13 @@ class List<E> {
      */
     public void remove(int idex) {
         //Write logic for remove method
-        if (idex >= size || idex < 0) {
+        try {
+            if (idex >= size || idex < 0) {
+                //System.out.println("Invalid Position Exception");
+                throw new Exception();
+                
+            }
+        } catch(Exception e) {
             System.out.println("Invalid Position Exception");
             return;
         }
