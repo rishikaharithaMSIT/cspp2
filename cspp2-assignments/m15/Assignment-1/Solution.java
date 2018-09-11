@@ -11,7 +11,6 @@ import java.util.Scanner;
      * Here E is a type parameter, and it will be replaced with
         actual type when the object got created.
      */
-
 /**
  * List of .
  *
@@ -334,9 +333,7 @@ class List<E> {
             return true;
         }
         return false;
-
     }
-
     /**
      * { hashCode function }.
      *
@@ -346,7 +343,6 @@ class List<E> {
         return 0;
 
     }
-
     /**
      * { function_description }.
      */
