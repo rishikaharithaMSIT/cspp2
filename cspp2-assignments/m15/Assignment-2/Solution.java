@@ -109,6 +109,13 @@ class Set {
      * @return     String representation of the object.
      */
     public String toString() {
+        try {
+            if(size == 0) {
+                throw new Exception();
+            }
+        }catch (Exception e) {
+            System.out.println("Set Empty Exception");
+        }
         String printString = "{";
         for (int i = 0; i < size; i++) {
             if (i == size - 1) {
