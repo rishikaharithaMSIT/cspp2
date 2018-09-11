@@ -305,15 +305,15 @@ class List<E> {
     public void removeAll(E[] items) {
         // // write the logic
         // System.out.println("list : "+items);
-        // for(int i =0;i<items.length;i++){
-        //     int c = count(items[i]);
-        //     for(int j =0;j<c;j++){
-        //         remove(indexOf(items[i]));
-        //         //System.out.println("removing : " + newArray[i]);
-        //         //System.out.println("list : "+ toString());
+        for(int i =0;i<items.length;i++){
+            int c = count(items[i]);
+             for(int j =0;j<c;j++){
+                 remove(indexOf(items[i]));
+                 //System.out.println("removing : " + newArray[i]);
+                 //System.out.println("list : "+ toString());
 
-        //     }
-        // }
+             }
+        }
     }
 
     /*Returns a list containing elements, including
