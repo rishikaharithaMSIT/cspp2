@@ -471,7 +471,8 @@ public class Solution {
                     System.out.println(object);
                 }
                 break;
-
+            case "count":
+                System.out.println(l.count(Integer.parseInt(tokens[1])));
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
