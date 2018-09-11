@@ -264,6 +264,7 @@ class SortedSet extends Set {
         }
         if(sub.size() == 0) {
             System.out.println("Set Empty Exception");
+            return null;
         }
         return sub;
     }
@@ -369,7 +370,9 @@ public final class Solution {
                 String[] strArray1 = tokens[1].split(",");
                 intArray = new int[1];
                 intArray[0] = Integer.parseInt(strArray1[0]);
-                System.out.println(s.headSet(intArray[0]));
+                if(intArray != null) {
+                    System.out.println(s.headSet(intArray[0]));
+                }
                 break;
             case "last":
                 int la = s.last();
