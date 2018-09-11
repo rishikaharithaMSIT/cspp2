@@ -336,7 +336,7 @@ class List<E> {
      *
      * @return     { int type }
      */
-    public int hashCode() {
+    public int equals() {
         return 0;
 
     }
