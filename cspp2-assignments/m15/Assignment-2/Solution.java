@@ -369,7 +369,10 @@ public final class Solution {
                 System.out.println(s.headSet(intArray[0]));
                 break;
             case "last":
-                System.out.println(s.last());
+                int la = s.last();
+                if(la != -1) {
+                    System.out.println();
+                }
                 break;
             case "intersection":
                 s = new SortedSet();
