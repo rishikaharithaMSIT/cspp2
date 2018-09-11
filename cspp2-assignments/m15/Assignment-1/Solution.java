@@ -192,6 +192,26 @@ class List {
      *
      * The method returns an int. Empty list should return 0.
      */
+    /**
+     * { function_description }.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public List subList(int start, int end) {
+
+        if (start < 0 || end > size + 1 || !(start < end)) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List sublist = new List(end - start);
+        for (int i = start; i < end; i++) {
+            sublist.add(list[i]);
+        }
+        return sublist;
+    }
 
     /**
      * { function_description }.
@@ -427,7 +447,7 @@ class List {
 
 }
 public class Solution {
-    
+
     /**
      * { function_description }.
      *
@@ -490,6 +510,17 @@ public class Solution {
                 break;
             case "indexOf":
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
+                break;
+            case "subList":
+                if (tokens.length != 2) {
+                    break;
+                }
+                String[] arrstring3 = tokens[1].split(",");
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
+                if (object != null) {
+                    System.out.println(object);
+                }
                 break;
             case "get":
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
