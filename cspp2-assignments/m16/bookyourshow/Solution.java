@@ -28,14 +28,14 @@ class Patron {
 
 class BookYourShow {
 
-	List al = new ArrayList();
+	static List al = new ArrayList();
 
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
 		System.out.println("Here");
 		al.add("hi");
-		System.out.println(al + " ail");
+		//System.out.println(al + " ail");
 	}
 
 	ArrayList getAShow(String inp) {
