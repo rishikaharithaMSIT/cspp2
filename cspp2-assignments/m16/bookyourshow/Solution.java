@@ -73,6 +73,7 @@ class BookYourShow {
 	             	booked[index][0] = tokens[3];
 	             	booked[index][1] = tokens[0];
 	             	booked[index][2] = tokens[1];
+	             	System.out.println(Arrays.deepToString(booked) + " booked arr");
 	             	index++;
 	         }
 	    }
