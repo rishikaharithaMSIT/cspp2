@@ -32,7 +32,7 @@ class Patron {
 class BookYourShow {
 
 	static List<Show> al = new ArrayList<Show>();
-	String[][] booked = new String[10][3];
+	static String[][] booked = new String[10][3];
 	static int index = 0;
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
