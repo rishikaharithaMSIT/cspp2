@@ -72,6 +72,9 @@ class Solution {
             	// System.out.println(tokens[2] + " t 2" );
             	case "get":
             		ArrayList shows = bys.getAShow(keys[1]);
+            		if(shows.size() == 1) {
+            			System.out.println(shows);
+            		}
             		break;
 
             	
