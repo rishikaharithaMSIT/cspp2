@@ -13,6 +13,9 @@ class Show {
 		this.seats = seats.split(",");
 		//System.out.println(Arrays.toString(this.seats) + " seats");
 	}
+	String getMovie(){
+		return movieName;
+	}
 
 }
 
@@ -28,12 +31,13 @@ class Patron {
 
 class BookYourShow {
 
-	static List al = new ArrayList();
+	static List<Show> al = new ArrayList<Show>();
 
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
 		System.out.println("Here");
+		System.out.println(show.movieName + " name");
 		al.add(show);
 		//System.out.println(al + " ail");
 	}
@@ -61,7 +65,7 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
 		for(Object each: al){
-			System.out.println(each.getClass().getName());
+			//System.out.println(each.getMovie());
 			// if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
 	  //           	System.out.println("booked");
 	  //       }
