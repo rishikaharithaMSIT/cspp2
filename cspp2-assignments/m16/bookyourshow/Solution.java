@@ -71,8 +71,8 @@ class BookYourShow {
 		System.out.println(Arrays.toString(seats) + " seats");	
 		System.out.println(Arrays.toString(sea) + " sea");
 		
-		for(int i = 0; i < sea.length;i++) {
-			for(int j =0;j<seats.length;j++) {
+		for(int i = 0; i < seats.length;i++) {
+			for(int j =0;j<sea.length;j++) {
 				if (seats[i]== sea[j]) {
 					flag++;
 				}
