@@ -28,8 +28,14 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
 		al.add(show);
-		System.out.println(al);
-}
+	}
+
+	String getAShow(String inp) {
+		String[] tokens = inp.split(",", 2);
+		System.out.println(Arrays.toString(tokens) + " get show");
+		return "No show";
+	}
+
 
 }
 
@@ -45,12 +51,15 @@ class Solution {
             // String[] tokens = keys[1].split(",", 3);
             switch(keys[0]) {
             	case "add":
-            	bys.addAShow(keys[1]);
-            	// String[] tokens = keys[1].split(",", 3);
+	            	bys.addAShow(keys[1]);
+	            	break;
+	            	// String[] tokens = keys[1].split(",", 3);
             	// System.out.println(tokens[0] + " t 0" );
             	// System.out.println(tokens[1] + " t 1" );
             	// System.out.println(tokens[2] + " t 2" );
             	case "get":
+            		String show = bys.getAShow(keys[1]);
+            		break;
 
             	
             }
