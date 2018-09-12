@@ -18,8 +18,12 @@ class Solution {
  	Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         while (stdin.hasNext()) {
             String line = stdin.nextLine();
-            String[] tokens = line.split(",");
-            System.out.println(Arrays.toString(tokens));
+            String[] keys = line.split(" ",2);
+            String[] tokens = line.split(",", 3);
+            switch(tokens[0]) {
+            	case "add":
+            	System.out.println(tokens[2]);
+            }
         }
 
  }
