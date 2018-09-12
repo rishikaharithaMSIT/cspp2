@@ -33,6 +33,7 @@ class BookYourShow {
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
+		System.out.println("Here");
 		al.add(show);
 	}
 
