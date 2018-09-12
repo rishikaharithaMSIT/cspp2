@@ -70,9 +70,9 @@ class BookYourShow {
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
 
-	             	booked[index][0] = tokens[3];
-	             	booked[index][1] = tokens[0];
-	             	booked[index][2] = tokens[1];
+	             	booked[index][0] = tokens[0];
+	             	booked[index][1] = tokens[1];
+	             	booked[index][2] = tokens[3];
 	             	System.out.println(Arrays.deepToString(booked) + " booked arr");
 	             	index++;
 	         }
