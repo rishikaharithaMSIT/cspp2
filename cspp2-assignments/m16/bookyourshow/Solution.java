@@ -1,17 +1,17 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 class Show {
 	String movieName;
 	String dateTime;
 	String[] seats;
-	Show(String movieName, String dateTime, String seats){
+	Show(String movieName, String dateTime, String seats) {
 		this.movieName = movieName;
 		this.dateTime = dateTime;
 		seats = seats.replace("[","");
 		seats = seats.replace("]","");
 		this.seats = seats.split(",");
-		System.out.println(Arrays.toString(this.seats) + " seats");
+		//System.out.println(Arrays.toString(this.seats) + " seats");
 	}
 
 }
@@ -21,11 +21,15 @@ class Patron {
 }
 
 class BookYourShow {
-void addAShow(String inp) {
-	String[] tokens = inp.split(",", 3);
-	Show show = new Show(tokens[0],tokens[1],tokens[2]);
 
+	ArrayList al = new ArrayList();
+
+	void addAShow(String inp) {
+		String[] tokens = inp.split(",", 3);
+		Show show = new Show(tokens[0],tokens[1],tokens[2]);
+		al.add(show);
 }
+
 }
 
 class Solution {
@@ -45,6 +49,8 @@ class Solution {
             	// System.out.println(tokens[0] + " t 0" );
             	// System.out.println(tokens[1] + " t 1" );
             	// System.out.println(tokens[2] + " t 2" );
+            	case "get":
+
             	
             }
         }
