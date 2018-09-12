@@ -88,7 +88,10 @@ class BookYourShow {
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
-		
+		if(index == 0) {
+			System.out.println("No show");
+			return;
+		}
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
@@ -103,6 +106,7 @@ class BookYourShow {
 	             }
 	         }
 	    }
+
 		
 	}
 	void printTickets(String inp) {
