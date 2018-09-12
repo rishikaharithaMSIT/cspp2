@@ -32,7 +32,8 @@ class Patron {
 class BookYourShow {
 
 	static List<Show> al = new ArrayList<Show>();
-
+	String[][] booked = new String[10][3];
+	static int index = 0;
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
@@ -64,13 +65,28 @@ class BookYourShow {
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
+		
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
-	             	System.out.println("booked");
+
+	             	booked[index][0] = tokens[3];
+	             	booked[index][1] = tokens[0];
+	             	booked[index][2] = tokens[1];
+	             	index++;
 	         }
 	    }
 		
+	}
+	void printTickets(String inp) {
+		String[] tokens = inp.split(",", 2);
+		for(int i = 0; i<tokens.length; i++) {
+    		for(int j = 0; j<booked.length; j++) {
+        		if(tokens == booked[j]) {
+        			System.out.println(tokens[0] + " boked");
+        		}
+        	}
+        }
 	}
 
 
@@ -90,10 +106,6 @@ class Solution {
             	case "add":
 	            	bys.addAShow(keys[1]);
 	            	break;
-	            	// String[] tokens = keys[1].split(",", 3);
-            	// System.out.println(tokens[0] + " t 0" );
-            	// System.out.println(tokens[1] + " t 1" );
-            	// System.out.println(tokens[2] + " t 2" );
             	case "get":
             		ArrayList shows = bys.getAShow(keys[1]);
             		if(shows.size() == 1) {
@@ -102,6 +114,10 @@ class Solution {
             		break;
             	case "book":
             		bys.bookAShow(keys[1]);
+            		break;
+            	case "print" :
+            		bys.printTickets(keys[1]);
+            		break;
 
             	
             }
