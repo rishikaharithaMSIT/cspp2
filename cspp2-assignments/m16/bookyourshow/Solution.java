@@ -48,11 +48,11 @@ class BookYourShow {
 		//System.out.println(Arrays.toString(tokens) + " get show");
 		ArrayList showsAvailable = new ArrayList();
 		//System.out.println(al + " getClass");
-		for(Object each: al){
+		for(Show each: al){
 			
-            // if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
-            // 	showsAvailable.add(each);
-            // }
+            if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
+           			showsAvailable.add(each);
+             }
         }
         if(showsAvailable.size() == 0) {
         	showsAvailable.add("No show");
