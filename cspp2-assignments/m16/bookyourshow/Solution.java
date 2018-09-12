@@ -67,7 +67,7 @@ class BookYourShow {
 		inp = inp.replace("]","");
 		seats = inp.split(",");
 		
-		return false;
+		return true;
 	}
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
