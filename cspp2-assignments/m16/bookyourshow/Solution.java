@@ -60,7 +60,7 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
 
-		System.out.println(al);
+		System.out.println(al + " al");
 	}
 
 
