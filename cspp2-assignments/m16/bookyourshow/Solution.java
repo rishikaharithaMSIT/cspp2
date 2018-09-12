@@ -51,7 +51,7 @@ class BookYourShow {
 		for(Show each: al){
 			
             if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
-           			showsAvailable.add(each);
+           			showsAvailable.add(each.movieName+","+each.dateTime);
              }
         }
         if(showsAvailable.size() == 0) {
