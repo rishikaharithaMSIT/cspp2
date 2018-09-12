@@ -81,14 +81,18 @@ class BookYourShow {
 	}
 	void printTickets(String inp) {
 		String[] tokens = inp.split(",", 3);
-		
+		int flag = 0;
     		for(int j = 0; j<booked.length; j++) {
     			//System.out.println(Arrays.toString(tokens) + " tok");
     			//System.out.println(Arrays.toString(booked[j])+" book");
     			//System.out.println("each ele" + tokens[0] + " and " + booked[j][0]);
         		if(tokens[0].equals(booked[j][0]) && tokens[1].equals(booked[j][1]) && tokens[2].equals(booked[j][2])) {
+        			flag = 1;
         			System.out.println(tokens[2] + " " + tokens[0] + " " + tokens[1]);
         		}
+        	}
+        	if(flag == 0) {
+        		System.out.println("Invalid");
         	}
         
 	}
