@@ -50,8 +50,8 @@ class BookYourShow {
 	}
 
 	void bookAShow(String inp){
-		String[] tokens = inp.split(",", 5);
-		System.out.println(Arrays.toString(tokens) + " book amma");
+		String[] tokens = inp.split(",", 4);
+		System.out.println(tokens[3] + " book amma");
 	}
 
 
