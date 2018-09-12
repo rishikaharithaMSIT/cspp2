@@ -60,8 +60,13 @@ class BookYourShow {
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
-
-		System.out.println(al + " al");
+		for(Object each: al){
+			System.out.println(each);
+			// if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
+	  //           	System.out.println("booked");
+	  //       }
+	    }
+		
 	}
 
 
