@@ -54,14 +54,20 @@ class BookYourShow {
            			showsAvailable.add(each.movieName+","+each.dateTime);
              }
         }
-        if(showsAvailable.size() == 0 || index == 0) {
+        if(showsAvailable.size() == 0) {
         	showsAvailable.add("No show");
         }
 
 
 		return showsAvailable;
 	}
-
+	boolean checkAvailable(String inp) {
+		String[] seats;
+		inp = inp.replace("[","");
+		inp = inp.replace("]","");
+		seats = inp.split(",");
+		return true;
+	}
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
@@ -69,12 +75,13 @@ class BookYourShow {
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
-
+				if (checkAvailable(tokens[4])) {
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
 	             	booked[index][2] = tokens[3];
 	             	//System.out.println(Arrays.deepToString(booked) + " booked arr");
 	             	index++;
+	             }
 	         }
 	    }
 		
