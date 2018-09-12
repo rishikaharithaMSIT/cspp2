@@ -9,9 +9,9 @@ class Show {
 	Show(String movieName, String dateTime, String seats) {
 		this.movieName = movieName;
 		this.dateTime = dateTime;
-		seats = seats.replace("[","");
-		seats = seats.replace("]","");
 		this.seatString = seats;
+		seats = seats.replace("[","");
+		seats = seats.replace("]","");		
 		this.seats = seats.split(",");
 		//System.out.println(Arrays.toString(this.seats) + " seats");
 	}
