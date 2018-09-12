@@ -20,7 +20,7 @@ class Solution {
             String line = stdin.nextLine();
             String[] keys = line.split(" ",2);
             String[] tokens = line.split(",", 3);
-            switch(tokens[0]) {
+            switch(keys[0]) {
             	case "add":
             	System.out.println(tokens[2]);
             }
