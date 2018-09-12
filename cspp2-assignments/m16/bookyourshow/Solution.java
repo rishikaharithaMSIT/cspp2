@@ -73,7 +73,7 @@ class BookYourShow {
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
 	             	booked[index][2] = tokens[3];
-	             	System.out.println(Arrays.deepToString(booked) + " booked arr");
+	             	//System.out.println(Arrays.deepToString(booked) + " booked arr");
 	             	index++;
 	         }
 	    }
@@ -83,8 +83,8 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 3);
 		
     		for(int j = 0; j<booked.length; j++) {
-    			//System.out.println(Arrays.toString(tokens) + " tok");
-    			//System.out.println(Arrays.toString(booked[0])+" book");
+    			System.out.println(Arrays.toString(tokens) + " tok");
+    			System.out.println(Arrays.toString(booked[0])+" book");
         		if(tokens[0]==booked[j][0] && tokens[1]==booked[j][1] && tokens[2]==booked[j][2]) {
         			System.out.println(tokens[0] + " boked");
         		}
