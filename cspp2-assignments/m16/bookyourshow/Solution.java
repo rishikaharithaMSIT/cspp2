@@ -54,7 +54,7 @@ class BookYourShow {
            			showsAvailable.add(each.movieName+","+each.dateTime);
              }
         }
-        if(showsAvailable.size() == 0) {
+        if(showsAvailable.size() == 0 || index == 0) {
         	showsAvailable.add("No show");
         }
 
