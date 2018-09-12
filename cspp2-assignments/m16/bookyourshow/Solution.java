@@ -61,7 +61,7 @@ class BookYourShow {
 
 		return showsAvailable;
 	}
-	boolean checkAvailable(String inp, String[] sea) {
+	boolean checkAvailable(String inp, String[] sea, Show each) {
 		String[] seats;
 		inp = inp.replace("[","");
 		inp = inp.replace("]","");
@@ -74,6 +74,7 @@ class BookYourShow {
 		for(int i = 0; i < seats.length;i++) {
 			for(int j =0;j<sea.length;j++) {
 				if (seats[i].equals(sea[j])){
+					each.seats[j] = "N/A";
 					flag = 1;
 				}
 			}
@@ -95,11 +96,12 @@ class BookYourShow {
 				flag = 1;
 				//System.out.println(tokens[4] + " seats");	
 				//System.out.println(Arrays.toString(each.seats) + " sea");
-				if (checkAvailable(tokens[4], each.seats)){
+				if (checkAvailable(tokens[4], each.seats, each)){
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
 	             	booked[index][2] = tokens[3];
 	             	//System.out.println(Arrays.deepToString(booked) + " booked arr");
+	             	
 	             	index++;
 	             }
 	         }
@@ -127,6 +129,9 @@ class BookYourShow {
         		System.out.println("Invalid");
         	}
         
+	}
+	void showAll() {
+
 	}
 
 
@@ -161,6 +166,9 @@ class Solution {
             		break;
             	case "print" :
             		bys.printTickets(keys[1]);
+            		break;
+            	case "showAll":
+            		bys.showAll();
             		break;
 
             	
