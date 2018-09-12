@@ -34,8 +34,9 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 2);
 		//System.out.println(Arrays.toString(tokens) + " get show");
 		ArrayList showsAvailable = new ArrayList();
+		System.out.println(al.getClass() + " getClass");
 		for(Object each: al){
-			System.out.println(each.getClass() + " getClass");
+			
             // if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
             // 	showsAvailable.add(each);
             // }
