@@ -61,16 +61,12 @@ class BookYourShow {
 
 		return showsAvailable;
 	}
-	boolean checkAvailable(String inp) {
+	boolean checkAvailable(String inp, String[] sea) {
 		String[] seats;
 		inp = inp.replace("[","");
 		inp = inp.replace("]","");
 		seats = inp.split(",");
-		for(Show each: al){
-			if(seats.equals(each.seats)) {
-				return true;
-			}
-		}
+		
 		return false;
 	}
 	void bookAShow(String inp){
@@ -80,7 +76,7 @@ class BookYourShow {
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
-				if (checkAvailable(tokens[4])) {
+				if (checkAvailable(tokens[4], each.seats)){
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
 	             	booked[index][2] = tokens[3];
