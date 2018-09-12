@@ -34,7 +34,7 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 3);
 		Show show = new Show(tokens[0],tokens[1],tokens[2]);
 		System.out.println("Here");
-		al.add("hi");
+		al.add(show);
 		//System.out.println(al + " ail");
 	}
 
