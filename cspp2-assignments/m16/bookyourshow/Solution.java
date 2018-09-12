@@ -34,7 +34,7 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 2);
 		//System.out.println(Arrays.toString(tokens) + " get show");
 		ArrayList showsAvailable = new ArrayList();
-		System.out.println(al + " getClass");
+		//System.out.println(al + " getClass");
 		for(Object each: al){
 			
             // if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
@@ -73,7 +73,7 @@ class Solution {
             	case "get":
             		ArrayList shows = bys.getAShow(keys[1]);
             		if(shows.size() == 1) {
-            			System.out.println(shows);
+            			System.out.println(shows.get(0));
             		}
             		break;
 
