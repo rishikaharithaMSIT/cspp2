@@ -22,6 +22,9 @@ class Solution {
             String[] tokens = line.split(",", 3);
             switch(keys[0]) {
             	case "add":
+            	System.out.println(keys[1]);
+            	System.out.println(tokens[0]);
+            	System.out.println(tokens[1]);
             	System.out.println(tokens[2]);
             }
         }
