@@ -58,6 +58,8 @@ class BookYourShow {
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
+
+		System.out.println(al);
 	}
 
 
