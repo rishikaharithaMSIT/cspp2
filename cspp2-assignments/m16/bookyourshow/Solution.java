@@ -115,6 +115,7 @@ class Solution {
             		if(shows.size() == 1) {
             			System.out.println(shows.get(0));
             		}
+            		System.out.println(shows);
             		break;
             	case "book":
             		bys.bookAShow(keys[1]);
