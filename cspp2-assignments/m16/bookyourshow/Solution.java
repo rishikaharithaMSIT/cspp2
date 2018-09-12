@@ -42,11 +42,16 @@ class BookYourShow {
             // }
         }
         if(showsAvailable.size() == 0) {
-        	showsAvailable.add("No Shows");
+        	showsAvailable.add("No Show");
         }
 
 
 		return showsAvailable;
+	}
+
+	void bookAShow(String inp){
+		String[] tokens = inp.split(",", 4);
+		System.out.println(Arrays.toString(tokens) + " book amma");
 	}
 
 
@@ -76,6 +81,8 @@ class Solution {
             			System.out.println(shows.get(0));
             		}
             		break;
+            	case "book":
+            		bys.bookAShow(keys[1]);
 
             	
             }
