@@ -131,7 +131,9 @@ class BookYourShow {
         
 	}
 	void showAll() {
-
+		for(Show each: al){
+			System.out.println(Arrays.toString(each.seats));
+		}
 	}
 
 
