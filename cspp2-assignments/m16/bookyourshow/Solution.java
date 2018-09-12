@@ -9,14 +9,18 @@ class Show {
 	Show(String movieName, String dateTime, String seats) {
 		this.movieName = movieName;
 		this.dateTime = dateTime;
-		this.seatString = seats;
 		seats = seats.replace("[","");
 		seats = seats.replace("]","");		
 		this.seats = seats.split(",");
 		//System.out.println(Arrays.toString(this.seats) + " seats");
 	}
-	String getMovie(){
-		return movieName;
+	String getSeats(){
+		seatString = "[";
+		for(int i =0;i<seats.length;i++){
+			seatString += seats[i];
+		}
+		seatString += "]";
+		return seatString;
 	}
 
 }
@@ -134,7 +138,7 @@ class BookYourShow {
 	}
 	void showAll() {
 		for(Show each: al){
-			System.out.println(each.movieName+","+each.dateTime+","+each.seatString);
+			System.out.println(each.movieName+","+each.dateTime+","+each.getSeats());
 			
 		}
 	}
