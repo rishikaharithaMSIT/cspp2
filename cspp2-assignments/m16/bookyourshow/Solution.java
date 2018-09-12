@@ -66,7 +66,12 @@ class BookYourShow {
 		inp = inp.replace("[","");
 		inp = inp.replace("]","");
 		seats = inp.split(",");
-		return true;
+		for(Show each: al){
+			if(seats.equals(each.seats)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
