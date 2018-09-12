@@ -88,13 +88,11 @@ class BookYourShow {
 	void bookAShow(String inp){
 		String[] tokens = inp.split(",", 5);
 		Patron p = new Patron(tokens[2],tokens[3]);
-		if(index == 0) {
-			System.out.println("No show");
-			return;
-		}
+		int flag = 0;
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
+				flag = 1;
 				//System.out.println(tokens[4] + " seats");	
 				//System.out.println(Arrays.toString(each.seats) + " sea");
 				if (checkAvailable(tokens[4], each.seats)){
@@ -105,6 +103,10 @@ class BookYourShow {
 	             	index++;
 	             }
 	         }
+	    }
+	    if(flag == 0) {
+	    	System.out.println("No show");
+	    	return;
 	    }
 
 		
