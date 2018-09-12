@@ -83,8 +83,8 @@ class BookYourShow {
 		String[] tokens = inp.split(",", 3);
 		
     		for(int j = 0; j<booked.length; j++) {
-    			System.out.println(Arrays.toString(tokens) + " tok");
-    			System.out.println(Arrays.toString(booked[0])+" book");
+    			//System.out.println(Arrays.toString(tokens) + " tok");
+    			//System.out.println(Arrays.toString(booked[0])+" book");
         		if(tokens.equals(booked[j])) {
         			System.out.println(tokens[0] + " boked");
         		}
