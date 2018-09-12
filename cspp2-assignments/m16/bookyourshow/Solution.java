@@ -5,11 +5,13 @@ class Show {
 	String movieName;
 	String dateTime;
 	String[] seats;
+	String seatString;
 	Show(String movieName, String dateTime, String seats) {
 		this.movieName = movieName;
 		this.dateTime = dateTime;
 		seats = seats.replace("[","");
 		seats = seats.replace("]","");
+		this.seatString = seats;
 		this.seats = seats.split(",");
 		//System.out.println(Arrays.toString(this.seats) + " seats");
 	}
@@ -132,7 +134,8 @@ class BookYourShow {
 	}
 	void showAll() {
 		for(Show each: al){
-			System.out.println(Arrays.toString(each.seats));
+			System.out.println(each.movieName+","+each.dateTime+","+each.seatString);
+			
 		}
 	}
 
