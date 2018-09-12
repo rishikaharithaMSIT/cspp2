@@ -4,13 +4,14 @@ import java.util.Arrays;
 class Show {
 	String movieName;
 	String dateTime;
-	String seats;
+	String[] seats;
 	Show(String movieName, String dateTime, String seats){
 		this.movieName = movieName;
 		this.dateTime = dateTime;
-		this.seats = seats;
-		System.out.println(seats.replace("[",""));
-		System.out.println(seats.replace("]",""));
+		seats = seats.replace("[","");
+		seats = seats.replace("]","");
+		this.seats = seats.split(",");
+		System.out.println(Arrays.toString(this.seats) + " seats");
 	}
 
 }
