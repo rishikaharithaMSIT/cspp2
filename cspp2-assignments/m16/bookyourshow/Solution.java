@@ -17,7 +17,13 @@ class Show {
 }
 
 class Patron {
-
+	String namePerson;
+	String phoneNumber;
+	Patron(String namePerson, String phoneNumber){
+		this.namePerson = namePerson;
+		this.phoneNumber = phoneNumber;
+		//System.out.println("name re : " + namePerson);
+	}
 }
 
 class BookYourShow {
