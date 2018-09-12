@@ -87,7 +87,7 @@ class BookYourShow {
     			//System.out.println(Arrays.toString(booked[j])+" book");
     			//System.out.println("each ele" + tokens[0] + " and " + booked[j][0]);
         		if(tokens[0].equals(booked[j][0]) && tokens[1].equals(booked[j][1]) && tokens[2].equals(booked[j][2])) {
-        			System.out.println(tokens[0] + " " + tokens[1] + " " + tokens[2]);
+        			System.out.println(tokens[3] + " " + tokens[0] + " " + tokens[1]);
         		}
         	}
         
