@@ -114,8 +114,11 @@ class Solution {
             		ArrayList shows = bys.getAShow(keys[1]);
             		if(shows.size() == 1) {
             			System.out.println(shows.get(0));
+            		}else {
+            			for(int i = 0;i<shows.size();i++) {
+            				System.out.println(shows.get(i));
+            			}
             		}
-            		System.out.println(shows);
             		break;
             	case "book":
             		bys.bookAShow(keys[1]);
