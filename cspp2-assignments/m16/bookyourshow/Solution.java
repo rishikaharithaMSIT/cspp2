@@ -92,6 +92,8 @@ class BookYourShow {
 		for(Show each: al){
 			//System.out.println(each.getMovie());
 			if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
+				System.out.println(tokens[4] + " seats");	
+				System.out.println(Arrays.toString(each.seats) + " sea");
 				if (checkAvailable(tokens[4], each.seats)){
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
