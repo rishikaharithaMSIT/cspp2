@@ -68,8 +68,8 @@ class BookYourShow {
 		seats = inp.split(",");
 		int len = seats.length;
 		int flag = 0;
-		System.out.println(Arrays.toString(seats) + " seats");	
-		System.out.println(Arrays.toString(sea) + " sea");
+		//System.out.println(Arrays.toString(seats) + " seats");	
+		//System.out.println(Arrays.toString(sea) + " sea");
 		
 		for(int i = 0; i < seats.length;i++) {
 			for(int j =0;j<sea.length;j++) {
