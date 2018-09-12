@@ -66,6 +66,8 @@ class BookYourShow {
 		inp = inp.replace("[","");
 		inp = inp.replace("]","");
 		seats = inp.split(",");
+		System.out.println(Arrays.toString(seats) + " seats");	
+		System.out.println(Arrays.toString(sea) + " sea");
 		if (seats.equals(sea)) {
 			return true;
 		}
