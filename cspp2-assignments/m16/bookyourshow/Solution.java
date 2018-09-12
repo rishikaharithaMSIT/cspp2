@@ -30,10 +30,22 @@ class BookYourShow {
 		al.add(show);
 	}
 
-	String getAShow(String inp) {
+	ArrayList getAShow(String inp) {
 		String[] tokens = inp.split(",", 2);
-		System.out.println(Arrays.toString(tokens) + " get show");
-		return "No show";
+		//System.out.println(Arrays.toString(tokens) + " get show");
+		ArrayList showsAvailable = new ArrayList();
+		for(Object each: al){
+			System.out.println(each.getClass() + " getClass");
+            // if(tokens[0].equals(each.movieName) && tokens[1].equals(each.dateTime)){
+            // 	showsAvailable.add(each);
+            // }
+        }
+        if(showsAvailable.size() == 0) {
+        	showsAvailable.add("No Shows");
+        }
+
+
+		return showsAvailable;
 	}
 
 
@@ -58,7 +70,7 @@ class Solution {
             	// System.out.println(tokens[1] + " t 1" );
             	// System.out.println(tokens[2] + " t 2" );
             	case "get":
-            		String show = bys.getAShow(keys[1]);
+            		ArrayList shows = bys.getAShow(keys[1]);
             		break;
 
             	
