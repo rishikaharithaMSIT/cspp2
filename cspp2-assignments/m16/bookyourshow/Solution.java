@@ -28,7 +28,7 @@ class Patron {
 
 class BookYourShow {
 
-	ArrayList al = new ArrayList();
+	List al = new ArrayList();
 
 	void addAShow(String inp) {
 		String[] tokens = inp.split(",", 3);
