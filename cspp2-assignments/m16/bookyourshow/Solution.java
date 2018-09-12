@@ -55,7 +55,7 @@ class BookYourShow {
             // }
         }
         if(showsAvailable.size() == 0) {
-        	showsAvailable.add("No Show");
+        	showsAvailable.add("No show");
         }
 
 
