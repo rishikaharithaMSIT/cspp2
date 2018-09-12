@@ -1,17 +1,27 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.ArrayList;
+/**
+ * Class for solution.
+ */
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
 
-class Solution {
-	public static void main(String[] args) {
+	}
+	/**
+	 * { function_description }.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		while (stdin.hasNext()) {
 			String line = stdin.nextLine();
 			String[] keys = line.split(" ", 2);
-			//System.out.println(keys[0] + " keys 0 " );
 			BookYourShow bys = new BookYourShow();
-			// System.out.println(keys[1] + "keys 1" );
-			// String[] tokens = keys[1].split(",", 3);
 			switch (keys[0]) {
 			case "add":
 				bys.addAShow(keys[1]);
