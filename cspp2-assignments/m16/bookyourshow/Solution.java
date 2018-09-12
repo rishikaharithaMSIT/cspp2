@@ -74,11 +74,11 @@ class BookYourShow {
 		for(int i = 0; i < seats.length;i++) {
 			for(int j =0;j<sea.length;j++) {
 				if (seats[i].equals(sea[j])){
-					flag++;
+					flag = 1;
 				}
 			}
 		}
-		if(flag == len) {
+		if(flag == 1) {
 			return true;
 		}
 		
