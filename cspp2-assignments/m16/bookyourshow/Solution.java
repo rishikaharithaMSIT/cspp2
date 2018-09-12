@@ -72,7 +72,7 @@ class BookYourShow {
 
 	             	booked[index][0] = tokens[0];
 	             	booked[index][1] = tokens[1];
-	             	booked[index][2] = tokens[3].trim();
+	             	booked[index][2] = tokens[3];
 	             	System.out.println(Arrays.deepToString(booked) + " booked arr");
 	             	index++;
 	         }
@@ -80,7 +80,7 @@ class BookYourShow {
 		
 	}
 	void printTickets(String inp) {
-		String[] tokens = inp.split(",", 2);
+		String[] tokens = inp.split(",", 3);
 		
     		for(int j = 0; j<booked.length; j++) {
     			System.out.println(Arrays.toString(tokens) + " tok");
