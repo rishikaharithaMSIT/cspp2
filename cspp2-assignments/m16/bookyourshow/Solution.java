@@ -1,6 +1,8 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+
 class Solution {
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
