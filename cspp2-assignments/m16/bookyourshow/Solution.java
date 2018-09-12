@@ -17,7 +17,11 @@ class Show {
 	String getSeats(){
 		seatString = "[";
 		for(int i =0;i<seats.length;i++){
-			seatString += seats[i];
+			if(i == seats.length -1) {
+				seatString += seats[i];
+			}else {
+				seatString += seats[i] + ",";
+			}
 		}
 		seatString += "]";
 		return seatString;
