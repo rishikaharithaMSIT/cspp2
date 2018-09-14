@@ -76,7 +76,7 @@ class ShoppingCart {
 		
 		float total = getTotalAmount();
 		float discount = (apply/100.0f)*total;
-		float tax = 0.15f*total;
+		float tax = 0.15f*(total-discount);
 		System.out.println("Name   quantity   Price");
 		for(int i=0;i<cart.size();i++) {
 			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
@@ -85,7 +85,7 @@ class ShoppingCart {
 		System.out.println("Total:"+total);
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
-		System.out.println("Payable amount: "+(getPayableAmount()-discount));
+		System.out.println("Payable amount: "+getPayableAmount());
 	}
 	boolean applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
