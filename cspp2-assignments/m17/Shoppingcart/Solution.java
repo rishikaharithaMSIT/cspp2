@@ -91,7 +91,7 @@ class ShoppingCart {
 		System.out.println("Total:"+total);
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
-		System.out.println("Payable amount: "+getPayableAmount());
+		System.out.println("Payable amount: "+(getPayableAmount()-discount));
 	}
 	void applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
