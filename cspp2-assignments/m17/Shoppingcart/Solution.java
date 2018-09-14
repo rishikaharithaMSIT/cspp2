@@ -42,16 +42,17 @@ class ShoppingCart {
 		if (isFirst == false) {
 			cart.add(item);
 			isFirst = true;
-		}		
-		for (int i = 0; i < cart.size(); i++) {
+		} else{	
+			for (int i = 0; i < cart.size(); i++) {
 
-			if((cart.get(i).productName).equals(item.productName)){
-				System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
-				cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.inCartQuantity))+"";
-				break;
-			}else {
-				cart.add(item);
-				break;
+				if((cart.get(i).productName).equals(item.productName)){
+					System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
+					cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.inCartQuantity))+"";
+					break;
+				}else {
+					cart.add(item);
+					break;
+				}
 			}
 		}
 
