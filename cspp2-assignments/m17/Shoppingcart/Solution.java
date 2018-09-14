@@ -40,10 +40,8 @@ class ShoppingCart {
 	void removeFromCart(Item item, int quan) {
 		for(int i =0;i<cart.size();i++) {
 			int cartQuan = Integer.parseInt(cart.get(i).inCartQuantity);
-			int totalQuan = Integer.parseInt(cart.get(i).quantity);
 			if(quan < cartQuan){
 				cart.get(i).inCartQuantity = (cartQuan - quan) + "";
-				cart.get(i).quantity = (totalQuan - quan) +"";
 				break;
 			}else {
 				cart.remove(cart.get(i));
