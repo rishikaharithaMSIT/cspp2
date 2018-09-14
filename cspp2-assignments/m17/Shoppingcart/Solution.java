@@ -30,7 +30,7 @@ class Solution {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
 			String[] keys = line.split(" ");
-			System.out.println(keys[0]);
+			//System.out.println(keys[0]);
 			switch(keys[0]) {
 				case "Item":
 					String[] tokens = keys[1].split(",");
