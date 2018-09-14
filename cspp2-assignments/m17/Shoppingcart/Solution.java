@@ -4,7 +4,13 @@ import java.util.ArrayList;
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * { var_description }.
      */
