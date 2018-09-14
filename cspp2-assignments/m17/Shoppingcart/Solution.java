@@ -15,8 +15,12 @@ class ShoppingCart {
 	ArrayList<Item> catalog = new ArrayList<Item>();
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
-		catalog.add(item);
-		System.out.println(catalog);
+		catalog.add(item);		
+	}
+	void showCatalog() {
+		for(int i=0; i< catalog.size();i++) {
+			System.out.println(catalog.get(i).productName + " in catalog showw");
+		}
 	}
 }
 class Solution {
@@ -32,8 +36,9 @@ class Solution {
 					String[] tokens = keys[1].split(",");
 					Item item = new Item(tokens[0], tokens[1], tokens[2]);
 					sc.addToCatalog(item);
-
-
+					break;
+				case "show":
+					sc.showCatalog();
 			}
 		}
 	}
