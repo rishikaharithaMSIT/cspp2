@@ -52,7 +52,7 @@ class ShoppingCart {
 	void getTotalAmount() {
 		float totalAmount = 0.0f;
 		for(int i=0;i<cart.size();i++) {
-			int quantity = Integer.parseInt(cart.get(i).quantity);
+			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
 			float unitPrice = cart.get(i).unitPrice;
 			totalAmount += (quantity*unitPrice);
 		}
