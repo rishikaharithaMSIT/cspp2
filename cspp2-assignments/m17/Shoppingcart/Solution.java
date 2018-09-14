@@ -45,10 +45,7 @@ class ShoppingCart {
 		//System.out.println(isFirst);
 
 		//cart.add(item);
-		Set<Item> set = new HashSet<Item>(cart);
-		System.out.println("-----------------");
-		System.out.println(set);
-		System.out.println("------------");
+		
 		if (isFirst == false) {
 			cart.add(item);
 			isFirst = true;
@@ -57,7 +54,7 @@ class ShoppingCart {
 		 	for (int i = 0; i < cart.size(); i++) {
 		// 		System.out.println(cart.get(i).inCartQuantity + " - " + cart.get(i).productName);
 		 		if(cart.get(i).productName.equals(item.productName)){
-		 			System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
+		 			//System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
 		 			cart.get(i).inCartQuantity = item.inCartQuantity;
 		// 			inCart = i;
 		 			break;
@@ -140,6 +137,7 @@ class ShoppingCart {
 }
 class Solution {
 	static ArrayList<Item> items = new ArrayList<Item>();
+	static ArrayList<Item> cart = new ArrayList<Item>();
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		boolean couponApplied = false;
@@ -164,7 +162,16 @@ class Solution {
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {						
 							items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
-							sc.addToCart(items.get(i));
+							if(cart.size() > 0) {
+								for(int j = 0;j<cart.size();j++) {
+									if(cart.get(j).productName.equals(tokens[1])) {
+										cart.get(j).inCartQuantity = items.get(i).inCartQuantity;
+									}
+								}
+							} else {
+								sc.addToCart(items.get(i));
+							}
+							
 						break;
 					}
 				}
