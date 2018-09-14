@@ -30,7 +30,7 @@ class ShoppingCart {
 		//System.out.println(catalog.size());
 		for(int i=0; i < cart.size();i++) {
 			System.out.println(cart.get(i).productName + " "+
-				cart.get(i).inCartQuantity + " " + cart.get(i).unitPrice);
+				cart.get(i).inCartQuantity);
 		}
 	}
 	void addToCart(Item item) {
@@ -81,7 +81,7 @@ class Solution {
 					//addToCart(item);
 					break;
 				case "show":
-					//sc.showCart();
+					sc.showCart();
 					break;
 				case "catalog":
 					sc.showCatalog();
