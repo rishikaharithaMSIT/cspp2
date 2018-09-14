@@ -163,7 +163,7 @@ class Solution {
 				    				
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
-					if(cart.size() != 0) {
+					if(cart.size() == 0) {
 						sc.addToCart(items.get(i));
 					}else {
 
