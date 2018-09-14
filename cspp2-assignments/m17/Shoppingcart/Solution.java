@@ -15,10 +15,11 @@ class ShoppingCart {
 	ArrayList<Item> catalog = new ArrayList<Item>();
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
-		catalog.add(item);		
+		catalog.add(item);
+		System.out.println(catalog.size());		
 	}
 	void showCatalog() {
-		System.out.println(catalog.size());
+		//System.out.println(catalog.size());
 		for(int i=0; i < catalog.size();i++) {
 			System.out.println(catalog + " in catalog showw");
 		}
