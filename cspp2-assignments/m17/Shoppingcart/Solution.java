@@ -38,7 +38,7 @@ class ShoppingCart {
 		}
 	}
 	void addToCart(Item item) {
-		cart.add(item);
+		//cart.add(item);
 		if (isFirst == false) {
 			cart.add(item);
 			isFirst = true;
