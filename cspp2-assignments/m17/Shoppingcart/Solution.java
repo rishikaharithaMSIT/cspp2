@@ -52,7 +52,7 @@ class ShoppingCart {
 					break;
 				}else {
 					cart.add(item);
-					break;
+				
 				}
 			}
 		}
