@@ -18,7 +18,13 @@ class ShoppingCart {
 	static int apply = 0;
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
-		catalog.add(item);
+		for (int i = 0; i < catalog.size(); i++) {
+			if(catalog.get(i).productName.equals(item.productName)){
+				catalog.get(i).inCartQuantity = item.quantity;
+			}else {
+				catalog.add(item);
+			}
+		}
 	}
 	void showCatalog() {
 		//System.out.println(catalog.size());
