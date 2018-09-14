@@ -165,6 +165,7 @@ class Solution {
 							
 							if(cart.size() > 0) {
 								for(int j = 0;j<cart.size();j++) {
+									System.out.println(cart.get(j).productName + " - " + tokens[0]);
 									if(cart.get(j).productName.equals(tokens[0])) {
 										System.out.println("same--------------------");
 										items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
