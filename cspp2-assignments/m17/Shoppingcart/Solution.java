@@ -160,8 +160,7 @@ class Solution {
 				//System.out.println(items.size());
                 System.out.println(tokens[0] + tokens[1]);
 				for (int i = 0; i < items.size(); i++) {
-				    System.out.println(items.get(i).productName + " Name of testproduct");
-				    System.out.println(items.get(i).inCartQuantity + " Quantity of the test");				
+				    				
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
 
@@ -178,6 +177,8 @@ class Solution {
 							} else {
 
 								items.get(i).inCartQuantity = tokens[1];
+								System.out.println(items.get(i).productName + " Name of testproduct");
+				    			System.out.println(items.get(i).inCartQuantity + " Quantity of the test");
 								sc.addToCart(items.get(i));
 								cart.add(items.get(i));
 							}
