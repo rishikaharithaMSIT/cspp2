@@ -79,6 +79,7 @@ class ShoppingCart {
 		for(int i=0;i<cart.size();i++) {
 			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
 		}
+		System.out.println("Total:"+total);
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
 		System.out.println("Payable amount: "+getPayableAmount());
