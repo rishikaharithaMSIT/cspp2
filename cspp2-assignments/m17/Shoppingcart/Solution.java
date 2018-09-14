@@ -158,7 +158,7 @@ class Solution {
 			case "add":
 				tokens = keys[1].split(",");
 				//System.out.println(items.size());
-                System.out.println(tokens[0] + tokens[1]);
+                //System.out.println(tokens[0] + tokens[1]);
 				for (int i = 0; i < items.size(); i++) {
 				    				
 					if (items.get(i).productName.equals(tokens[0]) &&
