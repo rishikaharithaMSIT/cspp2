@@ -16,8 +16,14 @@ class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
 	static ArrayList<Item> cart = new ArrayList<Item>();
 	static int apply = 0;
+	static boolean isFirst = false;
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
+		if (isFirst == false) {
+			catalog.add(item);
+			isFirst = true;
+		}
+		
 		for (int i = 0; i < catalog.size(); i++) {
 			if(catalog.get(i).productName.equals(item.productName)){
 				catalog.get(i).inCartQuantity = item.quantity;
