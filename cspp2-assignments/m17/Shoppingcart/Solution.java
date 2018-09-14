@@ -61,18 +61,19 @@ class ShoppingCart {
 	float getPayableAmount() {
 		float total = 0.0f;
 		float tax = 0.0f;
-		float discount = (apply / 100.0f) * total;
-		System.out.println("discountttttttttttttttt" + discount);
+		
+		//System.out.println("discountttttttttttttttt" + discount);
 		for (int i = 0; i < cart.size(); i++) {
 			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
 			float unitPrice = cart.get(i).unitPrice;
 			total += (quantity * unitPrice);
 		}
 		//System.out.println("Total"+totalAmount);
+		float discount = (apply / 100.0f) * total;
 		tax = 0.15f * (total - discount);
-		System.out.println("taxxxxxxxxxxxxxx" + tax);
+		//System.out.println("taxxxxxxxxxxxxxx" + tax);
 		float totalAmount = total + tax - discount;
-		System.out.println("total ammmonttttttttttt"+totalAmount);
+		//System.out.println("total ammmonttttttttttt"+totalAmount);
 		return totalAmount;
 	}
 	void printInvoice() {
