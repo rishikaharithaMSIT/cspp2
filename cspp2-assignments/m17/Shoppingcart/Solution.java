@@ -153,12 +153,13 @@ class Solution {
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
 						items.get(i).inCartQuantity = previousVal + Integer.parseInt(tokens[1]) + "" ;
-						previousVal = Integer.parseInt(items.get(i).inCartQuantity);
+
 						sc.addToCart(items.get(i));
 						break;
 					}
+
 				}
-				//addToCart(item);
+				previousVal = Integer.parseInt(tokens[1]);
 				break;
 			case "show":
 				sc.showCart();
