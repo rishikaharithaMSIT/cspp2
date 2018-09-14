@@ -38,7 +38,8 @@ class ShoppingCart {
 		}
 	}
 	void addToCart(Item item) {
-		//cart.add(item);
+		System.out.println(isFirst);
+		// cart.add(item);
 		if (isFirst == false) {
 			cart.add(item);
 			isFirst = true;
@@ -56,7 +57,7 @@ class ShoppingCart {
 			}else {
 				cart.get(inCart).inCartQuantity = Integer.parseInt(cart.get(inCart).inCartQuantity) + Integer.parseInt(item.inCartQuantity) + "";
 			}
-		}
+		 }
 
 	}
 	void removeFromCart(Item item, int quan) {
