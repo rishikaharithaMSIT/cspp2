@@ -19,19 +19,9 @@ class ShoppingCart {
 	static boolean isFirst = false;
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
-		if (isFirst == false) {
+		
 			catalog.add(item);
-			isFirst = true;
-		}		
-		for (int i = 0; i < catalog.size(); i++) {
-			if(catalog.get(i).productName.equals(item.productName)){
-				catalog.get(i).inCartQuantity = (Integer.parseInt(catalog.get(i).inCartQuantity)+Integer.parseInt(item.quantity))+"";
-				break;
-			}else {
-				catalog.add(item);
-				break;
-			}
-		}
+			
 	}
 	void showCatalog() {
 		//System.out.println(catalog.size());
@@ -49,6 +39,19 @@ class ShoppingCart {
 	}
 	void addToCart(Item item) {
 		cart.add(item);
+		if (isFirst == false) {
+			cart.add(item);
+			isFirst = true;
+		}		
+		for (int i = 0; i < cart.size(); i++) {
+			if(cart.get(i).productName.equals(item.productName)){
+				cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.quantity))+"";
+				break;
+			}else {
+				cart.add(item);
+				break;
+			}
+		}
 
 	}
 	void removeFromCart(Item item, int quan) {
