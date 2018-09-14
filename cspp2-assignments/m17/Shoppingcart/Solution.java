@@ -12,8 +12,11 @@ class Item{
 	}
 }
 class ShoppingCart {
+	ArrayList<Item> catalog = new ArrayList<Item>();
 	void addToCatalog(Item item) {
-		System.out.println("hi "+ item.productName);
+		//System.out.println("hi "+ item.productName);
+		catalog.add(item);
+		System.out.println(catalog);
 	}
 }
 class Solution {
