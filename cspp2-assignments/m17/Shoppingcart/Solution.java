@@ -41,6 +41,7 @@ class ShoppingCart {
 		for(int i =0;i<cart.size();i++) {
 			int cartQuan = Integer.parseInt(cart.get(i).inCartQuantity);
 			if(quan < cartQuan){
+				System.out.println(cart.get(i).productName + " in remove");
 				cart.get(i).inCartQuantity = (cartQuan - quan) + "";
 				break;
 			}else {
