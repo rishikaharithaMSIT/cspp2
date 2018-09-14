@@ -38,17 +38,14 @@ class ShoppingCart {
 
 	}
 	void removeFromCart(Item item, int quan) {
-		for(int i =0;i<cart.size();i++) {
-			int cartQuan = Integer.parseInt(cart.get(i).inCartQuantity);
+			int cartQuan = Integer.parseInt(item.inCartQuantity);
 			if(quan < cartQuan){
-				System.out.println(cart.get(i).productName + " in remove");
-				cart.get(i).inCartQuantity = (cartQuan - quan) + "";
-				break;
+				//System.out.println(item.productName + " in remove");
+				item.inCartQuantity = (cartQuan - quan) + "";
 			}else {
-				cart.remove(cart.get(i));
-				break;
+				cart.remove(item);
 			}
-		}
+		
 	}
 	void getTotalAmount() {
 		float totalAmount = 0.0f;
