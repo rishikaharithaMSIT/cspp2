@@ -4,12 +4,12 @@ import java.util.ArrayList;
 class Item{
 	String productName;
 	String quantity;
-	String unitPrice;
+	float unitPrice;
 	String inCartQuantity;
 	Item(String productName, String quantity, String unitPrice) {
 		this.productName = productName;
 		this.quantity = quantity;
-		this.unitPrice = unitPrice;
+		this.unitPrice = Float.parseFloat(unitPrice);
 	}
 }
 class ShoppingCart {
