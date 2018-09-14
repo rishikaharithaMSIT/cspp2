@@ -159,17 +159,20 @@ class Solution {
 				tokens = keys[1].split(",");
 				//System.out.println(items.size());
                 //System.out.println(tokens[0] + tokens[1]);
+				outerloop:
 				for (int i = 0; i < items.size(); i++) {
 				    				
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
-					if(cart.size() == 0) {
-						sc.addToCart(items.get(i));
-						break;
-					}else {
-
-					}					
-						
+					        for(int j = 0; j < cart.size(); j++) {
+					        	if(items.get(i).productName.equals(cart.get(j).productName)) {
+					        		cart.get(j).inCartQuantity = Integer.parseInt(cart.get(j).inCartQuantity) +
+					        		Integer.parseInt(tokens[1]) +"";
+					        		sc.addToCart(cart.get(j));
+					        		break outerloop;
+					        	}
+					        }
+					        sc.addToCart(items.get(i));
 					}
 				}
 				//addToCart(item);
