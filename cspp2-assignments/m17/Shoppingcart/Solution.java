@@ -170,7 +170,7 @@ class Solution {
 					        		items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) +
 					        		Integer.parseInt(tokens[1]) +"";
 					        		//System.out.println(items.get(i).);
-					        		sc.addToCart(items.get(i));
+					        		// sc.addToCart(items.get(i));
 					        		break outerloop;
 					        	}
 					        }
