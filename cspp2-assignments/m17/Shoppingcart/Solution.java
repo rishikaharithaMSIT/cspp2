@@ -70,7 +70,7 @@ class ShoppingCart {
 		//System.out.println("Total"+totalAmount);
 		tax = 0.15f * (total - discount);
 		float totalAmount = total + tax - discount;
-		return totalAmount;
+		return totalAmount- discount;
 	}
 	void printInvoice() {
 
@@ -85,7 +85,7 @@ class ShoppingCart {
 		System.out.println("Total:" + total);
 		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + tax);
-		System.out.println("Payable amount: " + getPayableAmount());
+		System.out.println("Payable amount: " + (getPayableAmount()-discount));
 	}
 	boolean applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
