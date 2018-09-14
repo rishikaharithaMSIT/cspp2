@@ -15,13 +15,12 @@ class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
-		catalog.add(item);
-		System.out.println(catalog.size());		
+		catalog.add(item);	
 	}
 	void showCatalog() {
 		//System.out.println(catalog.size());
 		for(int i=0; i < catalog.size();i++) {
-			System.out.println(catalog + " in catalog showw");
+			System.out.println(catalog.get(i).productName + " in catalog showw");
 		}
 	}
 }
