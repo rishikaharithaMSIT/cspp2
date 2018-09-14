@@ -163,27 +163,12 @@ class Solution {
 				    				
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
+					if(cart.size() != 0) {
+						sc.addToCart(items.get(i));
+					}else {
 
-							if(cart.size() > 0) {
-								for(int j = 0;j<cart.size();j++) {
-									System.out.println(cart.get(j).productName + " - " + tokens[0]);
-									if(cart.get(j).productName.equals(tokens[0])) {
-										System.out.println("same--------------------");
-										items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
-										//cart.get(j).inCartQuantity = items.get(i).inCartQuantity;
-										
-									}
-								}
-							} else {
-
-								items.get(i).inCartQuantity = tokens[1];
-								System.out.println(items.get(i).productName + " Name of testproduct");
-				    			System.out.println(items.get(i).inCartQuantity + " Quantity of the test");
-								sc.addToCart(items.get(i));
-								cart.add(items.get(i));
-							}
-							
-						break;
+					}					
+						
 					}
 				}
 				//addToCart(item);
