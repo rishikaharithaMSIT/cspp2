@@ -21,8 +21,10 @@ class ShoppingCart {
 		for (int i = 0; i < catalog.size(); i++) {
 			if(catalog.get(i).productName.equals(item.productName)){
 				catalog.get(i).inCartQuantity = item.quantity;
+				break;
 			}else {
 				catalog.add(item);
+				break;
 			}
 		}
 	}
