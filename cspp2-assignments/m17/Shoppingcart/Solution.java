@@ -15,7 +15,7 @@ class Item{
 class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
 	static ArrayList<Item> cart = new ArrayList<Item>();
-	static int applyCoupon = 0;
+	static int apply = 0;
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
 		catalog.add(item);	
@@ -75,7 +75,7 @@ class ShoppingCart {
 	void printInvoice() {
 		
 		float total = getTotalAmount();
-		float discount = (applyCoupon/100)*total;
+		float discount = (apply/100)*total;
 		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
 		for(int i=0;i<catalog.size();i++) {
@@ -96,7 +96,7 @@ class ShoppingCart {
 	void applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
 		//System.out.println("couponnnnnnnnnnnnnnnnnnnnnnnn" + coupons[1]);
-		applyCoupon =  Integer.parseInt(coupons[1]);
+		apply =  Integer.parseInt(coupons[1]);
 	}
 }
 class Solution {
