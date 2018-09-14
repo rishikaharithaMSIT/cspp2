@@ -45,7 +45,7 @@ class ShoppingCart {
 		} else{	
 			int inCart = -1;
 			for (int i = 0; i < cart.size(); i++) {
-				//System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
+				System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
 				if((cart.get(i).productName).equals(item.productName)){
 					inCart = i;
 				}
