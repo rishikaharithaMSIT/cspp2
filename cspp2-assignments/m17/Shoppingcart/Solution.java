@@ -24,7 +24,7 @@ final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         boolean couponApplied = false;
         while (stdin.hasNext()) {
@@ -45,8 +45,8 @@ final class Solution {
                 outerloop:
                 for (int i = 0; i < items.size(); i++) {
 
-                    if (items.get(i).productName.equals(tokens[0]) &&
-                            Integer.parseInt(items.get(i).quantity)
+                    if (items.get(i).productName.equals(tokens[0])
+                            && Integer.parseInt(items.get(i).quantity)
                             >= Integer.parseInt(tokens[1])) {
                         for (int j = 0; j < cart.size(); j++) {
                             if (items.get(i).productName.equals(
