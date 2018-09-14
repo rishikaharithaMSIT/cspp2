@@ -81,7 +81,10 @@ class Solution {
 					//addToCart(item);
 					break;
 				case "show":
-					sc.showCart();
+					//sc.showCart();
+					break;
+				case "catalog":
+					sc.showCatalog();
 					break;
 				case "remove":
 					tokens = keys[1].split(",");
