@@ -161,14 +161,16 @@ class Solution {
 				for (int i = 0; i < items.size(); i++) {					
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {						
-							items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
+							
 							if(cart.size() > 0) {
 								for(int j = 0;j<cart.size();j++) {
 									if(cart.get(j).productName.equals(tokens[0])) {
-										cart.get(j).inCartQuantity = items.get(i).inCartQuantity;
+										items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
+										//cart.get(j).inCartQuantity = items.get(i).inCartQuantity;
 									}
 								}
 							} else {
+								items.get(i).inCartQuantity = tokens[1];
 								sc.addToCart(items.get(i));
 							}
 							
