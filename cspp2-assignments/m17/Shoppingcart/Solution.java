@@ -5,6 +5,7 @@ class Item{
 	String productName;
 	String quantity;
 	String unitPrice;
+	String inCartQuantity;
 	Item(String productName, String quantity, String unitPrice) {
 		this.productName = productName;
 		this.quantity = quantity;
@@ -26,8 +27,13 @@ class ShoppingCart {
 		}
 	}
 	void addToCart(Item item) {
-		cart.add(item);
-		System.out.println(cart + " in cart");
+		cart.add(item); 
+
+	}
+	void removeFromCart(Item item) {
+		// for(int i =0;i<cart.size();i++) {
+		// 	if(cart.get(i).quantity)
+		// }
 	}
 }
 class Solution {
@@ -56,17 +62,23 @@ class Solution {
 
 						if(items.get(i).productName.equals(tokens[0]) &&
 							Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])){
-							//System.out.println("here");
+							items.get(i).inCartQuantity = tokens[1];
 							sc.addToCart(items.get(i));
-							//System.out.println(items.get(i).quantity + " before");
-							//items.get(i).quantity = tokens[1];
-							//System.out.println(items.get(i).quantity+ " af");
 						}
 					}
 					//addToCart(item);
 					break;
 				case "show":
 					//sc.showCatalog();
+					break;
+				case "remove":
+					// for(int i=0;i<items.size();i++) {
+					// 	if(items.get(i).productName.equals(tokens[0])){
+					// 		sc.removeFromCart(items.get(i));
+					// 	}
+					// }
+					break;
+					
 			}
 		}
 	}
