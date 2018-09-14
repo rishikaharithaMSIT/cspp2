@@ -68,7 +68,7 @@ class ShoppingCart {
 			total += (quantity*unitPrice);
 		}
 		//System.out.println("Total"+totalAmount);
-		tax = 0.15f*discount;
+		tax = 0.15f*(total-discount);
 		float totalAmount = total+tax-discount;
 		return totalAmount;
 	}
