@@ -18,7 +18,7 @@ class ShoppingCart {
 		catalog.add(item);		
 	}
 	void showCatalog() {
-		System.out.println("in show");
+		System.out.println(catalog.size());
 		for(int i=0; i < catalog.size();i++) {
 			System.out.println(catalog + " in catalog showw");
 		}
