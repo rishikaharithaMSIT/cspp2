@@ -75,7 +75,7 @@ class ShoppingCart {
 	void printInvoice() {
 		
 		float total = getTotalAmount();
-		float discount = applyCoupon*total;
+		float discount = (applyCoupon/100)*total;
 		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
 		for(int i=0;i<catalog.size();i++) {
