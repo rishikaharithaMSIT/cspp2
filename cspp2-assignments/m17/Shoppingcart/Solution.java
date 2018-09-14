@@ -14,11 +14,11 @@ final class Solution {
     /**
      * { var_description }.
      */
-    static ArrayList<Item> items = new ArrayList<Item>();
+    private static ArrayList<Item> items = new ArrayList<Item>();
     /**
      * { var_description }.
      */
-    static ArrayList<Item> cart = new ArrayList<Item>();
+    private static ArrayList<Item> cart = new ArrayList<Item>();
     /**
      * { function_description }.
      *
