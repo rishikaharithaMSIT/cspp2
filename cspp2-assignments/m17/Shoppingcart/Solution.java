@@ -49,6 +49,15 @@ class ShoppingCart {
 			}
 		}
 	}
+	void getTotalAmount() {
+		float totalAmount = 0.0f;
+		for(int i=0;i<cart.size();i++) {
+			int quantity = Integer.parseInt(cart.get(i).quantity);
+			float unitPrice = cart.get(i).unitPrice;
+			totalAmount += (quantity*unitPrice);
+		}
+		System.out.println(totalAmount);
+	}
 }
 class Solution {
 	static ArrayList<Item> items = new ArrayList<Item>();
@@ -98,6 +107,9 @@ class Solution {
 							break;
 						}
 					}
+					break;
+				case "totalAmount":
+					sc.getTotalAmount();
 					break;
 					
 			}
