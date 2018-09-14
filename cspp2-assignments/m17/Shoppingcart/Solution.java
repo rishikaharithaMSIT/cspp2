@@ -15,6 +15,7 @@ class Item{
 class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
 	static ArrayList<Item> cart = new ArrayList<Item>();
+	static int applyCoupon = 0;
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
 		catalog.add(item);	
@@ -72,8 +73,9 @@ class ShoppingCart {
 		return totalAmount;
 	}
 	void printInvoice() {
-		float discount = 0.0f;
+		
 		float total = getTotalAmount();
+		float discount = applyCoupon*total;
 		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
 		for(int i=0;i<catalog.size();i++) {
@@ -91,11 +93,16 @@ class ShoppingCart {
 		System.out.println("Tax:"+tax);
 		System.out.println("Payable amount: "+getPayableAmount());
 	}
+	void applyCoupon(String coupon) {
+		String[] coupons = coupon.split("D");
+		applyCoupon =  Integer.parseInt(coupons[1]);
+	}
 }
 class Solution {
 	static ArrayList<Item> items = new ArrayList<Item>();
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
+		boolean couponApplied = false;
 		while(stdin.hasNext()) {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
@@ -147,6 +154,13 @@ class Solution {
 					break;
 				case "payableAmount":
 					System.out.println("Payable amount: "+sc.getPayableAmount());
+					break;
+				case "coupon":
+
+					if(!couponApplied) {
+						sc.applyCoupon(keys[1]);
+						couponApplied = true;
+					}
 					break;
 				case "print":
 					sc.printInvoice();
