@@ -44,8 +44,9 @@ class ShoppingCart {
 			isFirst = true;
 		}		
 		for (int i = 0; i < cart.size(); i++) {
-			System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
+
 			if((cart.get(i).productName).equals(item.productName)){
+				System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
 				cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.inCartQuantity))+"";
 				break;
 			}else {
