@@ -165,6 +165,7 @@ class Solution {
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
 					if(cart.size() == 0) {
 						sc.addToCart(items.get(i));
+						break;
 					}else {
 
 					}					
