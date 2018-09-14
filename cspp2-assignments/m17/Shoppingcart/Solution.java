@@ -159,7 +159,7 @@ class Solution {
 							isFirst = true;
 						}else {
 							items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
-							sc.addToCart(items.get(i));
+							
 						}
 						
 						break;
