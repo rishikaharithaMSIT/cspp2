@@ -157,7 +157,7 @@ class Solution {
 					break;
 				case "coupon":
 
-					if(!couponApplied) {
+					if(couponApplied == false) {
 						sc.applyCoupon(keys[1]);
 						couponApplied = true;
 					}
