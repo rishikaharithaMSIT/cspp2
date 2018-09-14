@@ -169,6 +169,7 @@ class Solution {
 
 										items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
 										//cart.get(j).inCartQuantity = items.get(i).inCartQuantity;
+										break;
 									}
 								}
 							} else {
