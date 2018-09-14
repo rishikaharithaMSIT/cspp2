@@ -31,13 +31,14 @@ class ShoppingCart {
 	}
 }
 class Solution {
+	static ArrayList<Item> items = new ArrayList<Item>();
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		while(stdin.hasNext()) {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
 			String[] keys = line.split(" ");
-			ArrayList<Item> items = new ArrayList<Item>();
+			
 			switch(keys[0]) {
 				case "Item":
 					String[] tokens = keys[1].split(",");
