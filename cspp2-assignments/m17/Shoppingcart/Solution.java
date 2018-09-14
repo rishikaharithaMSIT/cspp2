@@ -95,6 +95,7 @@ class ShoppingCart {
 	}
 	void applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
+		//System.out.println("couponnnnnnnnnnnnnnnnnnnnnnnn" + coupons[1]);
 		applyCoupon =  Integer.parseInt(coupons[1]);
 	}
 }
