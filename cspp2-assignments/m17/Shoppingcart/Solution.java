@@ -129,7 +129,7 @@ class Solution {
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		boolean couponApplied = false;
-		int previousVal = 0;
+		boolean isFirst = false;
 		while (stdin.hasNext()) {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
@@ -145,21 +145,27 @@ class Solution {
 			case "add":
 				tokens = keys[1].split(",");
 				//System.out.println(items.size());
+
 				for (int i = 0; i < items.size(); i++) {
 					//System.out.println(items.get(i).productName +" "+ tokens[0]);
 					//System.out.println(items.get(i).quantity +" "+ tokens[1]);
 					//System.out.println(items.get(i).unitPrice +" "+ tokens[2]);
-
+					
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
-						items.get(i).inCartQuantity = previousVal + Integer.parseInt(tokens[1]) + "" ;
-
-						sc.addToCart(items.get(i));
+						if(isFirst == false) {
+							items.get(i).inCartQuantity = tokens[1];
+							sc.addToCart(items.get(i));
+							isFirst = true;
+						}else {
+							items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) + Integer.parseInt(tokens[1])+"";
+							sc.addToCart(items.get(i));
+						}
+						
 						break;
 					}
-
 				}
-				previousVal = Integer.parseInt(tokens[1]);
+				//addToCart(item);
 				break;
 			case "show":
 				sc.showCart();
