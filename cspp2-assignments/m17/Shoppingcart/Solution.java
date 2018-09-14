@@ -178,6 +178,7 @@ class Solution {
 					        System.out.println(items.get(i).inCartQuantity + " in xysc");
 					        sc.addToCart(items.get(i));
 					        cart.add(items.get(i));
+					        break;
 					}
 				}
 				//addToCart(item);
