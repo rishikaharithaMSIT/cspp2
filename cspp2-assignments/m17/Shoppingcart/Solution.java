@@ -48,9 +48,9 @@ class Solution {
 					break;
 				case "add":
 					tokens = keys[1].split(",");
-					System.out.println(items.size());
+					//System.out.println(items.size());
 					for(int i=0;i<items.size();i++) {
-						System.out.println(items.get(i).productName +" "+ tokens[0]);
+						//System.out.println(items.get(i).productName +" "+ tokens[0]);
 						if(items.get(i).productName == tokens[0] &&
 							items.get(i).quantity == tokens[1]&&
 							items.get(i).unitPrice == tokens[2]){
