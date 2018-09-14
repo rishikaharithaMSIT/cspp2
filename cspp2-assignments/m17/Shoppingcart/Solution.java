@@ -54,12 +54,13 @@ class Solution {
 						//System.out.println(items.get(i).quantity +" "+ tokens[1]);
 						//System.out.println(items.get(i).unitPrice +" "+ tokens[2]);
 
-						if(items.get(i).productName.equals(tokens[0])){
+						if(items.get(i).productName.equals(tokens[0]) &&
+							Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])){
 							//System.out.println("here");
 							sc.addToCart(items.get(i));
-							System.out.println(items.get(i).quantity + " before");
-							items.get(i).quantity = tokens[1];
-							System.out.println(items.get(i).quantity+ " af");
+							//System.out.println(items.get(i).quantity + " before");
+							//items.get(i).quantity = tokens[1];
+							//System.out.println(items.get(i).quantity+ " af");
 						}
 					}
 					//addToCart(item);
