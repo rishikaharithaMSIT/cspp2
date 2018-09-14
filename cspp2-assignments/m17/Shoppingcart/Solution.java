@@ -19,7 +19,7 @@ class ShoppingCart {
 	}
 	void showCatalog() {
 		for(int i=0; i< catalog.size();i++) {
-			System.out.println(catalog.get(i).productName + " in catalog showw");
+			System.out.println(catalog + " in catalog showw");
 		}
 	}
 }
