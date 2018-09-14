@@ -49,7 +49,7 @@ class ShoppingCart {
 		 	for (int i = 0; i < cart.size(); i++) {
 		// 		System.out.println(cart.get(i).inCartQuantity + " - " + cart.get(i).productName);
 		 		if((cart.get(i).productName).equals(item.productName)){
-		// 			System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
+		 			System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
 		 			cart.get(i).inCartQuantity = item.inCartQuantity;
 		// 			inCart = i;
 		 		} else {
