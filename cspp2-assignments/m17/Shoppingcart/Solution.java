@@ -44,8 +44,10 @@ class ShoppingCart {
 			if(quan < cartQuan){
 				cart.get(i).inCartQuantity = (cartQuan - quan) + "";
 				cart.get(i).quantity = (totalQuan - quan) +"";
+				break;
 			}else {
 				cart.remove(cart.get(i));
+				break;
 			}
 		}
 	}
