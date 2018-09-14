@@ -26,6 +26,13 @@ class ShoppingCart {
 				catalog.get(i).quantity + " " + catalog.get(i).unitPrice);
 		}
 	}
+	void showCart() {
+		//System.out.println(catalog.size());
+		for(int i=0; i < cart.size();i++) {
+			System.out.println(cart.get(i).productName + " "+
+				cart.get(i).inCartQuantity + " " + cart.get(i).unitPrice);
+		}
+	}
 	void addToCart(Item item) {
 		cart.add(item); 
 
@@ -74,7 +81,7 @@ class Solution {
 					//addToCart(item);
 					break;
 				case "show":
-					//sc.showCatalog();
+					sc.showCart();
 					break;
 				case "remove":
 					tokens = keys[1].split(",");
