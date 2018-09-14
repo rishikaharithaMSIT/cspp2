@@ -166,9 +166,9 @@ class Solution {
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
 					        for(int j = 0; j < cart.size(); j++) {
 					        	if(items.get(i).productName.equals(cart.get(j).productName)) {
-					        		cart.get(j).inCartQuantity = Integer.parseInt(cart.get(j).inCartQuantity) +
+					        		items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) +
 					        		Integer.parseInt(tokens[1]) +"";
-					        		sc.addToCart(cart.get(j));
+					        		sc.addToCart(items.get(i));
 					        		break outerloop;
 					        	}
 					        }
