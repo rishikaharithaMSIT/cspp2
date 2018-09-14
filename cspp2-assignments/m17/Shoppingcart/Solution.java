@@ -13,6 +13,7 @@ class Item{
 }
 class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
+	static ArrayList<Item> cart = new ArrayList<Item>();
 	void addToCatalog(Item item) {
 		//System.out.println("hi "+ item.productName);
 		catalog.add(item);	
@@ -24,6 +25,10 @@ class ShoppingCart {
 				catalog.get(i).quantity + " " + catalog.get(i).unitPrice);
 		}
 	}
+	void addToCart(Item item) {
+		cart.add(item);
+		System.out.println(cart + " in cart");
+	}
 }
 class Solution {
 	public static void main(String[] args) {
@@ -32,12 +37,24 @@ class Solution {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
 			String[] keys = line.split(" ");
-			//System.out.println(keys[0]);
+			ArrayList<Item> items = new ArrayList<Item>();
 			switch(keys[0]) {
 				case "Item":
 					String[] tokens = keys[1].split(",");
 					Item item = new Item(tokens[0], tokens[1], tokens[2]);
 					sc.addToCatalog(item);
+					items.add(item);
+					break;
+				case "add":
+					tokens = keys[1].split(",");
+					for(int i=0;i<items.size();i++) {
+						if(items.get(i).productName == tokens[0] &&
+							items.get(i).quantity == tokens[1]&&
+							items.get(i).unitPrice == tokens[2]){
+							sc.addToCart(items.get(i));
+						}
+					}
+					//addToCart(item);
 					break;
 				case "show":
 					sc.showCatalog();
