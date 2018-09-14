@@ -46,7 +46,8 @@ class Solution {
                             if (items.get(i).productName.equals(
                                         cart.get(j).productName)) {
                                 items.get(i).inCartQuantity
-                                    = Integer.parseInt(items.get(i).inCartQuantity)
+                                    = Integer.parseInt(
+                                          items.get(i).inCartQuantity)
                                       + Integer.parseInt(tokens[1]) + "";
                                 break outerloop;
                             }
@@ -68,7 +69,6 @@ class Solution {
                 tokens = keys[1].split(",");
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).productName.equals(tokens[0])) {
-                        //System.out.println(items.get(i).productName + " " +tokens[0]);
                         sc.removeFromCart(items.get(i),
                                           Integer.parseInt(tokens[1]));
                         break;
@@ -94,6 +94,7 @@ class Solution {
             case "print":
                 sc.printInvoice();
                 break;
+            default :
 
             }
         }
