@@ -47,37 +47,41 @@ class ShoppingCart {
 			}
 		
 	}
-	void getTotalAmount() {
+	float getTotalAmount() {
 		float totalAmount = 0.0f;
 		for(int i=0;i<cart.size();i++) {
 			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
 			float unitPrice = cart.get(i).unitPrice;
 			totalAmount += (quantity*unitPrice);
 		}
-		System.out.println("totalAmount: "+totalAmount);
+		return totalAmount;
+		
 	}
 	float getPayableAmount() {
-		float totalAmount = 0.0f;
+		float total = 0.0f;
+		float tax = 0.0f;
+
 		for(int i=0;i<cart.size();i++) {
 			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
 			float unitPrice = cart.get(i).unitPrice;
-			totalAmount += (quantity*unitPrice);
+			total += (quantity*unitPrice);
 		}
 		//System.out.println("Total"+totalAmount);
+		tax = 0.15f*total;
+		float totalAmount = total+tax;
 		return totalAmount;
 	}
 	void printInvoice() {
 		float discount = 0.0f;
-		float tax = 0.0f;
-		float total = getPayableAmount();
-		tax = 0.15f*total;
+		float total = getTotalAmount();
+		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
 		for(int i=0;i<cart.size();i++) {
 			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
 		}
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
-		System.out.println("Payable amount: "+(total+tax));
+		System.out.println("Payable amount: "+getPayableAmount());
 	}
 }
 class Solution {
@@ -131,10 +135,10 @@ class Solution {
 					}
 					break;
 				case "totalAmount":
-					sc.getTotalAmount();
+					System.out.println("totalAmount: "+sc.getTotalAmount());
 					break;
 				case "payableAmount":
-					System.out.println("Total:"+sc.getPayableAmount());
+					System.out.println("Payable amount: "+sc.getPayableAmount());
 					break;
 				case "print":
 					sc.printInvoice();
