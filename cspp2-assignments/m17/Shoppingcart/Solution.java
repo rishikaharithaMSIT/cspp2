@@ -78,6 +78,7 @@ class Solution {
 							Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])){
 							items.get(i).inCartQuantity = tokens[1];
 							sc.addToCart(items.get(i));
+							break;
 						}
 					}
 					//addToCart(item);
@@ -94,6 +95,7 @@ class Solution {
 						if(items.get(i).productName.equals(tokens[0])){
 							sc.removeFromCart(items.get(i), 
 								Integer.parseInt(tokens[1]));
+							break;
 						}
 					}
 					break;
