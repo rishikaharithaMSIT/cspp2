@@ -74,7 +74,7 @@ class ShoppingCart {
 		//System.out.println("taxxxxxxxxxxxxxx" + tax);
 		float totalAmount = total + tax - discount;
 		//System.out.println("total ammmonttttttttttt"+totalAmount);
-		return totalAmount;
+		return Math.round(totalAmount*100.0)/100.0f;
 	}
 	void printInvoice() {
 
