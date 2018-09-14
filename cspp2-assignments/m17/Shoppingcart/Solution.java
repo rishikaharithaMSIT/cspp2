@@ -38,26 +38,26 @@ class ShoppingCart {
 		}
 	}
 	void addToCart(Item item) {
-		System.out.println(isFirst);
-		// cart.add(item);
-		if (isFirst == false) {
-			cart.add(item);
-			isFirst = true;
-		} else{	
-			int inCart = -1;
-			for (int i = cart.size()-1; i > 0; i--) {
-				System.out.println(cart.get(i).inCartQuantity + " - " + cart.get(i).productName);
-				if((cart.get(i).productName).equals(item.productName)){
-					System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
-					inCart = i;
-				}
-			}
-			if(inCart == -1) {
-				cart.add(item);
-			}else {
-				cart.get(inCart).inCartQuantity = Integer.parseInt(cart.get(inCart).inCartQuantity) + Integer.parseInt(item.inCartQuantity) + "";
-			}
-		 }
+		//System.out.println(isFirst);
+		cart.add(item);
+		// if (isFirst == false) {
+		// 	cart.add(item);
+		// 	isFirst = true;
+		// } else{	
+		// 	int inCart = -1;
+		// 	for (int i = cart.size()-1; i > 0; i--) {
+		// 		System.out.println(cart.get(i).inCartQuantity + " - " + cart.get(i).productName);
+		// 		if((cart.get(i).productName).equals(item.productName)){
+		// 			System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
+		// 			inCart = i;
+		// 		}
+		// 	}
+		// 	if(inCart == -1) {
+		// 		cart.add(item);
+		// 	}else {
+		// 		cart.get(inCart).inCartQuantity = Integer.parseInt(cart.get(inCart).inCartQuantity) + Integer.parseInt(item.inCartQuantity) + "";
+		// 	}
+		//  }
 
 	}
 	void removeFromCart(Item item, int quan) {
@@ -129,6 +129,7 @@ class Solution {
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		boolean couponApplied = false;
+		int previousVal = 0;
 		while (stdin.hasNext()) {
 			ShoppingCart sc = new ShoppingCart();
 			String line = stdin.nextLine();
@@ -151,7 +152,8 @@ class Solution {
 
 					if (items.get(i).productName.equals(tokens[0]) &&
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
-						items.get(i).inCartQuantity = tokens[1];
+						items.get(i).inCartQuantity = previousVal + Integer.parseInt(tokens[1]) + "" ;
+						previousVal = Integer.parseInt(items.get(i).inCartQuantity);
 						sc.addToCart(items.get(i));
 						break;
 					}
