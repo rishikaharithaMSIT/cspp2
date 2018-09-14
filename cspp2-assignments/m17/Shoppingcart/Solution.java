@@ -61,7 +61,7 @@ class ShoppingCart {
 	float getPayableAmount() {
 		float total = 0.0f;
 		float tax = 0.0f;
-
+		float discount = (apply/100.0f)*total;
 		for(int i=0;i<cart.size();i++) {
 			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
 			float unitPrice = cart.get(i).unitPrice;
@@ -69,7 +69,7 @@ class ShoppingCart {
 		}
 		//System.out.println("Total"+totalAmount);
 		tax = 0.15f*total;
-		float totalAmount = total+tax;
+		float totalAmount = (total+tax)-discount;
 		return totalAmount;
 	}
 	void printInvoice() {
@@ -78,14 +78,8 @@ class ShoppingCart {
 		float discount = (apply/100.0f)*total;
 		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
-		for(int i=0;i<catalog.size();i++) {
-			for(int j =0;j<cart.size();j++){
-				if(catalog.get(i).productName.equals(cart.get(j).productName)) {
-					System.out.println(cart.get(j).productName + " "+cart.get(j).inCartQuantity+" "+cart.get(j).unitPrice);
-				}
-
-			}
-			
+		for(int i=0;i<cart.size();i++) {
+			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
 		}
 		//System.out.println("totalAmount: "+total);
 		System.out.println("Total:"+total);
