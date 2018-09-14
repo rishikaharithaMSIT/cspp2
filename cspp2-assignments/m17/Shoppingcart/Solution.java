@@ -177,6 +177,7 @@ class Solution {
 
 								items.get(i).inCartQuantity = tokens[1];
 								sc.addToCart(items.get(i));
+								cart.add(items.get(i));
 							}
 							
 						break;
