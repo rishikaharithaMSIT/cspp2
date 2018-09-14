@@ -50,13 +50,14 @@ class Solution {
 					tokens = keys[1].split(",");
 					//System.out.println(items.size());
 					for(int i=0;i<items.size();i++) {
-						System.out.println(items.get(i).productName +" "+ tokens[0]);
-						System.out.println(items.get(i).quantity +" "+ tokens[1]);
+						//System.out.println(items.get(i).productName +" "+ tokens[0]);
+						//System.out.println(items.get(i).quantity +" "+ tokens[1]);
 						//System.out.println(items.get(i).unitPrice +" "+ tokens[2]);
 
-						if(items.get(i).productName == tokens[0]){
+						if(items.get(i).productName.equals(tokens[0])){
 							//System.out.println("here");
 							sc.addToCart(items.get(i));
+							items.get(i).quantity = tokens[1];
 						}
 					}
 					//addToCart(item);
