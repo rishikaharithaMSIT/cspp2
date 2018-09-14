@@ -18,7 +18,8 @@ class ShoppingCart {
 		catalog.add(item);		
 	}
 	void showCatalog() {
-		for(int i=0; i< catalog.size();i++) {
+		System.out.println("in show");
+		for(int i=0; i < catalog.size();i++) {
 			System.out.println(catalog + " in catalog showw");
 		}
 	}
@@ -38,7 +39,6 @@ class Solution {
 					sc.addToCatalog(item);
 					break;
 				case "show":
-					System.out.println("in show");
 					sc.showCatalog();
 			}
 		}
