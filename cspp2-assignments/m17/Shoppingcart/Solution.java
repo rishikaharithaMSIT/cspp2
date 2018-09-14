@@ -71,6 +71,10 @@ class ShoppingCart {
 		float tax = 0.0f;
 		float total = getPayableAmount();
 		tax = 0.15f*total;
+		System.out.println("Name   quantity   Price");
+		for(int i=0;i<cart.size();i++) {
+			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
+		}
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
 		System.out.println("Payable amount: "+(total+tax));
