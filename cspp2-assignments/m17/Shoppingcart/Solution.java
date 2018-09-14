@@ -45,7 +45,7 @@ class ShoppingCart {
 		}		
 		for (int i = 0; i < cart.size(); i++) {
 			if(cart.get(i).productName.equals(item.productName)){
-				cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.quantity))+"";
+				cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.inCartQuantity))+"";
 				break;
 			}else {
 				cart.add(item);
