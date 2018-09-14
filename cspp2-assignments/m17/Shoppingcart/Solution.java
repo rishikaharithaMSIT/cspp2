@@ -56,7 +56,7 @@ class ShoppingCart {
 			float unitPrice = cart.get(i).unitPrice;
 			totalAmount += (quantity*unitPrice);
 		}
-		System.out.println(totalAmount);
+		System.out.println("totalAmount: "+totalAmount);
 	}
 }
 class Solution {
