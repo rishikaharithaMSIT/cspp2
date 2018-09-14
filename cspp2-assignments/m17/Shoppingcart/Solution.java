@@ -52,6 +52,8 @@ class ShoppingCart {
 		// 			System.out.println(cart.get(i).inCartQuantity + " " + item.inCartQuantity +" 99999999999999");
 		 			cart.get(i).inCartQuantity = item.inCartQuantity;
 		// 			inCart = i;
+		 		} else {
+		 			cart.add(item);
 		 		}
 		 	}
 		// 	if(inCart == -1) {
