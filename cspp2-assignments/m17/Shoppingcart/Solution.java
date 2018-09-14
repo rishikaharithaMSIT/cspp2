@@ -40,7 +40,6 @@ class ShoppingCart {
 			System.out.println(cart.get(i).productName + " " +
 			                   cart.get(i).inCartQuantity);
 		}
-		System.out.println("-------------------");
 	}
 	void addToCart(Item item) {
 		//System.out.println(isFirst);
@@ -166,16 +165,12 @@ class Solution {
 					        Integer.parseInt(items.get(i).quantity) >= Integer.parseInt(tokens[1])) {
 					        for(int j = 0; j < cart.size(); j++) {
 					        	if(items.get(i).productName.equals(cart.get(j).productName)) {
-					        		System.out.println(items.get(i).inCartQuantity + " in fsddsdsvds");
 					        		items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) +
 					        		Integer.parseInt(tokens[1]) +"";
-					        		//System.out.println(items.get(i).);
-					        		// sc.addToCart(items.get(i));
 					        		break outerloop;
 					        	}
 					        }
 					        items.get(i).inCartQuantity = tokens[1];
-					        System.out.println(items.get(i).productName + items.get(i).inCartQuantity + " in xysc");
 					        sc.addToCart(items.get(i));
 					        cart.add(items.get(i));
 					}
