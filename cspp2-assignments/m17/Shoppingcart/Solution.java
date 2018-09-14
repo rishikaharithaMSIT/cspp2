@@ -43,17 +43,17 @@ class ShoppingCart {
 			cart.add(item);
 			isFirst = true;
 		} else{	
-
+			int inCart = -1;
 			for (int i = 0; i < cart.size(); i++) {
-				System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
+				//System.out.println(cart.get(i).productName + " " + item.productName +" 99999999999999");
 				if((cart.get(i).productName).equals(item.productName)){
-					
-					cart.get(i).inCartQuantity = (Integer.parseInt(cart.get(i).inCartQuantity)+Integer.parseInt(item.inCartQuantity))+"";
-					break;
-				}else {
-					cart.add(item);
-				
+					inCart = i;
 				}
+			}
+			if(inCart == -1) {
+				cart.add(item);
+			}else {
+				cart.get(inCart).inCartQuantity = Integer.parseInt(cart.get(inCart).inCartQuantity) + Integer.parseInt(item.inCartQuantity) + "";
 			}
 		}
 
