@@ -51,13 +51,14 @@ class Solution {
 						if(items.get(i).productName == tokens[0] &&
 							items.get(i).quantity == tokens[1]&&
 							items.get(i).unitPrice == tokens[2]){
+							System.out.println("here");
 							sc.addToCart(items.get(i));
 						}
 					}
 					//addToCart(item);
 					break;
 				case "show":
-					sc.showCatalog();
+					//sc.showCatalog();
 			}
 		}
 	}
