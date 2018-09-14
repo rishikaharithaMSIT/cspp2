@@ -1,9 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 /**
  * Class for solution.
  */
@@ -43,14 +40,14 @@ class Solution {
                 for (int i = 0; i < items.size(); i++) {
 
                     if (items.get(i).productName.equals(tokens[0]) &&
-                            Integer.parseInt(items.get(i).quantity) >=
-                            Integer.parseInt(tokens[1])) {
+                            Integer.parseInt(items.get(i).quantity)
+                            >= Integer.parseInt(tokens[1])) {
                         for (int j = 0; j < cart.size(); j++) {
                             if (items.get(i).productName.equals(
                                         cart.get(j).productName)) {
-                                items.get(i).inCartQuantity =
-                                    Integer.parseInt(items.get(i).inCartQuantity) +
-                                    Integer.parseInt(tokens[1]) + "";
+                                items.get(i).inCartQuantity
+                                    = Integer.parseInt(items.get(i).inCartQuantity)
+                                      + Integer.parseInt(tokens[1]) + "";
                                 break outerloop;
                             }
                         }
