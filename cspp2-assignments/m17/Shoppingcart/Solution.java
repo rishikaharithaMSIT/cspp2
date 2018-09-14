@@ -57,7 +57,9 @@ class Solution {
 						if(items.get(i).productName.equals(tokens[0])){
 							//System.out.println("here");
 							sc.addToCart(items.get(i));
+							System.out.println(items.get(i).quantity + " before");
 							items.get(i).quantity = tokens[1];
+							System.out.println(items.get(i).quantity+ " af");
 						}
 					}
 					//addToCart(item);
