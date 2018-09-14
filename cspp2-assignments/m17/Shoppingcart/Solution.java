@@ -175,10 +175,9 @@ class Solution {
 					        	}
 					        }
 					        items.get(i).inCartQuantity = tokens[1];
-					        System.out.println(items.get(i).inCartQuantity + " in xysc");
+					        System.out.println(items.get(i).productName + items.get(i).inCartQuantity + " in xysc");
 					        sc.addToCart(items.get(i));
 					        cart.add(items.get(i));
-					        break;
 					}
 				}
 				//addToCart(item);
