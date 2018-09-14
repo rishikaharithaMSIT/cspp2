@@ -52,11 +52,10 @@ class Solution {
 					for(int i=0;i<items.size();i++) {
 						System.out.println(items.get(i).productName +" "+ tokens[0]);
 						System.out.println(items.get(i).quantity +" "+ tokens[1]);
-						System.out.println(items.get(i).unitPrice +" "+ tokens[2]);
+						//System.out.println(items.get(i).unitPrice +" "+ tokens[2]);
 
 						if(items.get(i).productName == tokens[0] &&
-							items.get(i).quantity == tokens[1]&&
-							items.get(i).unitPrice == tokens[2]){
+							items.get(i).quantity == tokens[1]){
 							//System.out.println("here");
 							sc.addToCart(items.get(i));
 						}
