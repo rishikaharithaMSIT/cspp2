@@ -54,6 +54,7 @@ class ShoppingCart {
 		// 			inCart = i;
 		 		} else {
 		 			cart.add(item);
+		 			break;
 		 		}
 		 	}
 		// 	if(inCart == -1) {
