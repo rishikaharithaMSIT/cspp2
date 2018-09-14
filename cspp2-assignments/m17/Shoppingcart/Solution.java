@@ -30,10 +30,15 @@ class ShoppingCart {
 		cart.add(item); 
 
 	}
-	void removeFromCart(Item item) {
-		// for(int i =0;i<cart.size();i++) {
-		// 	if(cart.get(i).quantity)
-		// }
+	void removeFromCart(Item item, int quan) {
+		for(int i =0;i<cart.size();i++) {
+			int cartQuan = Integer.parseInt(cart.get(i).inCartQuantity);
+			if(quan < cartQuan){
+				cart.get(i).inCartQuantity = (cartQuan - quan) + ""; 
+			}else {
+				cart.remove(cart.get(i));
+			}
+		}
 	}
 }
 class Solution {
@@ -72,11 +77,13 @@ class Solution {
 					//sc.showCatalog();
 					break;
 				case "remove":
-					// for(int i=0;i<items.size();i++) {
-					// 	if(items.get(i).productName.equals(tokens[0])){
-					// 		sc.removeFromCart(items.get(i));
-					// 	}
-					// }
+					tokens = keys[1].split(",");
+					for(int i=0;i<items.size();i++) {
+						if(items.get(i).productName.equals(tokens[0])){
+							sc.removeFromCart(items.get(i), 
+								Integer.parseInt(tokens[1]));
+						}
+					}
 					break;
 					
 			}
