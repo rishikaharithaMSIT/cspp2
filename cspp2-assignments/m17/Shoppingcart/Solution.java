@@ -168,10 +168,12 @@ class Solution {
 					        	if(items.get(i).productName.equals(cart.get(j).productName)) {
 					        		items.get(i).inCartQuantity = Integer.parseInt(items.get(i).inCartQuantity) +
 					        		Integer.parseInt(tokens[1]) +"";
+					        		//System.out.println(items.get(i).);
 					        		sc.addToCart(items.get(i));
 					        		break outerloop;
 					        	}
 					        }
+					        items.get(i).inCartQuantity = tokens[1];
 					        sc.addToCart(items.get(i));
 					}
 				}
