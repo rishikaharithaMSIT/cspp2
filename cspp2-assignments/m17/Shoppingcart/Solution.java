@@ -5,7 +5,7 @@ class Item {
 	String productName;
 	String quantity;
 	float unitPrice;
-	String inCartQuantity;
+	String inCartQuantity = "0";
 	Item(String productName, String quantity, String unitPrice) {
 		this.productName = productName;
 		this.quantity = quantity;
