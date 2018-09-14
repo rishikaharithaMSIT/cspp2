@@ -1,6 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 class Item {
 	String productName;
 	String quantity;
@@ -14,6 +17,7 @@ class Item {
 }
 class ShoppingCart {
 	static ArrayList<Item> catalog = new ArrayList<Item>();
+	
 	static ArrayList<Item> cart = new ArrayList<Item>();
 	static int apply = 0;
 	static boolean isFirst = false;
@@ -41,6 +45,10 @@ class ShoppingCart {
 		//System.out.println(isFirst);
 
 		//cart.add(item);
+		Set<Item> set = new HashSet<Item>(cart);
+		System.out.println("-----------------");
+		System.out.println(set);
+		System.out.println("------------");
 		if (isFirst == false) {
 			cart.add(item);
 			isFirst = true;
