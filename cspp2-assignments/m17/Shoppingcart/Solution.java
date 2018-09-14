@@ -88,8 +88,7 @@ final class Solution {
                 System.out.println("Payable amount: " + sc.getPayableAmount());
                 break;
             case "coupon":
-
-                if (couponApplied == false) {
+                if (!couponApplied) {
                     if (sc.applyCoupon(keys[1])) {
                         couponApplied = true;
                     } else {
