@@ -76,8 +76,14 @@ class ShoppingCart {
 		float total = getTotalAmount();
 		float tax = 0.15f*total;
 		System.out.println("Name   quantity   Price");
-		for(int i=0;i<cart.size();i++) {
-			System.out.println(cart.get(i).productName + " "+cart.get(i).inCartQuantity+" "+cart.get(i).unitPrice);
+		for(int i=0;i<catalog.size();i++) {
+			for(int j =0;j<cart.size();j++){
+				if(catalog.get(i).productName.equals(cart.get(j).productName)) {
+					System.out.println(cart.get(j).productName + " "+cart.get(j).inCartQuantity+" "+cart.get(j).unitPrice);
+				}
+
+			}
+			
 		}
 		System.out.println("totalAmount: "+total);
 		System.out.println("Total:"+total);
