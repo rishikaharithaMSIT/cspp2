@@ -38,6 +38,7 @@ class Solution {
 					sc.addToCatalog(item);
 					break;
 				case "show":
+					System.out.println("in show");
 					sc.showCatalog();
 			}
 		}
