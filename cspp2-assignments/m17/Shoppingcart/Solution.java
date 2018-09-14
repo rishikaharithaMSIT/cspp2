@@ -40,6 +40,7 @@ class ShoppingCart {
 			System.out.println(cart.get(i).productName + " " +
 			                   cart.get(i).inCartQuantity);
 		}
+		System.out.println("-------------------");
 	}
 	void addToCart(Item item) {
 		//System.out.println(isFirst);
@@ -171,7 +172,7 @@ class Solution {
 									}
 								}
 							} else {
-								System.out.println("here");
+
 								items.get(i).inCartQuantity = tokens[1];
 								sc.addToCart(items.get(i));
 							}
