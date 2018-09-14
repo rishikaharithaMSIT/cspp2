@@ -56,6 +56,25 @@ class ShoppingCart {
 		}
 		System.out.println("totalAmount: "+totalAmount);
 	}
+	float getPayableAmount() {
+		float totalAmount = 0.0f;
+		for(int i=0;i<cart.size();i++) {
+			int quantity = Integer.parseInt(cart.get(i).inCartQuantity);
+			float unitPrice = cart.get(i).unitPrice;
+			totalAmount += (quantity*unitPrice);
+		}
+		//System.out.println("Total"+totalAmount);
+		return totalAmount;
+	}
+	void printInvoice() {
+		float discount = 0.0f;
+		float tax = 0.0f;
+		float total = getPayableAmount();
+		tax = 0.15f*total;
+		System.out.println("Disc%:"+discount);
+		System.out.println("Tax:"+tax);
+		System.out.println("Payable amount: "+(total+tax));
+	}
 }
 class Solution {
 	static ArrayList<Item> items = new ArrayList<Item>();
@@ -109,6 +128,12 @@ class Solution {
 					break;
 				case "totalAmount":
 					sc.getTotalAmount();
+					break;
+				case "payableAmount":
+					System.out.println("Total:"+sc.getPayableAmount());
+					break;
+				case "print":
+					sc.printInvoice();
 					break;
 					
 			}
