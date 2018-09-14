@@ -70,7 +70,7 @@ class ShoppingCart {
 		}
 		//System.out.println("Total"+totalAmount);
 		float discount = (apply / 100.0f) * total;
-		tax = 0.15f * (total - discount);
+		tax = Math.round((0.15f * (total - discount))*100.0)/100.0f;
 		//System.out.println("taxxxxxxxxxxxxxx" + tax);
 		float totalAmount = total + tax - discount;
 		//System.out.println("total ammmonttttttttttt"+totalAmount);
@@ -80,7 +80,7 @@ class ShoppingCart {
 
 		float total = getTotalAmount();
 		float discount = (apply / 100.0f) * total;
-		float tax = 0.15f * (total - discount);
+		float tax = Math.round((0.15f * (total - discount))*100.0)/100.0f;
 		System.out.println("Name   quantity   Price");
 		for (int i = 0; i < cart.size(); i++) {
 			System.out.println(cart.get(i).productName + " " + cart.get(i).inCartQuantity + " " + cart.get(i).unitPrice);
