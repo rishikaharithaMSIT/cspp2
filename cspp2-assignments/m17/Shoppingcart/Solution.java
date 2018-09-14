@@ -87,7 +87,7 @@ class ShoppingCart {
 			}
 			
 		}
-		System.out.println("totalAmount: "+total);
+		//System.out.println("totalAmount: "+total);
 		System.out.println("Total:"+total);
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+tax);
