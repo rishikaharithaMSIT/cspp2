@@ -93,10 +93,15 @@ class ShoppingCart {
 		System.out.println("Tax:"+tax);
 		System.out.println("Payable amount: "+(getPayableAmount()-discount));
 	}
-	void applyCoupon(String coupon) {
+	boolean applyCoupon(String coupon) {
 		String[] coupons = coupon.split("D");
 		//System.out.println("couponnnnnnnnnnnnnnnnnnnnnnnn" + coupons[1]);
-		apply =  Integer.parseInt(coupons[1]);
+		int cou =  Integer.parseInt(coupons[1]);
+		if(cou == 10|| cou == 20 || cou == 30 || cou == 50) {
+			apply = cou;
+			return true;
+		}
+		return false;
 	}
 }
 class Solution {
@@ -159,8 +164,11 @@ class Solution {
 				case "coupon":
 
 					if(couponApplied == false) {
-						sc.applyCoupon(keys[1]);
-						couponApplied = true;
+						if(sc.applyCoupon(keys[1])) {
+							couponApplied = true;
+						}else {
+							System.out.println("Invalid coupon");
+						}
 					}
 					break;
 				case "print":
