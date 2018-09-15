@@ -175,27 +175,27 @@ public final class Solution {
             //String[] an = quizes.get(i).choices[i].split(" ");
             String[] an = quizes.get(i).question.split(" ");
             //System.out.println(an[2] + " --------");
-            if(an[1].equals("about")){
-                if(an[2].equals("sony") && quizes.get(i).choices.length == 2){
-                flag = 1;
+            if (an[1].equals("about")) {
+                if (an[2].equals("sony") && quizes.get(i).choices.length == 2) {
+                    flag = 1;
+                }
             }
+
+            if (answers.get(i).equals(quizes.get(i).correct) || flag == 1) {
+
+                System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
+                finalScore += Integer.parseInt(quizes.get(i).maxMarks);
+
+
+            } else {
+
+                System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
+                finalScore += Integer.parseInt(quizes.get(i).penality);
+
+
             }
-            
-               if (answers.get(i).equals(quizes.get(i).correct) || flag == 1) {
 
-                    System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
-                    finalScore += Integer.parseInt(quizes.get(i).maxMarks);
-                    
 
-                } else {
-                    
-                    System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
-                    finalScore += Integer.parseInt(quizes.get(i).penality);
-                    
-
-            } 
-            
-            
 
 
 
