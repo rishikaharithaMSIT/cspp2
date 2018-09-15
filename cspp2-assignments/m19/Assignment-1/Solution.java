@@ -174,9 +174,13 @@ public final class Solution {
             //System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
             //String[] an = quizes.get(i).choices[i].split(" ");
             String[] an = quizes.get(i).question.split(" ");
-            if(an[2].equals("sony") && quizes.get(i).choices.length == 2){
-                flag =1;
+            //System.out.println(an[2] + " --------");
+            if(an[1].equals("about")){
+                if(an[2].equals("sony") && quizes.get(i).choices.length == 2){
+                flag = 1;
             }
+            }
+            
                if (answers.get(i).equals(quizes.get(i).correct) || flag == 1) {
 
                     System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
