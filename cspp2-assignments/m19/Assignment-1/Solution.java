@@ -84,7 +84,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        while(questionCount > 0) {
+        while(questionCount >= 1) {
         	String line = s.nextLine();
         	String[] tokens = line.split(":");
         	String[] choices = tokens[1].split(",");
