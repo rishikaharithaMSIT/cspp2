@@ -1,29 +1,30 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 class Quiz{
-	String question;
-	String[] choices;
-	String correct;
-	String maxMarks;
-	String penality;
-	Quiz() {
+    String question;
+    String[] choices;
+    String correct;
+    String maxMarks;
+    String penality;
+    Quiz() {
 
-	}
-	Quiz(String question, String[] choices, String correct, String maxMarks, String penality) {
-		this.question = question;
-		this.choices = choices;
-		this.correct = correct;
-		this.maxMarks = maxMarks;
-		this.penality = penality;
-		//System.out.println(question);
-	}	
-	
+    }
+    Quiz(String question, String[] choices, String correct, String maxMarks, String penality) {
+        this.question = question;
+        this.choices = choices;
+        this.correct = correct;
+        this.maxMarks = maxMarks;
+        this.penality = penality;
+        //System.out.println(question);
+    }   
+    
 }
 /**
  * Solution class for code-eval.
  */
 public final class Solution {
-	static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    static ArrayList<String> answers = new ArrayList<String>();
      /**
      * Constructs the object.
      */
@@ -86,14 +87,14 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         while(questionCount > 0) {
-        	String line = s.nextLine();
-        	String[] tokens = line.split(":");
-        	String[] choices = tokens[1].split(",");
-        	Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
-        	quizes.add(q);
-        	questionCount--;
+            String line = s.nextLine();
+            String[] tokens = line.split(":");
+            String[] choices = tokens[1].split(",");
+            Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
+            quizes.add(q);
+            questionCount--;
         }
-        System.out.println(quizes.size() + " questions are added to quiz");
+        System.out.println(quizes.size() + " are added to the quiz");
 
     }
 
@@ -104,17 +105,30 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
+    public static void startQuiz(final Scanner s, final Quiz quiz, int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
         for(int i=0;i<quizes.size();i++){
-        	System.out.println(quizes.get(i).question+"("+i+")");
-        	for(int j =0 ; j<quizes.get(i).choices.length; j++) {
-        		System.out.print(quizes.get(i).choices[j] + "	");
-        	}
-        	System.out.println();
+            System.out.println(quizes.get(i).question+"("+(i+1)+")");
+            for(int j =0 ; j<quizes.get(i).choices.length; j++) {
+                System.out.print(quizes.get(i).choices[j] + "   ");
+            }
+            System.out.println();
+            System.out.println();
         }
+        while(answerCount > 0) {
+            //System.out.println(answerCount + " counttt");
+            String line = s.nextLine();
+            String[] tok = line.split(" ");
+            //System.out.println(line + " lineeeee");
+            answers.add(tok[1]);
+            answerCount--;
+
+        }
+        
+
+
     }
 
     /**
@@ -124,6 +138,25 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        int finalScore = 0;
+        for(int i=0;i<quizes.size();i++) {
+            System.out.println(quizes.get(i).question);
+                if(answers.get(i).equals(quizes.get(i).correct)) {
+                    
+                    System.out.println(" Correct Answer! - Marks Awarded: "+quizes.get(i).maxMarks);
+                    finalScore += Integer.parseInt(quizes.get(i).maxMarks);
+                    
+                } else {
+
+                    System.out.println(" Wrong Answer! - Penalty: "+quizes.get(i).maxMarks);
+                    finalScore += Integer.parseInt(quizes.get(i).penality);
+                    
+                }
+            
+            
+
     }
+    System.out.println("Total Score: "+finalScore );
+}
     
 }
