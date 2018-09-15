@@ -111,7 +111,8 @@ public final class Solution {
                     return;
                 }
                 Quiz q = new Quiz(tokens[0],
-                                  choices, tokens[2], tokens[three], tokens[four]);
+                                  choices, tokens[2], tokens[three],
+                                  tokens[four]);
                 quizes.add(q);
                 questionCount--;
             }
@@ -171,13 +172,10 @@ public final class Solution {
             answerCount--;
 
         }
-
-
-
     }
 
     /**
-     * Displays the score report
+     * Displays the score report.
      *
      * @param      quiz     The quiz object
      */
@@ -219,7 +217,7 @@ public final class Solution {
 
         }
         if (quizes.size() != 0) {
-            System.out.println("Total Score: " + finalScore );
+            System.out.println("Total Score: " + finalScore);
         }
 
     }
