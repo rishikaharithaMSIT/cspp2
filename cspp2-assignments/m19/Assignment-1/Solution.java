@@ -141,7 +141,7 @@ public final class Solution {
         for(int i=0;i<quizes.size();i++){
             System.out.println(quizes.get(i).question+"("+quizes.get(i).maxMarks+")");
             for(int j =0 ; j<quizes.get(i).choices.length; j++) {
-                System.out.print(quizes.get(i).choices[j] + "    ");
+                System.out.print(quizes.get(i).choices[j] + "   ");
             }
             System.out.println();
             System.out.println();
