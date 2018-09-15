@@ -84,7 +84,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        while(questionCount >= 1) {
+        while(questionCount > 0) {
         	String line = s.nextLine();
         	String[] tokens = line.split(":");
         	String[] choices = tokens[1].split(",");
@@ -92,6 +92,7 @@ public final class Solution {
         	quizes.add(q);
         	questionCount--;
         }
+        System.out.println(quizes.size() + " questions are added to quiz");
     }
 
     /**
