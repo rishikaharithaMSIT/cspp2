@@ -173,12 +173,12 @@ public final class Solution {
             System.out.println(quizes.get(i).question);
             //System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
             //String[] an = quizes.get(i).choices[i].split(" ");
-            for(int j = 0;j < quizes.get(i).choices.length;j++) {
-                String[] an = quizes.get(i).choices[j].split(" ");
-                if(answers.get(i).equals(an[1])) {
-                    flag = 1;
-                }
-            }
+            // for(int j = 0;j < quizes.get(i).choices.length;j++) {
+            //     String[] an = quizes.get(i).choices[j].split(" ");
+            //     if(answers.get(i).equals(an[1])) {
+            //         flag = 1;
+            //     }
+            // }
                if (answers.get(i).equals(quizes.get(i).correct) || flag == 1) {
 
                     System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
