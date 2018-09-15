@@ -94,7 +94,12 @@ public final class Solution {
             quizes.add(q);
             questionCount--;
         }
-        System.out.println(quizes.size() + " are added to the quiz");
+        if(quizes.size() != 0) {
+            System.out.println(quizes.size() + " are added to the quiz");
+        }else {
+            System.out.println("Quiz does not have questions");
+        }
+        
 
     }
 
@@ -166,7 +171,10 @@ public final class Solution {
             
 
     }
-    System.out.println("Total Score: "+finalScore );
+    if(quizes.size() != 0){
+        System.out.println("Total Score: "+finalScore );
+    }
+    
 }
     
 }
