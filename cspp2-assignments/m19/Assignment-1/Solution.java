@@ -15,7 +15,7 @@ class Quiz{
 		this.correct = correct;
 		this.maxMarks = maxMarks;
 		this.penality = penality;
-		System.out.println(question);
+		//System.out.println(question);
 	}	
 	
 }
@@ -54,6 +54,7 @@ public final class Solution {
                 System.out.println("|----------------|");
                 //System.out.println(tokens[1]);
                 loadQuestions(s, q, Integer.parseInt(tokens[1]));
+
                 break;
                 case "START_QUIZ":
                 System.out.println("|------------|");
@@ -93,6 +94,7 @@ public final class Solution {
         	questionCount--;
         }
         System.out.println(quizes.size() + " questions are added to quiz");
+
     }
 
     /**
@@ -106,6 +108,13 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        for(int i=0;i<quizes.size();i++){
+        	System.out.println(quizes.get(i).question+"("+i+")");
+        	for(int j =0 ; j<quizes.get(i).choices.length; j++) {
+        		System.out.print(quizes.get(i).choices[j] + "	");
+        	}
+        	System.out.println();
+        }
     }
 
     /**
