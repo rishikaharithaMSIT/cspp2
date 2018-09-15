@@ -131,18 +131,21 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, int answerCount) {
+    public static void startQuiz(final Scanner s, 
+        final Quiz quiz, int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
         for (int i = 0; i < quizes.size(); i++) {
-            System.out.println(quizes.get(i).question + "(" + quizes.get(i).maxMarks + ")");
+            System.out.println(quizes.get(i).question
+             + "(" + quizes.get(i).maxMarks + ")");
             for (int j = 0 ; j < quizes.get(i).choices.length - 1; j++) {
                 System.out.print(quizes.get(i).choices[j] + "	");
                 //System.out.print("  ");
 
             }
-            System.out.print(quizes.get(i).choices[quizes.get(i).choices.length - 1]);
+            System.out.print(
+                quizes.get(i).choices[quizes.get(i).choices.length - 1]);
             System.out.println();
             System.out.println();
         }
@@ -192,13 +195,15 @@ public final class Solution {
 
             if (answers.get(i).equals(quizes.get(i).correct) || flag == 1) {
 
-                System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
+                System.out.println(" Correct Answer! - Marks Awarded: "
+                 + quizes.get(i).maxMarks);
                 finalScore += Integer.parseInt(quizes.get(i).maxMarks);
 
 
             } else {
 
-                System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
+                System.out.println(" Wrong Answer! - Penalty: "
+                 + quizes.get(i).penality);
                 finalScore += Integer.parseInt(quizes.get(i).penality);
 
 
