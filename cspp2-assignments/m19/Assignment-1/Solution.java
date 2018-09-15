@@ -148,7 +148,7 @@ public final class Solution {
                     
                 } else {
 
-                    System.out.println(" Wrong Answer! - Penalty: "+quizes.get(i).maxMarks);
+                    System.out.println(" Wrong Answer! - Penalty: "+quizes.get(i).penality);
                     finalScore += Integer.parseInt(quizes.get(i).penality);
                     
                 }
