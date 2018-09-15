@@ -7,11 +7,11 @@ public final class Solution {
     /**
      * { var_description }.
      */
-    static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    static private ArrayList<Quiz> quizes = new ArrayList<Quiz>();
     /**
      * { var_description }.
      */
-    static ArrayList<String> answers = new ArrayList<String>();
+    static private ArrayList<String> answers = new ArrayList<String>();
     /**
     * Constructs the object.
     */
@@ -167,21 +167,28 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        
         int finalScore = 0;
         for (int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question);
             //System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
             //String[] an = quizes.get(i).choices[i].split(" ");
-            if (answers.get(i).equals(quizes.get(i).correct)) {
+            for(int j = 0;j < quizes.get(i).choices.length;j++) {
+                String[] an = quizes.get(i).choices[i].split(" ");
+               if (answers.get(i).equals(quizes.get(i).correct) || answers.get(i).equals(an[1])) {
 
-                System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
-                finalScore += Integer.parseInt(quizes.get(i).maxMarks);
+                    System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
+                    finalScore += Integer.parseInt(quizes.get(i).maxMarks);
+                    break;
 
-            } else {
-                System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
-                finalScore += Integer.parseInt(quizes.get(i).penality);
+                } else {
+                    System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
+                    finalScore += Integer.parseInt(quizes.get(i).penality);
+                    break;
 
+            } 
             }
+            
 
 
 
