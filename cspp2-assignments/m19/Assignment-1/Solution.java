@@ -1,14 +1,29 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+/**
+ * Class for quiz.
+ */
 class Quiz {
     String question;
     String[] choices;
     String correct;
     String maxMarks;
     String penality;
+    /**
+     * Constructs the object.
+     */
     Quiz() {
 
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      question  The question
+     * @param      choices   The choices
+     * @param      correct   The correct
+     * @param      maxMarks  The maximum marks
+     * @param      penality  The penality
+     */
     Quiz(String question, String[] choices, String correct, String maxMarks, String penality) {
         this.question = question;
         this.choices = choices;
@@ -19,11 +34,18 @@ class Quiz {
     }
 
 }
+
 /**
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * { var_description }.
+     */
     static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    /**
+     * { var_description }.
+     */
     static ArrayList<String> answers = new ArrayList<String>();
     /**
     * Constructs the object.
@@ -191,7 +213,6 @@ public final class Solution {
                 finalScore += Integer.parseInt(quizes.get(i).maxMarks);
 
             } else {
-
                 System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
                 finalScore += Integer.parseInt(quizes.get(i).penality);
 
