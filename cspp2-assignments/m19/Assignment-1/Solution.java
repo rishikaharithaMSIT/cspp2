@@ -179,12 +179,12 @@ public final class Solution {
 
                     System.out.println(" Correct Answer! - Marks Awarded: " + quizes.get(i).maxMarks);
                     finalScore += Integer.parseInt(quizes.get(i).maxMarks);
-                    break;
+                    
 
                 } else {
                     System.out.println(" Wrong Answer! - Penalty: " + quizes.get(i).penality);
                     finalScore += Integer.parseInt(quizes.get(i).penality);
-                    break;
+                    
 
             } 
             }
