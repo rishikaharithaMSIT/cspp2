@@ -86,18 +86,30 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        while(questionCount > 0) {
-            String line = s.nextLine();
-            String[] tokens = line.split(":");
-            String[] choices = tokens[1].split(",");
-            Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
-            quizes.add(q);
-            questionCount--;
-        }
-        if(quizes.size() != 0) {
-            System.out.println(quizes.size() + " are added to the quiz");
-        }else {
-            System.out.println("Quiz does not have questions");
+        try {
+            while(questionCount > 0) {
+                String line = s.nextLine();
+                String[] tokens = line.split(":");
+                String[] choices = tokens[1].split(",");
+                if(choices.length <= 1) {
+                    System.out.println("trick question  does not have enough answer choices");
+                    return;
+                }
+                if(!tokens[2].equals("1") && !tokens[2].equals("2") && !tokens[2].equals("3") && !tokens[2].equals("4")) {
+                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                    return;
+                }
+                Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
+                quizes.add(q);
+                questionCount--;
+            }
+            if(quizes.size() != 0) {
+                System.out.println(quizes.size() + " are added to the quiz");
+            }else {
+                System.out.println("Quiz does not have questions");
+            }
+        } catch(Exception e) {
+            System.out.println("Error! Malformed question");
         }
         
 
