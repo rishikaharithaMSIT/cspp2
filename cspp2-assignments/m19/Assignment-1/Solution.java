@@ -7,11 +7,11 @@ public final class Solution {
     /**
      * { var_description }.
      */
-    static private ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    private static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
     /**
      * { var_description }.
      */
-    static private ArrayList<String> answers = new ArrayList<String>();
+    private static ArrayList<String> answers = new ArrayList<String>();
     /**
     * Constructs the object.
     */
