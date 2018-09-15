@@ -1,40 +1,7 @@
 import java.util.Scanner;
 class Quiz{
 
-	/**
-     * Loads questions.
-     *
-     * @param      s              The scanner object for user input
-     * @param      quiz           The quiz object
-     * @param      questionCount  The question count
-     */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
-        // write your code here to read the questions from the console
-        // tokenize the question line and create the question object
-        // add the question objects to the quiz class
-    }
-
-    /**
-     * Starts a quiz.
-     *
-     * @param      s            The scanner object for user input
-     * @param      quiz         The quiz object
-     * @param      answerCount  The answer count
-     */
-    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
-        // write your code here to display the quiz questions
-        // read the user responses from the console
-        // store the user respones in the quiz object
-    }
-
-    /**
-     * Displays the score report
-     *
-     * @param      quiz     The quiz object
-     */
-    public static void displayScore(final Quiz quiz) {
-        // write your code here to display the score report
-    }
+	
 }
 /**
  * Solution class for code-eval.
@@ -69,24 +36,64 @@ public final class Solution {
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
                 //System.out.println(tokens[1]);
-                q.loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 break;
                 case "START_QUIZ":
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                q.startQuiz(s, q, Integer.parseInt(tokens[1]));
+                startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
                 case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
-                q.displayScore(q);
+                displayScore(q);
                 break;
                 default:
                 break;
             }
         }
+    }
+
+    /**
+     * Loads questions.
+     *
+     * @param      s              The scanner object for user input
+     * @param      quiz           The quiz object
+     * @param      questionCount  The question count
+     */
+    public static void loadQuestions(final Scanner s, final Quiz quiz, int questionCount) {
+        // write your code here to read the questions from the console
+        // tokenize the question line and create the question object
+        // add the question objects to the quiz class
+        while(questionCount > 0) {
+        	String line = s.nextLine();
+        	System.out.println(line + " 99999999999");
+        	questionCount--;
+        }
+    }
+
+    /**
+     * Starts a quiz.
+     *
+     * @param      s            The scanner object for user input
+     * @param      quiz         The quiz object
+     * @param      answerCount  The answer count
+     */
+    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
+        // write your code here to display the quiz questions
+        // read the user responses from the console
+        // store the user respones in the quiz object
+    }
+
+    /**
+     * Displays the score report
+     *
+     * @param      quiz     The quiz object
+     */
+    public static void displayScore(final Quiz quiz) {
+        // write your code here to display the score report
     }
     
 }
