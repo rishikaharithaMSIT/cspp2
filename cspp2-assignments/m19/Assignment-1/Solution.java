@@ -110,7 +110,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         for(int i=0;i<quizes.size();i++){
-            System.out.println(quizes.get(i).question+"("+(i+1)+")");
+            System.out.println(quizes.get(i).question+"("+quizes.get(i).maxMarks+")");
             for(int j =0 ; j<quizes.get(i).choices.length; j++) {
                 System.out.print(quizes.get(i).choices[j] + "   ");
             }
@@ -122,6 +122,15 @@ public final class Solution {
             String line = s.nextLine();
             String[] tok = line.split(" ");
             //System.out.println(line + " lineeeee");
+            if(tok[1].equals("a")) {
+                tok[1] = "1";
+            } else if (tok[1].equals("b") ){
+                tok[1] = "2";
+            } else if (tok[1].equals("c")) {
+                tok[1] = "3";
+            }else if (tok[1].equals("d")) {
+                tok[1] = "4";
+            } 
             answers.add(tok[1]);
             answerCount--;
 
@@ -141,6 +150,7 @@ public final class Solution {
         int finalScore = 0;
         for(int i=0;i<quizes.size();i++) {
             System.out.println(quizes.get(i).question);
+            //System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
                 if(answers.get(i).equals(quizes.get(i).correct)) {
                     
                     System.out.println(" Correct Answer! - Marks Awarded: "+quizes.get(i).maxMarks);
