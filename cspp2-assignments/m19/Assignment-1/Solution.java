@@ -167,7 +167,7 @@ public final class Solution {
         int finalScore = 0;
         for(int i=0;i<quizes.size();i++) {
             System.out.println(quizes.get(i).question);
-            //System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
+            System.out.println(answers.get(i) + " - "+ quizes.get(i).correct);
                 if(answers.get(i).equals(quizes.get(i).correct)) {
                     
                     System.out.println(" Correct Answer! - Marks Awarded: "+quizes.get(i).maxMarks);
