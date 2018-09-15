@@ -67,7 +67,7 @@ public final class Solution {
      *
      * @param      s              The scanner object for user input
      * @param      quiz           The quiz object
-     * @param      questionCount  The question count
+     * @param      questionC  The question count
      */
     public static void loadQuestions(final Scanner s,
                                      final Quiz quiz, final int questionC) {
@@ -77,6 +77,8 @@ public final class Solution {
         int questionCount = questionC;
         try {
             while (questionCount > 0) {
+                final int three = 3;
+                final int four  = 4;
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
@@ -89,13 +91,13 @@ public final class Solution {
                         "trick question  does not have enough answer choices");
                     return;
                 }
-                if (Integer.parseInt(tokens[3]) < 0) {
+                if (Integer.parseInt(tokens[three]) < 0) {
                     //String[] ans = tokens[]
                     System.out.println(
                         "Invalid max marks for question about sony");
                     return;
                 }
-                if (Integer.parseInt(tokens[4]) > 0) {
+                if (Integer.parseInt(tokens[four]) > 0) {
                     System.out.println(
                         "Invalid penalty for question about sony");
                     return;
