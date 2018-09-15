@@ -1,12 +1,29 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 class Quiz{
+	String question;
+	String[] choices;
+	String correct;
+	String maxMarks;
+	String penality;
+	Quiz() {
 
+	}
+	Quiz(String question, String[] choices, String correct, String maxMarks, String penality) {
+		this.question = question;
+		this.choices = choices;
+		this.correct = correct;
+		this.maxMarks = maxMarks;
+		this.penality = penality;
+		System.out.println(question);
+	}	
 	
 }
 /**
  * Solution class for code-eval.
  */
 public final class Solution {
+	static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
      /**
      * Constructs the object.
      */
@@ -69,7 +86,10 @@ public final class Solution {
         // add the question objects to the quiz class
         while(questionCount > 0) {
         	String line = s.nextLine();
-        	System.out.println(line + " 99999999999");
+        	String[] tokens = line.split(":");
+        	String[] choices = tokens[1].split(",");
+        	Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
+        	quizes.add(q);
         	questionCount--;
         }
     }
