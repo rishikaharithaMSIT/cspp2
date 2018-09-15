@@ -69,7 +69,8 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, int questionCount) {
+    public static void loadQuestions(final Scanner s,
+                                     final Quiz quiz, int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -83,23 +84,31 @@ public final class Solution {
                     return;
                 }
                 if (choices.length <= 1) {
-                    System.out.println("trick question  does not have enough answer choices");
+                    System.out.println(
+                        "trick question  does not have enough answer choices");
                     return;
                 }
                 if (Integer.parseInt(tokens[3]) < 0) {
                     //String[] ans = tokens[]
-                    System.out.println("Invalid max marks for question about sony");
+                    System.out.println(
+                        "Invalid max marks for question about sony");
                     return;
                 }
                 if (Integer.parseInt(tokens[4]) > 0) {
-                    System.out.println("Invalid penalty for question about sony");
+                    System.out.println(
+                        "Invalid penalty for question about sony");
                     return;
                 }
-                if (!tokens[2].equals("1") && !tokens[2].equals("2") && !tokens[2].equals("3") && !tokens[2].equals("4")) {
-                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                if (!tokens[2].equals("1") && !tokens[2].equals("2")
+                        && !tokens[2].equals("3") && !tokens[2].equals("4")) {
+                    System.out.print(
+                        "Error! Correct answer choice number ");
+                    System.out.print("is out of range for question text 1");
+                    System.out.println();
                     return;
                 }
-                Quiz q = new Quiz(tokens[0], choices, tokens[2], tokens[3], tokens[4]);
+                Quiz q = new Quiz(tokens[0],
+                                  choices, tokens[2], tokens[3], tokens[4]);
                 quizes.add(q);
                 questionCount--;
             }
