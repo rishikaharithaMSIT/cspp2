@@ -91,6 +91,10 @@ public final class Solution {
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
+                if(tokens[0].equals("")){
+                    System.out.println("Error! Malformed question");
+                    return;
+                }
                 if(choices.length <= 1) {
                     System.out.println("trick question  does not have enough answer choices");
                     return;
