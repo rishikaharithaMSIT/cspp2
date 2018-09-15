@@ -70,10 +70,11 @@ public final class Solution {
      * @param      questionCount  The question count
      */
     public static void loadQuestions(final Scanner s,
-                                     final Quiz quiz, int questionCount) {
+                                     final Quiz quiz, final int questionC) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        int questionCount = questionC;
         try {
             while (questionCount > 0) {
                 String line = s.nextLine();
