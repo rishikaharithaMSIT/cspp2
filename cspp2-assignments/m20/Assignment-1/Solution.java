@@ -291,7 +291,7 @@ public final class Solution {
 				System.out.println("Error! Correct answer choice number is out of range for question text 1");
 				return;
 			}			
-			if(questions[0] == ""){
+			if(questions[0].equals("")){
 				System.out.println("Error! Malformed question");
 				return;
 			}
