@@ -161,6 +161,15 @@ class Quiz {
 
 	}
 	/**
+	 * Gets the size.
+	 *
+	 * @return     The size.
+	 */
+	public int getSize(){
+		return size;
+	}
+
+	/**
 	 * Gets the question.
 	 *
 	 * @param      index  The index
@@ -281,7 +290,7 @@ public final class Solution {
 
 			Question ques = quiz.getQuestion(noOfChoices);
 			ques.setResponse(responses[1]);
-			
+
 			System.out.println(ques.getQuestionText() + "(" +
 			                   ques.getMaxMarks() + ")");
 			for(int i = 0;i < ques.getChoice().length-1; i++) {
@@ -299,5 +308,15 @@ public final class Solution {
 	 */
 	public static void displayScore(final Quiz quiz) {
 		// write your code here to display the score report using quiz object.
+		int noOfQuestions = quiz.getSize();
+		for(int i = 0;i < noOfQuestions;i++) {
+			Question ques = quiz.getQuestion(i);
+			System.out.println(ques.getQuestionText());
+			String choice = ques.getChoice()[ques.getCorrectAnswer()].split(" ")[1];
+			if(choice.equals(ques.getResponse())) {
+				System.out.println("in correct");
+			}
+		}
+
 	}
 }
