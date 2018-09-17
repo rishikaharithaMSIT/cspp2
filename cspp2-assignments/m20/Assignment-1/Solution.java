@@ -165,7 +165,7 @@ class Quiz {
 	 *
 	 * @return     The size.
 	 */
-	public int getSize(){
+	public int getSize() {
 		return size;
 	}
 
@@ -293,10 +293,10 @@ public final class Solution {
 
 			System.out.println(ques.getQuestionText() + "(" +
 			                   ques.getMaxMarks() + ")");
-			for(int i = 0;i < ques.getChoice().length-1; i++) {
+			for (int i = 0; i < ques.getChoice().length - 1; i++) {
 				System.out.print(ques.getChoice()[i] + "	");
 			}
-			System.out.print(ques.getChoice()[ques.getChoice().length-1]);
+			System.out.print(ques.getChoice()[ques.getChoice().length - 1]);
 			System.out.println();
 			noOfChoices++;
 		}
@@ -310,12 +310,12 @@ public final class Solution {
 		// write your code here to display the score report using quiz object.
 		int totalScore = 0;
 		int noOfQuestions = quiz.getSize();
-		for(int i = 0;i < noOfQuestions;i++) {
+		for (int i = 0; i < noOfQuestions; i++) {
 			Question ques = quiz.getQuestion(i);
 			System.out.println(ques.getQuestionText());
 			String[] choice = ques.getChoice()[ques.getCorrectAnswer() - 1].split(" ");
 			//System.out.println(choice[1] + "-" + ques.getResponse());
-			if(choice[1].equals(ques.getResponse())) {
+			if (choice[1].equals(ques.getResponse())) {
 				totalScore += ques.getMaxMarks();
 				System.out.println(" Correct Answer! - Marks Awarded: " + ques.getMaxMarks());
 			} else {
@@ -323,6 +323,7 @@ public final class Solution {
 				System.out.println(" Wrong Answer! - Penalty: " + ques.getPenalty());
 			}
 		}
+		System.out.println("Total Score: " + totalScore);
 
 	}
 }
