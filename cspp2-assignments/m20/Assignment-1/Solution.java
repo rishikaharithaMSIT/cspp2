@@ -289,7 +289,7 @@ public final class Solution {
 				return;
 			}
 			if (Integer.parseInt(questions[2]) < 1
-			        ||  Integer.parseInt(questions[2]) > 4) {
+			        ||  Integer.parseInt(questions[2]) > four) {
 				System.out.print("Error! Correct answer choice number is ");
 				System.out.print("out of range for question text 1");
 				System.out.println();
