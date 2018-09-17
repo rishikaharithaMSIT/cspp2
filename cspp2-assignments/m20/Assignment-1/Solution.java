@@ -115,7 +115,7 @@ class Question {
 	 * @return     The response.
 	 */
 	public String getResponse() {
-		return null;
+		return response;
 	}
 	/**
 	 * Returns a string representation of the object.
@@ -313,6 +313,7 @@ public final class Solution {
 			Question ques = quiz.getQuestion(i);
 			System.out.println(ques.getQuestionText());
 			String[] choice = ques.getChoice()[ques.getCorrectAnswer() - 1].split(" ");
+			System.out.println(choice[1] + "-" + ques.getResponse());
 			if(choice[1].equals(ques.getResponse())) {
 				System.out.println("in correct");
 			}
