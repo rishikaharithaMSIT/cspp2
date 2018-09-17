@@ -312,7 +312,7 @@ public final class Solution {
 		for(int i = 0;i < noOfQuestions;i++) {
 			Question ques = quiz.getQuestion(i);
 			System.out.println(ques.getQuestionText());
-			String[] choice = ques.getChoice()[ques.getCorrectAnswer()].split(" ");
+			String[] choice = ques.getChoice()[ques.getCorrectAnswer() - 1].split(" ");
 			System.out.println(choice[1] + " choiceeeeeee");
 			if(choice.equals(ques.getResponse())) {
 				System.out.println("in correct");
