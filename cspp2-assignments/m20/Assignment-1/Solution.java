@@ -86,7 +86,7 @@ class Question {
 	 * @return     The maximum marks.
 	 */
 	public int getMaxMarks() {
-		return 1;
+		return maxMarks;
 	}
 	/**
 	 * Gets the penalty.
@@ -252,14 +252,8 @@ public final class Solution {
 			    Integer.parseInt(questions[4]));
 			quiz.addQuestion(question);
 			noOfInputs--;
-
-			System.out.println(questions[0] + "(" +Integer.parseInt(questions[3]) + ")");
-			for(int i = 0; i < choices.length-1; i++) {
-				System.out.print(choices[i] + "	");
-			}
-			System.out.print(choices[choices.length-1]);
-			System.out.println();
 		}
+		System.out.println(q + " are added to the quiz");
 
 
 	}
@@ -275,6 +269,14 @@ public final class Solution {
 		// write your code here to display the quiz questions on the console.
 		// read the user responses from the console using scanner object.
 		// store the user respone in the question object
+		int noOfChoices = 0;
+		while (noOfChoices < q) {
+			String line = scan.nextLine();
+
+			System.out.println(quiz.getQuestion(noOfChoices) + "(" +
+			                   quiz.getQuestion(noOfChoices).getMaxMarks() + ")");
+			noOfChoices++;
+		}
 	}
 	/**
 	 * Displays the score report.
