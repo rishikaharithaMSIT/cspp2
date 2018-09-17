@@ -163,7 +163,7 @@ class Quiz {
 	 * @return     The question.
 	 */
 	public Question getQuestion(final int index) {
-		return null;
+		return questions[index];
 	}
 	/**
 	 * Shows the report.
@@ -252,7 +252,15 @@ public final class Solution {
 			    Integer.parseInt(questions[4]));
 			quiz.addQuestion(question);
 			noOfInputs--;
+
+			System.out.println(questions[0] + "(" +Integer.parseInt(questions[3]) + ")");
+			for(int i = 0; i < choices.length-1; i++) {
+				System.out.print(choices[i] + "	");
+			}
+			System.out.print(choices[choices.length-1]);
+			System.out.println();
 		}
+
 
 	}
 	/**
