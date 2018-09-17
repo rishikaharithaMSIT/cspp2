@@ -66,8 +66,8 @@ class Question {
 	 *
 	 * @return     The correct answer.
 	 */
-	public String getCorrectAnswer() {
-		return null;
+	public int getCorrectAnswer() {
+		return correctAnswer;
 	}
 	/**
 	 * Gets the question text.
@@ -83,7 +83,7 @@ class Question {
 	 * @return     The choice.
 	 */
 	public String[] getChoice() {
-		return null;
+		return choices;
 	}
 	/**
 	 * Gets the maximum marks.
@@ -99,7 +99,7 @@ class Question {
 	 * @return     The penalty.
 	 */
 	public int getPenalty() {
-		return 1;
+		return penalty;
 	}
 	/**
 	 * Sets the response.
@@ -277,9 +277,14 @@ public final class Solution {
 		int noOfChoices = 0;
 		while (noOfChoices < q) {
 			String line = scan.nextLine();
-
-			System.out.println(quiz.getQuestion(noOfChoices).getQuestionText() + "(" +
-			                   quiz.getQuestion(noOfChoices).getMaxMarks() + ")");
+			Question ques = quiz.getQuestion(noOfChoices);
+			System.out.println(ques.getQuestionText() + "(" +
+			                   ques.getMaxMarks() + ")");
+			for(int i = 0;i < ques.getChoice().length-1; i++) {
+				System.out.print(ques.getChoice()[i] + "	");
+			}
+			System.out.print(ques.getChoice()[ques.getChoice().length-1]);
+			System.out.println();
 			noOfChoices++;
 		}
 	}
