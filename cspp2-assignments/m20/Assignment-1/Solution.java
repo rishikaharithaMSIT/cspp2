@@ -241,12 +241,7 @@ public final class Solution {
 			}
 		}
 	}
-	public static String checkExceptions(final String question1, final String[] choices1,
-	                                     final int correctAnswer1, final int maxMarks1, final int penalty1) {
-		if (question1 == null)
-			return "Quiz does not have questions";
-		return null;
-	}
+
 	/**
 	 * Loads questions.
 	 *
@@ -287,11 +282,16 @@ public final class Solution {
 				return;
 			}
 			if (choices.length <= 1) {
-				System.out.println("trick question  does not have enough answer choices");
+				System.out.print("trick question  does not ");
+				System.out.print("have enough answer choices");
+				System.out.println();
 				return;
 			}
-			if (Integer.parseInt(questions[2]) < 1 ||  Integer.parseInt(questions[2]) > 4) {
-				System.out.println("Error! Correct answer choice number is out of range for question text 1");
+			if (Integer.parseInt(questions[2]) < 1
+			        ||  Integer.parseInt(questions[2]) > 4) {
+				System.out.print("Error! Correct answer choice number is ");
+				System.out.print("out of range for question text 1");
+				System.out.println();
 				return;
 			}
 			if (questions[0].equals("")) {
@@ -345,7 +345,8 @@ public final class Solution {
 				for (int i = 0; i < ques.getChoice().length - 1; i++) {
 					System.out.print(ques.getChoice()[i] + "	");
 				}
-				System.out.print(ques.getChoice()[ques.getChoice().length - 1]);
+				System.out.print(ques.getChoice()
+				                 [ques.getChoice().length - 1]);
 				System.out.println();
 				System.out.println();
 				noOfChoices++;
@@ -366,14 +367,17 @@ public final class Solution {
 		for (int i = 0; i < noOfQuestions; i++) {
 			Question ques = quiz.getQuestion(i);
 			System.out.println(ques.getQuestionText());
-			String[] choice = ques.getChoice()[ques.getCorrectAnswer() - 1].split(" ");
+			String[] choice = ques.getChoice()
+			                  [ques.getCorrectAnswer() - 1].split(" ");
 			//System.out.println(choice[1] + "-" + ques.getResponse());
 			if (choice[1].equals(ques.getResponse())) {
 				totalScore += ques.getMaxMarks();
-				System.out.println(" Correct Answer! - Marks Awarded: " + ques.getMaxMarks());
+				System.out.println(" Correct Answer! - Marks Awarded: "
+				                   + ques.getMaxMarks());
 			} else {
 				totalScore += ques.getPenalty();
-				System.out.println(" Wrong Answer! - Penalty: " + ques.getPenalty());
+				System.out.println(" Wrong Answer! - Penalty: "
+				                   + ques.getPenalty());
 			}
 		}
 		if (noOfQuestions != 0) {
