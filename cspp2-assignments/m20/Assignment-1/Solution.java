@@ -107,7 +107,7 @@ class Question {
 	 * @param      answer  The answer
 	 */
 	public void setResponse(final String answer) {
-
+		response = answer;
 	}
 	/**
 	 * Gets the response.
@@ -277,7 +277,11 @@ public final class Solution {
 		int noOfChoices = 0;
 		while (noOfChoices < q) {
 			String line = scan.nextLine();
+			String[] responses = line.split(" ");
+
 			Question ques = quiz.getQuestion(noOfChoices);
+			ques.setResponse(responses[1]);
+			
 			System.out.println(ques.getQuestionText() + "(" +
 			                   ques.getMaxMarks() + ")");
 			for(int i = 0;i < ques.getChoice().length-1; i++) {
