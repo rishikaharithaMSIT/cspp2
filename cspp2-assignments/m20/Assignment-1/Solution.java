@@ -43,7 +43,8 @@ class Question {
 	 * @param      penalty1        The penalty 1
 	 */
 	Question(final String question1, final String[] choices1,
-	         final int correctAnswer1, final int maxMarks1, final int penalty1) {
+	         final int correctAnswer1, final int maxMarks1,
+	         final int penalty1) {
 		questiontext = question1;
 		choices = choices1;
 		correctAnswer = correctAnswer1;
