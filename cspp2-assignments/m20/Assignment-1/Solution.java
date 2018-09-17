@@ -242,7 +242,7 @@ public final class Solution {
 		}
 	}
 	public static String checkExceptions(final String question1, final String[] choices1,
-	         final int correctAnswer1, final int maxMarks1, final int penalty1){
+	                                     final int correctAnswer1, final int maxMarks1, final int penalty1) {
 		if (question1 == null)
 			return "Quiz does not have questions";
 		return null;
@@ -261,7 +261,10 @@ public final class Solution {
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
 		int noOfInputs = q;
-		if( q <= 0) {
+		final int three = 3;
+		final int four = 4;
+		final int five = 5;
+		if ( q <= 0) {
 			System.out.println("Quiz does not have questions");
 			return;
 		}
@@ -279,35 +282,35 @@ public final class Solution {
 			// 	System.out.println(exceptions);
 			// 	return;
 			// }
-			if(questions.length != 5) {
+			if (questions.length != five) {
 				System.out.println("Error! Malformed question");
 				return;
 			}
-			if(choices.length <= 1) {
+			if (choices.length <= 1) {
 				System.out.println("trick question  does not have enough answer choices");
 				return;
 			}
-			if(Integer.parseInt(questions[2]) < 1 ||  Integer.parseInt(questions[2]) > 4){
+			if (Integer.parseInt(questions[2]) < 1 ||  Integer.parseInt(questions[2]) > 4) {
 				System.out.println("Error! Correct answer choice number is out of range for question text 1");
 				return;
-			}			
-			if(questions[0].equals("")){
+			}
+			if (questions[0].equals("")) {
 				System.out.println("Error! Malformed question");
 				return;
 			}
-			if(Integer.parseInt(questions[3]) < 0) {
+			if (Integer.parseInt(questions[three]) < 0) {
 				System.out.println("Invalid max marks for " + questions[0]);
 				return;
 			}
-			if(Integer.parseInt(questions[4]) > 0) {
+			if (Integer.parseInt(questions[four]) > 0) {
 				System.out.println("Invalid penalty for " + questions[0]);
 				return;
 			}
 			Question question = new Question(
 			    questions[0], choices,
 			    Integer.parseInt(questions[2]),
-			    Integer.parseInt(questions[3]),
-			    Integer.parseInt(questions[4]));
+			    Integer.parseInt(questions[three]),
+			    Integer.parseInt(questions[four]));
 			quiz.addQuestion(question);
 
 			noOfInputs--;
@@ -373,10 +376,10 @@ public final class Solution {
 				System.out.println(" Wrong Answer! - Penalty: " + ques.getPenalty());
 			}
 		}
-		if(noOfQuestions != 0) {
+		if (noOfQuestions != 0) {
 			System.out.println("Total Score: " + totalScore);
 		}
-		
+
 
 	}
 }
