@@ -308,14 +308,19 @@ public final class Solution {
 	 */
 	public static void displayScore(final Quiz quiz) {
 		// write your code here to display the score report using quiz object.
+		int totalScore = 0;
 		int noOfQuestions = quiz.getSize();
 		for(int i = 0;i < noOfQuestions;i++) {
 			Question ques = quiz.getQuestion(i);
 			System.out.println(ques.getQuestionText());
 			String[] choice = ques.getChoice()[ques.getCorrectAnswer() - 1].split(" ");
-			System.out.println(choice[1] + "-" + ques.getResponse());
+			//System.out.println(choice[1] + "-" + ques.getResponse());
 			if(choice[1].equals(ques.getResponse())) {
-				System.out.println("in correct");
+				totalScore += ques.getMaxMarks();
+				System.out.println(" Correct Answer! - Marks Awarded: " + ques.getMaxMarks());
+			} else {
+				totalScore += ques.getPenalty();
+				System.out.println(" Wrong Answer! - Penalty: " + ques.getPenalty());
 			}
 		}
 
