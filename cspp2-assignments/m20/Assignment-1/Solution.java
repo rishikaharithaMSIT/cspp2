@@ -70,7 +70,7 @@ class Question {
 	 * @return     The question text.
 	 */
 	public String getQuestionText() {
-		return null;
+		return questiontext;
 	}
 	/**
 	 * Gets the choice.
@@ -273,7 +273,7 @@ public final class Solution {
 		while (noOfChoices < q) {
 			String line = scan.nextLine();
 
-			System.out.println(quiz.getQuestion(noOfChoices) + "(" +
+			System.out.println(quiz.getQuestion(noOfChoices).getQuestionText() + "(" +
 			                   quiz.getQuestion(noOfChoices).getMaxMarks() + ")");
 			noOfChoices++;
 		}
