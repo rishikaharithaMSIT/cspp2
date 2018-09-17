@@ -288,7 +288,11 @@ public final class Solution {
 				return;
 			}
 			if(choices.length <= 1) {
-				System.out.println("Error! Correct answer choice number is out of range for question text 1");
+				System.out.println("trick question  does not have enough answer choices");
+				return;
+			}
+			if(questions[0] == ""){
+				System.out.println("Error! Malformed question");
 				return;
 			}
 			if(Integer.parseInt(questions[3]) < 0) {
