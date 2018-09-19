@@ -44,7 +44,6 @@ final class Solution {
                 //System.out.println(tokens[0] + tokens[1]);
                 outerloop:
                 for (int i = 0; i < items.size(); i++) {
-
                     if (items.get(i).productName.equals(tokens[0])
                             && Integer.parseInt(items.get(i).quantity)
                             >= Integer.parseInt(tokens[1])) {

@@ -431,7 +431,7 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t = tokens[1].split(",");
                     if (t.length == 1) {
-                        l.add(Integer.parseInt(tokens[1]));
+                        l.add(Integer.parseInt(tokens[1]))
                     }
                 }
                 break;

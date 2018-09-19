@@ -206,7 +206,7 @@ public class List {
         if (index <= size) {
             //System.out.println(array[index-1] + "get element");
             return array[index];
-        }
+        }   
         return -1;
     }
 

@@ -366,6 +366,7 @@ public class List<E> {
      */
     public int hashCode() {
         return 0;
+        
     }
     /*Removes all the elements from list*/
 
