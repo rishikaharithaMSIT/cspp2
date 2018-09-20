@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.io.*;
-
 public class Solution {
 	public static void main(String[] args) {
 		try {
@@ -20,7 +19,7 @@ public class Solution {
 			System.out.println();
 			for(int i =0;i < files.length;i++) {
 				System.out.print(files[i].getName()+"\t");
-				for(int j =0;j < files.length;j++) {
+				for(int j =0; j < files.length;j++) {
 					Distance map1 = new Distance(files[i]);
 					Distance map2 = new Distance(files[j]);
 					int similar = (int)Math.round(map1.angle(map2));
