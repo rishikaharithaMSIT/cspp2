@@ -1,6 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
-import java.io.*;
+import java.io.File;
 public class Solution {
     public static void main(String[] args) {
         try {
