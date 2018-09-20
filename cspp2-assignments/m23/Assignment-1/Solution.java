@@ -15,6 +15,7 @@ public class Solution {
 					Distance map2 = new Distance(files[j]);
 					System.out.println(map1.angle(map2) + " : " + files[0] + " , "+ files[1]);
 				}
+				System.out.println("---------------------");
 				
 			}
 			
