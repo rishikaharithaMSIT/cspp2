@@ -13,7 +13,7 @@ public class Solution {
 				for(int j =0;j < files.length;j++) {
 					Distance map1 = new Distance(files[i]);
 					Distance map2 = new Distance(files[j]);
-					System.out.println(map1.angle(map2) + " : " + files[0] + " , "+ files[1]);
+					System.out.println(map1.angle(map2) + " : " + files[i] + " , "+ files[j]);
 				}
 				System.out.println("---------------------");
 				
