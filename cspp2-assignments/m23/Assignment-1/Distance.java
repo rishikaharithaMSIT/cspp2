@@ -63,7 +63,7 @@ public class Distance
 				String[] words = line.split("\\W");
 
 				for(String word: words) {
-					//word = word.replaceAll("[^a-z0-9]","");
+					word = word.replaceAll("[^a-z0-9\\s]","");
 					if(freqWords.containsKey(word.toLowerCase())){
 						//System.out.println(freqWords.get(word.toLowerCase()) + " freq");
 						int a = freqWords.get(word.toLowerCase());
