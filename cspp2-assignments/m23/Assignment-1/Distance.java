@@ -126,7 +126,7 @@ public class Distance
 	}
 	public double angle(Distance map){
  		double numerator = innerProduct(map.freqWords);
- 		System.out.println(numerator);
+ 		//System.out.println(numerator);
  		double denominator = norm() * map.norm();
  		//System.out.println(denominator);
  		double angle = numerator/denominator;
