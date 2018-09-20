@@ -60,12 +60,12 @@ public class Distance
 
 			while((line = bufferedReader.readLine()) != null) {
 				noOfLines++;
-				line = line.replaceAll("[^A-Za-z0-9_]"," ");
-				line = line.replaceAll("\\s+"," ");
-				String[] words = line.split(" ");
+				//line = line.replaceAll("[^A-Za-z0-9_]"," ");
+				//line = line.replaceAll("\\s+"," ");
+				String[] words = line.split("\\W");
 
 				for(String word: words) {
-					//word = word.replaceAll("[^A-Za-z0-9_]","");
+					word = word.replaceAll("[^a-z0-9_]","");
 					//word = word.replaceAll("\\s","");
 					if(freqWords.containsKey(word.toLowerCase())){
 						//System.out.println(freqWords.get(word.toLowerCase()) + " freq");
