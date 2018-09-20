@@ -20,8 +20,6 @@ public class Solution {
 				for(int j =0;j < files.length;j++) {
 					Distance map1 = new Distance(files[i]);
 					Distance map2 = new Distance(files[j]);
-
-					//printSimilarities(files[i].getName(), files[j].getName(), Math.round(map1.angle(map2)))
 					System.out.print(Math.round(map1.angle(map2))+ "\t\t");
 				}
 				System.out.println();
