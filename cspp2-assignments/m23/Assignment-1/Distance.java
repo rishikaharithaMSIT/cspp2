@@ -131,6 +131,6 @@ public class Distance
  		//System.out.println(denominator);
  		double angle = numerator/denominator;
  		// return Math.acos(angle);
- 		return Math.acos(angle)*100;
+ 		return angle*100;
 	}
 }
