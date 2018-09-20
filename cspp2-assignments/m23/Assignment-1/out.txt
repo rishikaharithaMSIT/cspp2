@@ -1,0 +1,110 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+      		File1.txt	File2.txt	File3.txt	File4.txt	File5.txt	
+File1.txt	100		66		69		72		71		
+File2.txt	66		100		77		74		76		
+File3.txt	69		77		100		75		81		
+File4.txt	72		74		75		100		74		
+File5.txt	71		76		81		74		100		
+Maximum similarity is between File3.txt and File5.txt
+
+Your Output: 
+		File1.txt	File2.txt	File3.txt	File4.txt	File5.txt
+File1.txt	100		72		72		77		73		
+File2.txt	72		100		77		75		78		
+File3.txt	72		77		100		76		81		
+File4.txt	77		75		76		100		74		
+File5.txt	73		78		81		74		100		
+Maximum similarity is between File3.txt and File5.txt
+
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+      		File1.txt	File2.txt	File3.txt	File4.txt	
+File1.txt	100		66		69		30		
+File2.txt	66		100		77		0		
+File3.txt	69		77		100		3		
+File4.txt	30		0		3		100		
+Maximum similarity is between File2.txt and File3.txt
+
+Your Output: 
+		File1.txt	File2.txt	File3.txt	File4.txt
+File1.txt	100		72		72		0		
+File2.txt	72		100		77		0		
+File3.txt	72		77		100		0		
+File4.txt	0		0		0		0		
+Maximum similarity is between File2.txt and File3.txt
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+empty directory
+
+Your Output: 
+empty directory
+
+----------------------------------------
+Result: 1/3 testcases passed.
+Starting audit...
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:2:8: Unused import - java.util.Arrays. [UnusedImports]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:3: Using the '.*' form of import should be avoided - java.io.*. [AvoidStarImport]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:5: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:5:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:6:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:6:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:6:33: Parameter args should be final. [FinalParameters]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:8: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:14: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:28: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:34: '=' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:35: '=' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:37: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:38: '<' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:39: '<' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:51: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:52: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:16:54: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:17:68: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:17:69: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:19:60: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:19:61: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:21:28: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:21:36: '=' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:21:38: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:21:55: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:22:68: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:22:69: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:23:36: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:23:44: '=' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:23:46: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:23:63: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:26: Line is longer than 80 characters (found 88). [LineLength]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:26:60: 'typecast' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:27: Line is longer than 80 characters (found 112). [LineLength]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:27:43: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:32:65: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:34: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:35: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37: Line is longer than 80 characters (found 97). [LineLength]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:76: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:77: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:82: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:83: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:90: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:37:91: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:38: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:39: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:40:24: 'catch' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:43: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\Users\ravit\Desktop\MSIT\cspp2\cspp2-assignments\m23\Assignment-1\Solution.java:45: Line has trailing spaces. [RegexpSingleline]
+Audit done.
+Checkstyle ends with 52 errors.
+
+
+[master 6f1afae] "check_style_score -> 1 of 3 passed. style score: 0/1 "
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cspp2-assignments/m23/Assignment-1/out.txt
+
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+

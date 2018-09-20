@@ -61,8 +61,9 @@ public class Distance
 			while((line = bufferedReader.readLine()) != null) {
 				noOfLines++;
 				String[] words = line.split("\\W");
-				for(String word: words) {
 
+				for(String word: words) {
+					word = word.replaceAll("[^a-z0-9]","");
 					if(freqWords.containsKey(word.toLowerCase())){
 						//System.out.println(freqWords.get(word.toLowerCase()) + " freq");
 						int a = freqWords.get(word.toLowerCase());
@@ -130,7 +131,7 @@ public class Distance
  		double denominator = norm() * map.norm();
  		//System.out.println(denominator);
  		double angle = numerator/denominator;
- 		// return Math.acos(angle);
+ 		//return Math.acos(angle);
  		return angle*100;
 	}
 }
