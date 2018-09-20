@@ -78,10 +78,10 @@ public class Distance
 						//freqWords.get(word.toLowerCase()) = 2;
 						//System.out.println(a + " " + word.toLowerCase());
 					} else {
-						if(word.length() > 0) {
+						// if(word.length() > 0) {
 							freqWords.put(word.toLowerCase(), 1);
 							noOfWords++;
-						}						
+						// }						
 					}
 				}				
 			}
