@@ -22,7 +22,7 @@ public class Solution {
 					Distance map2 = new Distance(files[j]);
 
 					//printSimilarities(files[i].getName(), files[j].getName(), Math.round(map1.angle(map2)))
-					System.out.print(Math.round(map1.angle(map2))+ "\t");
+					System.out.print(Math.round(map1.angle(map2))+ "\t\t");
 				}
 				System.out.println();
 				
