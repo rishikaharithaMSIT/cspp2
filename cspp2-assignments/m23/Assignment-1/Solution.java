@@ -11,6 +11,7 @@ public class Solution {
 				File dir = new File(line);
 				File[] files = dir.listFiles();
 				//System.out.println(Arrays.toString(files));
+				if(files.length == 0) throw new Exception();
 
 			}
 		} catch(Exception e) {
