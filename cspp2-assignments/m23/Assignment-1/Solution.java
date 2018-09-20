@@ -15,7 +15,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try {
             Scanner scan = new Scanner(System.in);
             String line = scan.nextLine();
@@ -35,8 +35,9 @@ public final class Solution {
                 for (int j = 0; j < files.length; j++) {
                     Distance map1 = new Distance(files[i]);
                     Distance map2 = new Distance(files[j]);
-                    int similar = (int)Math.round(map1.angle(map2));
-                    if (similar > maxVal && !files[i].getName().equals(files[j].getName())) {
+                    int similar = (int) Math.round(map1.angle(map2));
+                    if (similar > maxVal && !files[i].getName().equals(
+                                files[j].getName())) {
                         maxVal = similar;
                         file1 = files[i].getName();
                         file2 = files[j].getName();
@@ -45,7 +46,8 @@ public final class Solution {
                 }
                 System.out.println();
             }
-            System.out.println("Maximum similarity is between " + file1 + " and " + file2);
+            System.out.println("Maximum similarity is between " + file1
+                               + " and " + file2);
         } catch (Exception e) {
             System.out.println("empty directory");
         }
