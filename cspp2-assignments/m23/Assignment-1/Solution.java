@@ -9,10 +9,10 @@ public class Solution {
 			String line = scan.nextLine();
 			File dir = new File(line);
 			File[] files = dir.listFiles();
-			for(int i =0;i < files.length-1;i++) {
-				for(int j =0;j < files.length-1;j++) {
-					Distance map1 = new Distance(files[0]);
-					Distance map2 = new Distance(files[1]);
+			for(int i =0;i < files.length;i++) {
+				for(int j =0;j < files.length;j++) {
+					Distance map1 = new Distance(files[i]);
+					Distance map2 = new Distance(files[j]);
 					System.out.println(map1.angle(map2) + " : " + files[0] + " , "+ files[1]);
 				}
 				
