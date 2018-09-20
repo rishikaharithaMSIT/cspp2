@@ -9,13 +9,22 @@ public class Solution {
 			String line = scan.nextLine();
 			File dir = new File(line);
 			File[] files = dir.listFiles();
+			System.out.print("		");
+			for(int i=0;i<files.length-1;i++) {
+				System.out.print(files[i].getName()+"\t");
+			}
+			System.out.print(files[files.length-1].getName());
+			System.out.println();
 			for(int i =0;i < files.length;i++) {
+				System.out.print(files[i]);
 				for(int j =0;j < files.length;j++) {
 					Distance map1 = new Distance(files[i]);
 					Distance map2 = new Distance(files[j]);
-					System.out.println(Math.round(map1.angle(map2)) + " : " + files[i] + " , "+ files[j]);
+
+					//printSimilarities(files[i].getName(), files[j].getName(), Math.round(map1.angle(map2)))
+					System.out.print(Math.round(map1.angle(map2)));
 				}
-				System.out.println("---------------------");
+				System.out.println();
 				
 			}
 			
@@ -26,4 +35,5 @@ public class Solution {
 		}
 		
 	}
+	
 }
