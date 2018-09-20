@@ -62,7 +62,7 @@ public class Distance
 				noOfLines++;
 				line = line.replaceAll("[^A-Za-z0-9_]"," ");
 				line = line.replaceAll("\\s+"," ");
-				String[] words = line.split("\\W");
+				String[] words = line.split(" ");
 
 				for(String word: words) {
 					//word = word.replaceAll("[^A-Za-z0-9_]","");
@@ -78,10 +78,10 @@ public class Distance
 						//freqWords.get(word.toLowerCase()) = 2;
 						//System.out.println(a + " " + word.toLowerCase());
 					} else {
-						// if(word.length() > 0) {
+						if(word.length() > 0) {
 							freqWords.put(word.toLowerCase(), 1);
 							noOfWords++;
-						// }						
+						}						
 					}
 				}				
 			}
