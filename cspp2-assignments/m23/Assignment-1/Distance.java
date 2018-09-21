@@ -62,7 +62,7 @@ public class Distance
 				noOfLines++;
 				//line = line.replaceAll("[^A-Za-z0-9_ ]"," ");
 				//line = line.replaceAll("\\s+"," ");
-				String[] words = line.split("\\s");
+				String[] words = line.split(" ");
 
 				for(String word: words) {
 					//word = word.replaceAll("[^A-Za-z0-9 ]",""); 
