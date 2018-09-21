@@ -137,3 +137,4 @@ public class Distance
  		//return Math.acos(angle);
  		return angle*100;
 	}
+}
