@@ -67,19 +67,19 @@ public class Distance
 				for(String word: words) {
 					//word = word.replaceAll("[^A-Za-z0-9 ]",""); 
 					//word = word.replaceAll("\\s","");
-					if(freqWords.containsKey(word.toLowerCase())){
+					if(freqWords.containsKey(word)){
 						//System.out.println(freqWords.get(word.toLowerCase()) + " freq");
-						int a = freqWords.get(word.toLowerCase());
+						int a = freqWords.get(word);
 						noOfWords++;
 						a++;
 						//System.out.println(a + " a");
-						freqWords.put(word.toLowerCase(), a);
+						freqWords.put(word, a);
 						//System.out.println(freqWords);
 						//freqWords.get(word.toLowerCase()) = 2;
 						//System.out.println(a + " " + word.toLowerCase());
 					} else {
 						if(word.length() > 0) {
-							freqWords.put(word.toLowerCase(), 1);
+							freqWords.put(word, 1);
 							noOfWords++;
 						}						
 					}
