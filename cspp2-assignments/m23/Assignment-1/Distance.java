@@ -60,8 +60,8 @@ public class Distance
 
 			while((line = bufferedReader.readLine()) != null) {
 				noOfLines++;
-				line = line.replaceAll("[^A-Za-z0-9_ ]"," ");
-				line = line.replaceAll("\\s+"," ");
+				//line = line.replaceAll("[^A-Za-z0-9_ ]"," ");
+				//line = line.replaceAll("\\s+"," ");
 				String[] words = line.split(" ");
 
 				for(String word: words) {
