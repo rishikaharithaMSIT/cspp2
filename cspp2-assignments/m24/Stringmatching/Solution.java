@@ -35,14 +35,15 @@ public final class Solution {
                 for (int j = 0; j < files.length; j++) {
                     Distance map1 = new Distance(files[i]);
                     Distance map2 = new Distance(files[j]);
-                    int similar = (int) Math.round(map1.angle(map2));
-                    if (similar > maxVal && !files[i].getName().equals(
-                                files[j].getName())) {
-                        maxVal = similar;
-                        file1 = files[i].getName();
-                        file2 = files[j].getName();
-                    }
-                    System.out.print(similar + "\t\t");
+                    // int similar = (int) Math.round(map1.angle(map2));
+                    // if (similar > maxVal && !files[i].getName().equals(
+                    //             files[j].getName())) {
+                    //     maxVal = similar;
+                    //     file1 = files[i].getName();
+                    //     file2 = files[j].getName();
+                    // }
+                    
+                    //System.out.print(similar + "\t\t");
                 }
                 System.out.println();
             }
