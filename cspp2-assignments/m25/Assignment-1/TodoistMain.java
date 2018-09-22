@@ -25,16 +25,16 @@ class Todoist {
         tasks = Arrays.copyOf(tasks, 2 * size);
     }
     public String toString(){
-    	String imp = "Not Important";
-		String urg = "Not Urgent";
+    	
 		String display = "";
     	for (int i =0; i< size;i++) {
-    	System.out.println(tasks[i].important + " - " + tasks[i].urgent);
+    	//System.out.println(tasks[i].important + " - " + tasks[i].urgent);
+    	String imp = "Not Important";
+		String urg = "Not Urgent";
 		if(tasks[i].important) imp = "Important";
 		if(tasks[i].urgent) urg = "Urgent";
 		display += tasks[i].title + ", " + tasks[i].assignedTo+", "+ tasks[i].timeToComplete+", "+ imp+", "+ urg+", "+ tasks[i].status + "\n";
-		imp = "Not Important";
-		urg = "Not Urgent";
+		
     	}
     	return display;
     }
