@@ -18,6 +18,7 @@ class Todoist {
 			size++;
 		} catch (Exception e) {
 			resize();
+			addTask(task);
 		}
 		
 	}
