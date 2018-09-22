@@ -43,6 +43,7 @@ class Todoist {
     			if(tasks[i].important && !tasks[i].urgent) {
     				getTasks[index] = tasks[i];
     				index++;
+    				if (index == n) break;
     			}
     		}
     	}
