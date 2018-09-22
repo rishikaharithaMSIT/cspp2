@@ -26,12 +26,12 @@ public final class Solution {
             String file2 = null;
             System.out.print("\t\t");
             for (int i = 0; i < files.length - 1; i++) {
-                System.out.print(files[i].getName() + "\t");
+                System.out.print(files[i].getName() + "        ");
             }
             System.out.print(files[files.length - 1].getName());
             System.out.println();
             for (int i = 0; i < files.length; i++) {
-                System.out.print(files[i].getName() + "\t");
+                System.out.print(files[i].getName() + "        ");
                 for (int j = 0; j < files.length; j++) {
                     Distance map1 = new Distance(files[i], files[j]);
                     //Distance map2 = new Distance(files[j]);
