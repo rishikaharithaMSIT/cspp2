@@ -33,8 +33,8 @@ public final class Solution {
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName() + "\t");
                 for (int j = 0; j < files.length; j++) {
-                    Distance map1 = new Distance(files[i]);
-                    Distance map2 = new Distance(files[j]);
+                    Distance map1 = new Distance(files[i], files[j]);
+                    //Distance map2 = new Distance(files[j]);
                     // int similar = (int) Math.round(map1.angle(map2));
                     // if (similar > maxVal && !files[i].getName().equals(
                     //             files[j].getName())) {
