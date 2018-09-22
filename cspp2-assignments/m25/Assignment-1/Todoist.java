@@ -4,6 +4,9 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
+/**
+ * Class for todoist.
+ */
 class Todoist {
     Task[] tasks;
     int size;
@@ -56,7 +59,6 @@ class Todoist {
         return totalTime;
     }
     public String toString() {
-
         String display = "";
         for (int i = 0; i < size; i++) {
             //System.out.println(tasks[i].important + " - " + tasks[i].urgent);
@@ -69,5 +71,4 @@ class Todoist {
         }
         return display;
     }
-
 }
