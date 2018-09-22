@@ -10,9 +10,7 @@ import java.util.Arrays;
  * Class for todoist main.
  */
 public final class TodoistMain {
-    /**
-     * Constructs the object.
-     */
+    
     private TodoistMain() {
         //unused.
     }
