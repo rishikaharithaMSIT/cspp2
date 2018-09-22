@@ -4,6 +4,11 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
+class InvalidTitle extends Exception {
+	InvalidTitle(String s) {
+		super(s);
+	}
+}
 class Todoist {
 	Task[] tasks;
 	int size;
@@ -34,7 +39,8 @@ class Task {
 	String status;
 
 	Task(String title, String assignedTo, int timeToComplete, boolean important,
-	     boolean urgent, String status) {
+	     boolean urgent, String status) throws Exception {
+		if (title.equals("") || title == null) throw new Exception("Title not provided");
 		this.title = title;
 		this.assignedTo = assignedTo;
 		this.timeToComplete = timeToComplete;
