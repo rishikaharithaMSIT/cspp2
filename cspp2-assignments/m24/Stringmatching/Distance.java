@@ -25,6 +25,7 @@ public class Distance
 	private HashMap<String, Integer> freqWords = new HashMap<>();
 	String s1 = "";
 	String s2 = "";
+	double ans;
 
 	public Distance(File inputFile, File inputFile2) {
 		String line;
@@ -54,7 +55,7 @@ public class Distance
 			}
 			int numerator = lcs.length() * 2 * 100;
 			int denominator = s1.length() + s2.length();
-			double ans = numerator/denominator;
+			ans = numerator/denominator;
 			System.out.print(ans +"\t\t"); 
 
 
@@ -62,5 +63,7 @@ public class Distance
 	        	System.out.println("Exception");
 	        }
 	}
-
+	public double getSimilarity(){
+		return ans;
+	}
 }
