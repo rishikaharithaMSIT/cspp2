@@ -25,6 +25,16 @@ class Todoist {
 	void resize() {
         tasks = Arrays.copyOf(tasks, 2 * size);
     }
+    public Task getNextTask(String name) {
+    	for(int i =0; i< size; i++) {
+    		if(tasks[i].assignedTo.equals(name) && tasks[i].status.equals("todo")) {
+    			if(tasks[i].important) {
+    				return tasks[i];
+    			}
+    		}
+    	}
+    	return null;
+    }
     public String toString(){
     	
 		String display = "";
