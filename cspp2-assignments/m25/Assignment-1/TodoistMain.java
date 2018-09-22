@@ -5,10 +5,14 @@ import java.util.Arrays;
   * write your code below this comment
   */
 //classes in seperate files
+
 /**
  * Class for todoist main.
  */
 public final class TodoistMain {
+    /**
+     * Constructs the object.
+     */
     private TodoistMain() {
         //unused.
     }
