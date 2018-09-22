@@ -41,7 +41,21 @@ public class Distance
 			while((line = bufferedReader.readLine()) != null) {
 				s2 += line;
 				}
-			System.out.println(s1);
+			//System.out.println(s1);
+			String lcs = "";
+			for (int i = 0; i < s2.length(); i++) {
+				for (int j = i + 1 ; j <= s2.length(); j++) {
+					if (s1.contains(s2.substring(i, j))) {
+						if (s2.substring(i, j).length() > lcs.length()) {
+							lcs = s2.substring(i, j).replaceAll(" ","");
+						}
+					}
+				}
+			}
+			int numerator = lcs.length() * 2 * 100;
+			int denominator = s1.length() + s2.length();
+			System.out.println((numerator/denominator)); 
+
 
 	    } catch(Exception e) {
 	        	System.out.println("Exception");
