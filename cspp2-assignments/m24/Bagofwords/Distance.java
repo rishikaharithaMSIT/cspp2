@@ -30,35 +30,13 @@ public class Distance
 	
 	private double angle;
 
-	// public Distance(String input) {
-	// 	String[] lines = input.split("\n");
-	// 	noOfLines = lines.length;
-	// 	for(String line: lines) {
-	// 		String[] words = line.split(" ");
-	// 		for(String word: words) {
-	// 			if(freqWords.containsKey(word.toLowerCase())){
-	// 				int a = freqWords.get(word.toLowerCase());
-	// 				noOfWords++;
-	// 				a++;
-	// 				freqWords.put(word.toLowerCase(), a);
-	// 				//System.out.println(a + " " + word.toLowerCase());
-	// 			}
-	// 			else {
-	// 				freqWords.put(word.toLowerCase(), 1);
-	// 				noOfWords++;
-	// 			}
-	// 		}
-			
-	// 	}
-	// 	noOfDistinctWords = freqWords.size();
-	// }
 	public Distance(File inputFile) {
 		String line = null;
 		try {
-			FileReader fileReader = new FileReader(inputFile);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-			while((line = bufferedReader.readLine()) != null) {
+			FileReader file = new FileReader(inputFile);
+			//BufferedReader bufferedReader = new BufferedReader(fileReader);
+			Scanner scan = new Scanner(file).useDelimiter("\\A");
+			while(scan.hasNext()) {
 				noOfLines++;
 				//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
 				//line = line.replaceAll("\\s+"," ");
