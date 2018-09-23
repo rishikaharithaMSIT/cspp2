@@ -24,11 +24,12 @@ public final class Solution {
             double maxVal = 0;
             String file1 = null;
             String file2 = null;
-            System.out.print("     ");
+            System.out.print("         ");
             for (int i = 0; i < files.length - 1; i++) {
                 System.out.format("%13s", files[i].getName());
             }
-            System.out.print(files[files.length - 1].getName());
+            System.out.format("%13s",files[files.length - 1].getName());
+            System.out.print(" ");
             System.out.println();
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName());
