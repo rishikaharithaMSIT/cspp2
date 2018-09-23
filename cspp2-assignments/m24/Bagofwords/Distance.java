@@ -35,11 +35,11 @@ public class Distance
 		try {
 			FileReader file = new FileReader(inputFile);
 			//BufferedReader bufferedReader = new BufferedReader(fileReader);
-			Scanner scan = new Scanner(file).useDelimiter("\\A");
-			while(scan.hasNext()) {
-				noOfLines++;
+			Scanner scan = new Scanner(file);
+			//while(scan.hasNext()) {
+				//noOfLines++;
 				//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
-				//line = line.replaceAll("\\s+"," ");
+				line = scan.useDelimiter("\\A").next();
 				String[] words = line.split(" ");
 
 				for(String word: words) {
@@ -62,10 +62,10 @@ public class Distance
 						}						
 					}
 				}				
-			}
+			//}
 			noOfDistinctWords = freqWords.size();		
 	    } catch(Exception e) {
-	        	System.out.println("Exception");
+	        	System.out.println(e);
 	        }
 	}
 	public int getNumOfLines(){
