@@ -39,8 +39,10 @@ public class Distance
 			//while(scan.hasNext()) {
 				//noOfLines++;
 				//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
+			
 				line = scan.useDelimiter("\\A").next();
-				String[] words = line.split(" ");
+				if(line != null){
+					String[] words = line.split(" ");
 
 				for(String word: words) {
 					//word = word.replaceAll("[^A-Za-z0-9 ]",""); 
@@ -63,9 +65,11 @@ public class Distance
 					}
 				}				
 			//}
-			noOfDistinctWords = freqWords.size();		
+			noOfDistinctWords = freqWords.size();
+				}
+						
 	    } catch(Exception e) {
-	        	System.out.println(e);
+	        	System.out.println("Exception");
 	        }
 	}
 	public int getNumOfLines(){
