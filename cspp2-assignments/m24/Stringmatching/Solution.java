@@ -34,7 +34,8 @@ public final class Solution {
             for (int i = 0; i < files.length; i++) {
                 System.out.print(files[i].getName());
                 for (int j = 0; j < files.length; j++) {
-                    StringMatching map1 = new StringMatching(files[i], files[j]);
+                    StringMatching map1 = new StringMatching(files[i],
+                            files[j]);
                     //Distance map2 = new Distance(files[j]);
                     double similar = map1.getSimilarity();
                     if (similar > maxVal && !files[i].getName().equals(
