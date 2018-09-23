@@ -18,8 +18,7 @@ import java.util.*;
 import java.io.*;
 import java.net.*;
 
-public class Distance
-{
+public class Distance {
 	//requirements are defined by provided tests
 	//       Test1.java, Test2.java, Test3.java, Test4.java
 	private HashMap<String, Integer> freqWords = new HashMap<>();
@@ -27,7 +26,7 @@ public class Distance
 	private int noOfWords;
 	private int noOfDistinctWords;
 	private double norm;
-	
+
 	private double angle;
 
 	public Distance(File inputFile) {
@@ -37,19 +36,19 @@ public class Distance
 			//BufferedReader bufferedReader = new BufferedReader(fileReader);
 			Scanner scan = new Scanner(file);
 			//while(scan.hasNext()) {
-				//noOfLines++;
-				//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
-				while(scan.hasNext()) {
-					line = scan.useDelimiter("\\A").next();
-				}
-				
-				if(line != null){
-					String[] words = line.split(" ");
+			//noOfLines++;
+			//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
+			while (scan.hasNext()) {
+				line = scan.useDelimiter("\\A").next();
+			}
 
-				for(String word: words) {
-					//word = word.replaceAll("[^A-Za-z0-9 ]",""); 
+			if (line != null) {
+				String[] words = line.split(" ");
+
+				for (String word : words) {
+					//word = word.replaceAll("[^A-Za-z0-9 ]","");
 					//word = word.replaceAll("\\s","");
-					if(freqWords.containsKey(word)){
+					if (freqWords.containsKey(word)) {
 						//System.out.println(freqWords.get(word.toLowerCase()) + " freq");
 						int a = freqWords.get(word);
 						noOfWords++;
@@ -60,34 +59,34 @@ public class Distance
 						//freqWords.get(word.toLowerCase()) = 2;
 						//System.out.println(a + " " + word.toLowerCase());
 					} else {
-						if(word.length() > 0) {
+						if (word.length() > 0) {
 							freqWords.put(word, 1);
 							noOfWords++;
-						}						
+						}
 					}
-				}				
-			//}
-			noOfDistinctWords = freqWords.size();
 				}
-						
-	    } catch(Exception e) {
-	        	System.out.println("Exception");
-	        }
+				//}
+				noOfDistinctWords = freqWords.size();
+			}
+
+		} catch (Exception e) {
+			System.out.println("Exception");
+		}
 	}
-	public int getNumOfLines(){
+	public int getNumOfLines() {
 		return noOfLines;
 	}
-	public int getNumOfWords(){
+	public int getNumOfWords() {
 		return noOfWords;
 	}
-	public int getNumOfDistinctWords(){
+	public int getNumOfDistinctWords() {
 		return noOfDistinctWords;
 	}
 	public double norm() {
 		int sum = 0;
-		for(int val: freqWords.values()) {
+		for (int val : freqWords.values()) {
 			//System.out.println(val + " vallll");
-			sum += Math.pow(val, 2.0); 
+			sum += Math.pow(val, 2.0);
 		}
 		norm = Math.sqrt(sum);
 		return norm;
@@ -99,26 +98,26 @@ public class Distance
 		double dotProduct = 0.0;
 		HashMap<String, Integer> map1 = freqWords;
 		HashMap<String, Integer> map2 = map;
-		if(map1.size() < map2.size()) {
+		if (map1.size() < map2.size()) {
 			map1 = map;
 			map2 = freqWords;
 		}
-		for(String each: map1.keySet()) {
-			if(map2.containsKey(each)) {
+		for (String each : map1.keySet()) {
+			if (map2.containsKey(each)) {
 				int key2 = map2.get(each);
 				dotProduct += (map1.get(each) * key2);
 			}
-			
+
 		}
-		return dotProduct;		
+		return dotProduct;
 	}
-	public double angle(Distance map){
- 		double numerator = innerProduct(map.freqWords);
- 		//System.out.println(numerator);
- 		double denominator = norm() * map.norm();
- 		//System.out.println(denominator);
- 		double angle = numerator/denominator;
- 		//return Math.acos(angle);
- 		return angle*100;
+	public double angle(Distance map) {
+		double numerator = innerProduct(map.freqWords);
+		//System.out.println(numerator);
+		double denominator = norm() * map.norm();
+		//System.out.println(denominator);
+		double angle = numerator / denominator;
+		//return Math.acos(angle);
+		return angle * 100;
 	}
 }
