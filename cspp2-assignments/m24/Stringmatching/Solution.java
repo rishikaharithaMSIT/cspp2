@@ -46,7 +46,7 @@ public final class Solution {
                     // System.out.print(" ");
                     //System.out.print(similar + "\t\t");
                 }
-                System.out.print(" ");
+                System.out.print("space");
                 System.out.println();
             }
             System.out.println("Maximum similarity is between " + file1
