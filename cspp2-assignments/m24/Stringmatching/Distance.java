@@ -59,7 +59,7 @@ public class Distance
 			//System.out.print(denominator + " ");
 			//System.out.print(numerator/denominator + " ");
 			ans = Math.round(numerator/denominator);
-			System.out.format("%13.1f", ans); 
+			System.out.format("%13f", ans); 
 
 
 	    } catch(Exception e) {
