@@ -26,7 +26,7 @@ public final class Solution {
             String file2 = null;
             System.out.print("             ");
             for (int i = 0; i < files.length - 1; i++) {
-                System.out.format("%13", files[i].getName());
+                System.out.format("%13s", files[i].getName());
             }
             System.out.print(files[files.length - 1].getName());
             System.out.println();
