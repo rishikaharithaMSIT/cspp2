@@ -39,8 +39,10 @@ public class Distance
 			//while(scan.hasNext()) {
 				//noOfLines++;
 				//line = line.replaceAll("[^A-Za-z0-9_' ]"," ");
-			
-				line = scan.useDelimiter("\\A").next();
+				while(scan.hasNext()) {
+					line = scan.useDelimiter("\\A").next();
+				}
+				
 				if(line != null){
 					String[] words = line.split(" ");
 
