@@ -31,7 +31,7 @@ public final class Solution {
             System.out.print(files[files.length - 1].getName());
             System.out.println();
             for (int i = 0; i < files.length; i++) {
-                System.out.print(files[i].getName() + "    ");
+                System.out.print(files[i].getName());
                 for (int j = 0; j < files.length; j++) {
                     Distance map1 = new Distance(files[i], files[j]);
                     //Distance map2 = new Distance(files[j]);
@@ -42,10 +42,10 @@ public final class Solution {
                         file1 = files[i].getName();
                         file2 = files[j].getName();
                     }
-
+                    System.out.print(" ");
                     //System.out.print(similar + "\t\t");
                 }
-                System.out.println(" ");
+                System.out.println();
             }
             System.out.println("Maximum similarity is between " + file1
                                + " and " + file2);
